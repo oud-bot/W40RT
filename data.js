@@ -11,7 +11,7 @@ const GLOSSARY = [
   ["Dünya", "Voidship", "Boşluk Gemisi (uzay gemisi)", "Şehir büyüklüğünde, binlerce mürettebatlı geminiz."],
   ["Dünya", "Warp / Immaterium", "Warp / İmmateryum", "Gerçek uzayın 'altındaki' tehlikeli boyut; gemiler hızlı seyahat için buradan geçer."],
   ["Dünya", "Navigator", "Navigatör", "Gemiyi Warp'tan güvenle geçirebilen özel kişi. İyi bir Navigatör seyahati güvenli yapar."],
-  ["Dünya", "Psyker", "Psişer (psişik güç kullanıcı)", "Warp'tan güç çeken kişi. Sanctioned (kayıtlı) ve Unsanctioned (kayıtsız) olarak ayrılır; kayıtsızlar daha risklidir."],
+  ["Dünya", "Psyker", "Psişer (psişik güç kullanıcı)", "Warp'tan güç çeken kişi. Sanctioned (kayıtlı) ve Unsanctioned (kayıtsız) olarak ayrılır; kayıtsızlar daha risklidir (Idira her güçte Perils tetikleyebilir)."],
   ["Dünya", "Imperium", "İmparatorluk (Imperium)", "İnsanlığın İmparatorluğu."],
 
   ["Karakter", "Homeworld", "Anavatan Dünyası", "Pasif bonusları ve NPC'lerin sizi nasıl gördüğünü etkileyen ilk stratejik seçim (Death World, Voidborn, Hive World, Forge World, Imperial World, Fortress World)."],
@@ -136,7 +136,7 @@ const ARCHETYPES = [
 const COMPANIONS = [
   // name, arch, role tags, tier, join (spoiler), romance, note
   { n: "Abelard Werserian", arch: "Warrior", tags: ["tank","melee"], tier: "B", join: "Prolog (otomatik)", rom: "Yok", note: "Güvenilir ön saf. 'Asla yüz üstü bırakmaz ama tek başına savaş kazandırmaz.'" },
-  { n: "Idira Tlass", arch: "Operative (psişer)", tags: ["caster","support"], tier: "A", join: "Prolog (otomatik)", rom: "Yok", note: "Başta zayıf, geç oyunda çok güçlü. Her güçte Perils of the Warp riski." },
+  { n: "Idira Tlass", arch: "Operative (psişer)", tags: ["caster","support"], tier: "A", join: "Prolog (otomatik)", rom: "Yok", note: "Başta zayıf, geç oyunda çok güçlü. Her psişik güçte rastgele Perils of the Warp riski (sıradan psişerler gibi eşik beklemez): vahşi büyücü gibi; çok felaket çıkarırsa partiden çıkarabilirsiniz [Video 3]." },
   { n: "Sister Argenta", arch: "Soldier", tags: ["ranged","aoe"], tier: "S", join: "Prolog (otomatik)", rom: "Yok", note: "Menzilli carry; ağır bolter en yüksek hasar kaynaklarından." },
   { n: "Cassia Orsellio", arch: "Officer", tags: ["support","navigator","aoe"], tier: "S", join: "Bölüm 1", rom: "Yalnızca erkek Rogue Trader", note: "Navigatör; AoE ve parti buff'ları. Tartışmasız ilk tercih." },
   { n: "Pasqal Haneumann", arch: "Operative", tags: ["ranged","tech","support"], tier: "B", join: "Bölüm 1", rom: "Yok", note: "Yardımcı/teknik. Kişisel hasarı orta; Tech-Use'u partiye katar." },
@@ -181,6 +181,8 @@ const QUIZ = [
   { q: "Agility 38 iken +5 yükseltirseniz?", a: ["Bonus 3 kalır", "Bonus 4 olur (başarı kalitesi artar)", "Hiçbir şey değişmez", "Toughness da artar"], c: 1, e: "Onlar basamağı bonus; 43 → bonus 4. Şansa ek olarak initiative/dodge kalitesi de iyileşir." },
   { q: "Warp rotasında yeşil çizgi ne demek?", a: ["Ölümcül", "Güvenli yolculuk", "Hiç yol yok", "Ticaret rotası"], c: 1, e: "Yeşil güvenli, sarı/turuncu riskli, kırmızı tehlikeli. Navigatör ve Insight puanları riski düşürür." },
   { q: "Void Shadows DLC'sini ne zaman almanız önerilir?", a: ["Oyun ortasında", "Yeni oyuna başlamadan önce (Bladedancer yaratımda kilitli)", "Hiç gerekmez", "Sadece Hard'da"], c: 1, e: "Bladedancer yaratım sırasında seçilir; sonradan eklenmez." },
+  { q: "Idira'yı sıradan bir psişer gibi kullanmak neden riskli?", a: ["Çok yavaştır", "Her psişik güçte rastgele Perils of the Warp tetikleyebilir", "Hiç hasar vermez", "Yalnızca Bölüm 1'de partide kalır"], c: 1, e: "Idira kayıtsız (unsanctioned) bir psişerdir: sıradan psişerler gibi Veil eşiğini beklemez, her güçte rastgele Perils riski vardır. Çok felaket çıkarırsa partiden çıkarmak makul [Video 3]." },
+  { q: "Erken oyunda en güvenli savaş yaklaşımı hangisi?", a: ["İlk turda herkesle yakın dövüş", "Mesafe aç, siper kullan, düşmanı kümelendirip AoE ile vur", "Hiç siper kullanma", "Sadece tek hedefe odaklan"], c: 1, e: "Yarım siper %35, tam siper %60 kaçınma verir; kümelenen düşmanlara AoE ve dar geçitte tank + fırsat saldırıları çok işe yarar [Video 3]." },
   { q: "Düşmanı neyle inceleyebilirsiniz?", a: ["Orta tık", "Sağ tık (zayıflık, zırh, direnç)", "Tab", "J"], c: 1, e: "Sağ tık: düşmanın davranışı, zırhı ve hangi check'lere zayıf olduğu hakkında bilgi verir; savaş sırasında da çalışır." }
 ];
 
@@ -236,7 +238,7 @@ const WALK = [
       "Nomos (gemi makine ruhu) zinciri burada başlar; Nomos’u asla öldürmeyin / arındırmayın (Possessed Ship, gizli son için de önemli).",
       "Üst güverteyi kilitli kapılar için Tech-Use / Demolition ile tarayın; ek sandıklar çıkar."
     ],
-    tips: ["Abelard önde, Idira’nın Lightning Arc’ı zincirleme vurduğu yerde dursun.", "Odadan çıkmadan Abelard ile Kunrad’ın yarasını iyileştirin; yoksa göndermez."]
+    tips: ["Abelard önde, Idira’nın Lightning Arc’ı zincirleme vurduğu yerde dursun. Idira kayıtsız psişerdir: her güçte rastgele Perils riski vardır, felaket çıkarırsa şaşırmayın.", "Odadan çıkmadan Abelard ile Kunrad’ın yarasını iyileştirin; yoksa göndermez."]
   },
   {
     id: "w1", tr: "Bölüm 1 — Belanın Peşinde (Rykad sistemi)", en: "Chapter 1 — Looking for Trouble",
