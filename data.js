@@ -207,3 +207,236 @@ const CHECKLIST = [
     "Veil göstergesi ve Momentum'u her tur takip edin"
   ]}
 ];
+
+/* ---------- WALKTHROUGH ----------
+   Kaynak: Gamer Guides (bölüm yazıları), Fextralife wiki, BrokenBuilds başarım rehberi, Steam tartışmaları.
+   gist/warn: spoiler'sız veya çok hafif. Diğer alanlar <details> içinde saklanır.
+   Türkçe bölüm adları öneridir; oyundaki resmi Türkçe adlar farklı olabilir. */
+const WALK = [
+  {
+    id: "w0", tr: "Prolog — Kan Hakkıyla", en: "Prologue — By the Right of Blood",
+    gist: "Kısa giriş ve savaş eğitimi. Karakteriniz hazırken hikâyeye ve ilk çatışmalara başlarsınız.",
+    warn: ["Final konuşmasında “Rogue Trader olmayı reddetme” seçeneğinde ısrar etmeyin: oyun erken bir epilogla bitebilir."],
+    steps: [
+      "Kunrad’ı takip edin; Theodora’nın ganimet odasında kontrolden çıkmış bir servitor ile ilk savaş (eğitim) yaşanır.",
+      "Theodora ile konuşma ve köprüde isyan; Kunrad’ın asıl niyeti ortaya çıkar. Warrant of Trade odasını açmak için kanınız gerekir.",
+      "Abelard yanınıza katılır. Navigator’s Sanctum → yemekhane (Sister Argenta katılır) → Theodora’nın çalışma odası.",
+      "Köprüye ulaşın, Chaos Spawn’ı yenin, Master Helmsman ile konuşup Lord Kaptan’ın yerini alın."
+    ],
+    choices: [
+      "İlk büyük karar 15 conviction puanı verir: <b>Dogmatic</b> = ateşin içinden geç (Edelthrad ve “Gizli asansör” hedefi); <b>Heretical</b> = gizli odaya yardım kabul et (Corrupted Inferno Pistol, ama üst güverte ganimetinin bir kısmı kaçar); <b>Iconoclast</b> = köprü mürettebatını tahliye et, platformu Ballistic Skill ile düşür (kurtardığınız mürettebat final boss’ta yardım eder).",
+      "Kunrad’a direnir ya da Coercion / Sanctioned Psyker diyalog seçerseniz Chaos blade ile kesilirsiniz: içinize bir daemon bilinci yerleşir. Sadece anlatım katar ve Prolog’da temizlenebilir.",
+      "<b>Blade Shard</b>: Chaos Spawn’dan lootlarsanız sizde kalır; atlarsanız Janris Danrok sonradan conviction’a göre seçenekler sunar.",
+      "Güverte görevlilerinde Iconoclast seçeneği “Varisle toplantıya yetiş” hedefini başarısız kılar."
+    ],
+    companions: ["<b>Abelard</b> ve <b>Sister Argenta</b> bu bölümde katılır; <b>Idira</b>’nın yetenekleri (Lightning Arc) ilk savaşlarda işinize yarar."],
+    bosses: ["<b>Chaos Spawn</b> (köprü): masa/mobilya ile siper alın; Iconoclast yolunda kurtardığınız mürettebat destek olur."],
+    missable: [
+      "Başarım <i>Don’t Touch This</i>: Chaos Spawn hiçbir kültisti yemesin.",
+      "Nomos (gemi makine ruhu) zinciri burada başlar; Nomos’u asla öldürmeyin / arındırmayın (Possessed Ship, gizli son için de önemli).",
+      "Üst güverteyi kilitli kapılar için Tech-Use / Demolition ile tarayın; ek sandıklar çıkar."
+    ],
+    tips: ["Abelard önde, Idira’nın Lightning Arc’ı zincirleme vurduğu yerde dursun.", "Odadan çıkmadan Abelard ile Kunrad’ın yarasını iyileştirin; yoksa göndermez."]
+  },
+  {
+    id: "w1", tr: "Bölüm 1 — Belanın Peşinde (Rykad sistemi)", en: "Chapter 1 — Looking for Trouble",
+    gist: "Oyunun uzun öğretici bölümü (~15 saat). Ana hikâye, yoldaş görevleri ve yan görevler birlikte açılır.",
+    warn: [
+      "<b>Geçit töreni (Parade) ve Epilogue</b> Rykad Minoris’i kapatır: yan görevleri ve alışverişi bunlardan <b>önce</b> bitirin.",
+      "Bölüm 2’de tüccarlara erişim kapanır; satış/alışverişi bu bölümde tamamlayın."
+    ],
+    steps: [
+      "Gemide ilk işler: gemiyi onarın, mürettebatı doldurun, yeni bir Navigator bulun (Warp seyahati için).",
+      "<b>The Chosen Ones</b> (hapishane gezegeni) — önce bunu önerilir; Pilot Raquel ile konuşun, kışlayı temizleyin, Evayne’i bulun, çukurda ona katılın. Sonunda Raquel’e durumun çözüldüğünü söyleyin.",
+      "<b>Secrets of the Navis Nobilite</b> — Cassia’yı mümkün olduğunca erken kurtarın. Laboratuvardaki bulmaca Warp/Toxic düşmanlara karşı iksirler verir.",
+      "<b>The Starport</b> (Rykad Minoris) — bir Tech-Priest’i başkente kadar eşlik edin (Pasqal katılır), depo (isteğe bağlı bulmaca + kanalizasyonda Herald of Tzeentch), keskin nişancılar, uçaksavar topu, Ancient Cannon’u yok edin; sığınakta general ve bir tüccar var.",
+      "<b>Gleam of the Final Dawn</b> (Elektrodinamik manastır) — kayıp keşişleri bulun; Heinrix girişin sağındaki yan odada. Reaktörde üç noktada sabotaj yapın, sonunda Aurora ile savaşın.",
+      "İsteğe bağlı: Rykad Majoris’teki gizemli gemiyi inceleyin.",
+      "<b>Taste of Victory → The Escape</b>: tören, saldırı, kaçış. Başlamadan önce tüm yan işleri bitirin."
+    ],
+    choices: [
+      "Starport’ta Fanatical Old Man’ı bağışlamak/öldürmek sırasıyla Iconoclast / Dogmatic puanı verir. Vali Medineth ile Commerce kontrolü isteğe bağlı ek XP ve Profit Factor verir.",
+      "Chosen Ones’ta kaçan mahkûmları bağışlamak Iconoclast +1 verir.",
+      "Kaçış sırasında kurtarma kararı: Mechanicus eserleri, halk veya soylular. Bir <b>Persuasion kontrolü</b>, <i>Illustrious Glory</i> triumph’ı ya da Dogmatic–Follower yolu ile hem soyluları hem askerleri kurtarabilirsiniz. Bazı mekikler boss savaşında yok olabilir (1–3 mekik kalır).",
+      "Bölüm sonunda ayrı bir büyük karar var (halk / reaktör / Exterminatus gibi seçenekler). Gamer Guides bunun için ayrı sayfa ayırmış; kaydedip her yolu görebilirsiniz."
+    ],
+    companions: [
+      "<b>Cassia</b>: Navis Nobilite (erken). <b>Pasqal</b>: Starport. <b>Heinrix</b>: manastırdaki yan oda.",
+      "<b>Evayne</b>: Chosen Ones; sonraki bölümde ayrılır. Ana hikâyeyi ondan önce yaparsanız Evayne ölür."
+    ],
+    bosses: [
+      "<b>The Warden</b> (Chosen Ones): önce Unholy Lens’leri yok edin ve hızlı olun; Evayne ölebilir.",
+      "<b>Aurora</b> (reaktör): grubu üçe bölün, Electro-Priest’lere öncelik verin; <b>elektrikli silah kullanmayın</b> — elektrikle iyileşirler.",
+      "<b>Chaos Space Marine</b> (Epilogue): Heavy Bolter’ın patlama alanı yüzünden üst üste yığılmayın; keskin nişancıyı hızla indirin."
+    ],
+    missable: [
+      "Hapishane gezegeni ana hikâyeden sonra kapanır (Evayne ölür).",
+      "Navis Nobilite laboratuvar iksirleri, Arc Rifle bulmacası, depo bulmacası (isteğe bağlı).",
+      "Rykad Majoris’teki Drukhari egzotik silahı.",
+      "Chaos Blade parçaları (başarım <i>Knee-Deep in Chaos</i>) Prolog + Bölüm 1’de toplanır.",
+      "Gizli son zinciri için Bölüm 1–2’de Başkâhya (High Factotum) ile servitor sorununu çözmek ve Bölüm 1 sonu seçimi önemli (başarım rehberine göre)."
+    ],
+    tips: ["Starport sırasında: yeni başlayanlar için bulmacayı atlamak sorun değil.", "Argenta’nın ikinci silah yuvasına erken alınabilen Flamer, kalabalığa karşı çok iş görür."]
+  },
+  {
+    id: "w2", tr: "Bölüm 2 — Kaybedileni Geri Al (Koronus Expanse)", en: "Chapter 2 — Reclaim What Was Lost",
+    gist: "Oyun açılır: uzay savaşı, gemi geliştirme, koloniler, fraksiyonlar. Üç gezegen görevini istediğiniz sırayla yaparsınız.",
+    warn: [
+      "Bölüm <b>taç giyme (Dargonus)</b> ile biter; sonra Footfall kısmen kapanır ve tüccarlara erişim bir süre kesilir. Her şeyi bundan önce bitirin.",
+      "Taç giyme için üç gezegen görevi + <i>Blades in the Void</i> tamamlanmış olmalı."
+    ],
+    steps: [
+      "<b>Tattered Spirit</b>: Furibundus’ta uzay savaşı eğitimi, sonra Footfall. Anver haydutlarıyla uğraşın, Drusian ve Kasballica temsilcileriyle tanışın, Jae’yi bulun; Heinrix gemiye geri döner.",
+      "<b>Reclaim What Was Lost</b> (zorunlu): Navigator ile Warp rotaları açın; üç gezegen, sırası serbest:",
+      "• <b>Janus (World Shapers, Telikos Epsilon)</b>: isyanı inceleyin, valinin kaderine karar verin, Aeldari mi kültistler mi? Sonra Footfall’a yardım gönderip göndermemek.",
+      "• <b>Kiava Gamma (Flame in the Dark, Cranach)</b>: Heinrix’i getirin (yoldaş görevi burada). Forge world’den geçip bozulmuş Fabricator-Censor Cubis Delphim’e ulaşın.",
+      "• <b>Dargonus (Spiders in a Jar, Mundus Valancius)</b>: çoğunlukla siyasi; asıl işi taç giymeyi açmak.",
+      "<b>Blades in the Void, Bölüm 1</b>: Vheabos VI’da Drukhari’yi temizleyin; Warp seyahati sonrası bir baskın başlar → <b>Attack in the Silence of Mer-Segrit</b> → <b>Blades in the Void, Bölüm 2</b>: Palatium Stellos, Cinerus Maleficum bulutsusunda Drukhari lideri Marazhai, bindirme savaşı, Dargonus’a dönüş.",
+      "<b>Coronation</b>: Dargonus’a saldırı, saray çevresinde Drukhari savaşı; bölüm biter."
+    ],
+    choices: [
+      "Janus valisine pişmanlık yolu mu konfrontasyon mu; isyancılarla mı Aeldari ile mi.",
+      "Atrium’daki mutant mültecileri kurtarmak/bırakmak.",
+      "Drukhari gladyatörlerini Tazarra’ya karşı ikna etmek savaşı kolaylaştırır.",
+      "Footfall’a erzak göndermek ileride <i>Hunger’s Hand</i> sonucuna bağlanır.",
+      "Dargonus çökme tepkisi: yalnızca küçük etkiler."
+    ],
+    companions: [
+      "<b>Jae</b>: Persona Non Grata (Liege’in sarayı) — görevi başlatmazsanız yoldaş görevi de açılmaz.",
+      "<b>Yrliet</b>: Janus’ta isteğe bağlı; almazsanız isyancıları bulmak için bir kitap olayında kontroller geçmeniz gerekir.",
+      "<b>Argenta</b>: Astray, Hieronymus Doloroso ile konuşunca ilerler. <b>Idira</b>: Echo of the Past, Telikos Epsilon yolunda tetiklenmesi muhtemel."
+    ],
+    bosses: ["Janus’ta Muaran; Drukhari lideri Marazhai (Cinerus Maleficum); bindirme ve saray savaşları."],
+    missable: [
+      "Kiava Gamma’da bir konteynerde Melta Ultima ve Staff of Blood.",
+      "Palatium Stellos: Sybarite’ten Elite Blast Pistol; mekik yakınındaki cesette Armor of the Undaunted ve benzersiz Bolt Pistol.",
+      "Heinrix’in Kiava Gamma odası: gezegenden ayrılmadan çözün.",
+      "Foulstone koloni projesi “For Saint Drusus!” (Trinnitos) ödülü Infernical flamer.",
+      "Castel (Void Shadows ile ilgili görünüyor): <i>Burning Inheritance</i> ile <i>This Is a Job for the Lord Captain</i> birbirini dışlar — birini seçin.",
+      "Kiava Gamma ve Dargonus’taki gizli önbellekler (Nomos başarımı)."
+    ],
+    tips: ["Navigator’ın açtığı Warp rotalarının rengi tehlike seviyesini gösterir; oyunun tooltip’ini okuyun.", "Gemi savaşı ve koloni için “Gemi & Uzay” sekmesine bakın."]
+  },
+  {
+    id: "w3", tr: "Bölüm 3 — Rahatsız Edici Gelişmeler", en: "Chapter 3 — Troubling Developments",
+    gist: "Doğrusal, hikâye ağırlıklı bölüm. Sık kayıt alın; bölüm boyunca birçok seçim geri alınamaz.",
+    warn: [
+      "Bu bölümde <b>kaçırılabilir yoldaş teklifleri</b> ve geri dönüşsüz noktalar var; ayrıntı için aşağıdaki spoiler’ı açın.",
+      "Bu bölümde tüccarlara erişim yoktur (Bölüm 4’te geri gelir); eşyalarınızı önceden düzenleyin."
+    ],
+    steps: [
+      "<b>One Foot in the Grave</b>: Corpse Pile’dan gardiyanlı Xeno sokağından geçip Çukur’a (Pit) varın, Malice ile konuşun → <i>The Chasm</i> ve <i>Reunion</i> açılır.",
+      "<b>The Chasm</b>: Malice Komiser’in başını ister (ya Komiser’i öldürün ya Malice’e karşı çıkın); her iki yol da arenaya götürür.",
+      "<b>Arena 1</b>: Chimera’lar ve dönüştürülmüş insan esirler; sonra Anatomical Opera’da Tervantias.",
+      "<b>Marazhai ve Tervantias</b>: Opera’da iyileşin, Marazhai ile konuşun.",
+      "<b>Arena 2</b>: rastgele çatışmalar (Marazhai katılabilir), sonra Opera’da uçan yaratıkla diyalog.",
+      "<b>Arena 3</b>: mini boss’lar, sonunda Keykaross ve robotu. Sık kaydedin.",
+      "<b>Puppeteer</b>: Kule’de iki kız kardeşle savaş; Stranger sizi kurtarılacak bir Farseer’e yönlendirir.",
+      "<b>Reaving Tempest Spire</b>: Farseer’i kurtarın, ganimeti alın, Tervantias’ın hikâyesini bitirin. Son boss: Yremeryss; Commorragh’tan kaçış."
+    ],
+    choices: [
+      "Komiser mi Malice mi: Komiser’i yenmek takviyesiz daha zor; Malice ile savaşta takviye için 3 tur dayanmalısınız.",
+      "Komiser Şapkası: Çukur’da gardiyanları Komiser’e karşı çevirerek alınır.",
+      "Tervantias yalnızca <b>bir</b> yoldaş verir — seçiminizi bilerek yapın.",
+      "Yrliet: öldür, bağışla ya da zihin solucanını çıkarmak için kullan. Abelard, Pasqal veya Argenta’yı bölüme getirmediyseniz onu bağışlamak başlangıçta tek başına savaşmanızı önler.",
+      "Heretical yol: Chaos’u şehre almak ek görev içeriği açar."
+    ],
+    companions: [
+      "<b>Yrliet</b>: Çukur sonrası Chasm kavşağı. <b>Abelard</b>: Mangled Sector’da Athletics boşluğu (Coercion/Persuasion kontrolü veya Stimm).",
+      "<b>Argenta</b>: Mangled Sector’da Komiser yakını. <b>Idira</b>: Opera laboratuvarı (ikna edin veya cihazını çıkarın).",
+      "<b>Heinrix ve Cassia</b>: 2. arenadan sonrasına kadar bir kutuda kilitli. <b>Jae</b>: 1. arenadan sonra Opera önü.",
+      "<b>Pasqal</b>: 1. arenadan sonra Mangled asansörü yanındaki dilenciler. <b>Ulfar</b>: Opera’da kafeste; 1. arenadan bir eşyayla serbest bırakılır.",
+      "<b>Marazhai</b>: Opera ziyaretinde ve 2. arenada teklif edin."
+    ],
+    bosses: ["Komiser (isteğe bağlı/Chasm), Malice, Arena 1 Chimera’ları, iki kız kardeş (Puppeteer), Keykaross ve robotu, Pain Engine’ler, Yremeryss (son, güçlü takviyeli)."],
+    missable: [
+      "<b>Marazhai’nin katılım teklifi</b> ilk Opera ziyaretinde söylenmezse kaybolur.",
+      "<b>Heretical görev</b> Opera bölgesinden çıkmadan başlamalı; dönüş şansı az.",
+      "Tech Use / Athletics / Demolition gerektiren ganimet 3. arenadan önce alınmalı.",
+      "İsteğe bağlı Mangled boss’u Opera’dan ayrılmadan yenilmeli; Heretical terminali Opera dışında; Marazhai’nin Kule’deki kargo etkileşimi.",
+      "Başarım <i>Whodunit?</i>: Dark City’deki kilit anlarda Argenta partide olsun."
+    ],
+    tips: ["Abelard, Pasqal veya Argenta’yı bölüme getirmediyseniz Yrliet’i bağışlamak iyi olur; yoksa başlangıçta yalnız dövüşürsünüz.", "Bölüm başında kişisel odalardan çıkış noktası görünmezse kaydedip yeniden yükleyin (bilinen bug)."]
+  },
+  {
+    id: "w4", tr: "Bölüm 4 — Lord Engizitör ve Lord Kaptan", en: "Chapter 4 — The Lord Inquisitor and the Lord Captain",
+    gist: "Hesaplaşma bölümü: önceki seçimlerin sonuçları ortaya çıkar. Conviction hattınız burada çok belirleyici olur.",
+    warn: [
+      "Bu bölümde conviction’ınızı sıfırlayabilen <b>tek seferlik</b> bir seçenek ve yoldaşların <b>kalıcı olarak</b> ayrılabileceği bir eşik var — spoiler’ı okuyup karar verin.",
+      "Zor bir savaşta takılırsanız zorluğu geçici düşürebilirsiniz; yan boss’lar ödülü az olduğu için isteğe bağlı."
+    ],
+    steps: [
+      "Janus’a dönüş: Vigdis’in raporu <i>The Lord Inquisitor and the Lord Captain</i> ve <i>Hunting Grounds</i> görevlerini açar; Abelard (Blood Ties), Idira (The Door), Jae (Rat Hunting) yoldaş görevleri başlar; Marazhai’nin Soulless görevi başlayabilir.",
+      "<b>Lord Inquisitor… Bölüm 1</b>: Footfall; Vladaym Tocara’yı tutuklamanız istenir.",
+      "<b>Hunting Grounds Bölüm 1</b>: Quetza Temer (tekrar eden haritalar), Calligos Winterscale avı; Yrliet’in Outcast’s Duty görevi başlar.",
+      "<b>The Great Judgment</b>: bar yüzleşmesi, Incendia savaşı. <b>Lair of the Haemonculus</b>: Tervantias boss’u.",
+      "<b>Hunting Grounds Bölüm 2</b>: köyde Calligos’u kurtarın ya da savaşın.",
+      "<b>Lord Inquisitor… Bölüm 2</b>: Footfall’a dönüş; Engizitör’ün talepleri conviction ve yoldaşları etkiler.",
+      "<b>The Siege</b>: Emperor’s Palm’da savaş konseyi, yörünge savaşı, Eufrates II’ye kara saldırısı. Ulfar ve Argenta yoldaş görevleri burada başlar.",
+      "<b>Machine Cathedral</b>: Uralon, Incongruous Defiler boss’u, Prayer Halls. Finalde Doomscream savaşı ve “Questions and Answers”."
+    ],
+    choices: [
+      "Janus dönüşü sonrası Yrliet’e tavır: genelde özür dilettirip konuyu kapatmak iyi sonuç verir.",
+      "Great Judgment’ta Vladaym ya da Incendia’nın tarafı: Vladaym’a yardım tutuklama hedefini bozar ve Incendia savaşına yol açar.",
+      "Calligos’u kurtarmak için belirli kontroller ve diyalog gerekir; köyde seçim bir kez yapılır.",
+      "<b>Calcazar’a pişmanlık</b>: conviction’ı nötre sıfırlar ve conviction rank’larınızı siler; tek seferlik.",
+      "Savaş konseyi planı (Opticon-22 mi Thorbald mı): rehber hangisinin kesin doğru olduğunu söylemiyor."
+    ],
+    companions: [
+      "<b>Uralon</b> gizli yoldaştır: Heretical yol ve <i>The Call of the Edge</i> ilerlemesi gerekir.",
+      "Idira’nın Tervantias laboratuvarındaki kapısı için Idira partide olmalı."
+    ],
+    bosses: [
+      "<b>Incendia</b> (iyi konumlanma ile kolay). <b>Tervantias</b>: bio-founts ve Cronos engine’i önce yok edin; kanamalı düşmanlardan iyileşir.",
+      "<b>Calligos ve maiyeti</b> (isteğe bağlı): çok zor, ödül az.",
+      "<b>Incongruous Defiler</b>: önce plazma bataryalarını yok edin, Havoc Barrage’dan kaçınmak için hareket edin, arkadan vurun."
+    ],
+    missable: [
+      "<b>Kalıcı ayrılış:</b> Heretical iken pişmanlığı reddederseniz Yrliet, Ulfar ve Argenta The Siege başında kalıcı olarak ayrılır.",
+      "Lair’deki Toxic Flamer odası için Awareness kontrolü.",
+      "Machine Cathedral’deki gizli odada Untainted Sacrament chainsword.",
+      "Khepri’s Cradle’daki kayalık gezegende altın xeno idol (başarım <i>Frog Trader</i>).",
+      "Başarım <i>Knee-Deep in Chaos</i>: Engizitör’e karşı Chaos’u seçin, sonra Eufrates II sonunda da Chaos seçeneğini seçin; tek sapma zinciri bozar.",
+      "Marazhai’nin Soulless görevi önceki bölümlerin seçimlerine bağlı."
+    ],
+    tips: ["Machine Cathedral / reaktör finali oyuncularca zor bulunuyor (Uralon): Abelard’ı tank yapın, yüksek DPS’i önemli hedeflere verin; gerekirse kaydı bölüm öncesine alıp partiyi yeniden kurun.", "Bu bölümün yan boss’ları için kaynakta zorluğu düşürme önerisi var; ilk geçişte zorlamayın."]
+  },
+  {
+    id: "w5", tr: "Bölüm 5 — Karanlığa Cesurca İlk Adım", en: "Chapter 5 — To Walk Bravely First Into Darkness",
+    gist: "Final bölümü. Nekron mekaniklerine hazırlanın: ölü robotlar yeniden canlanır, kendini onarır.",
+    warn: [
+      "Resmî bir geri dönüşsüz nokta işaretlenmemiş; ama <b>filo savaşı</b> ve <b>Nomos seçimi</b> final öncesi son kapılar. Önce isteğe bağlı gezegenleri gezip kaydedin.",
+      "Parti: Vanguard (taunt), siper/dodge araçları, Deathmark’ları vuracak uzun menzil."
+    ],
+    steps: [
+      "Debris of Battiada’da başlayın; yakın yıldız sistemlerini gezerek Sanctum of Tepheetus’a ve Calcazhar’ın izine gidin.",
+      "İsteğe bağlı: ilk sistemde Buz Dünyası gibi yan savaşlar Nekron pratiği içindir.",
+      "İsteğe bağlı ganimet: <b>Neos Charoitus</b> (Gaze of the Void, Cloaking Field Emitter) ve <b>Sanctum’un Tomb World’ü</b> (Inevitable Demise eldivenleri, Gloomrifle, They Shall Weep, Heavy Void Suit — en değerlisi).",
+      "<b>Filo savaşı</b>: bir Nekron Lord filosu yolu keser. Ana gemilere hızlı yük bindirin; Lord en çok yarası kalan gemiyi güçlendirir.",
+      "<b>Nomos seçimi</b>: Epitaph’a inmeden önce Nomos’un hangi bedeni kullanacağı seçilir (çoğunlukla diyalog/görünüm).",
+      "Boss sırası: Elegy of Sorrow → Cryptogeometric Sentinel → The Copies → Calcazhar savaşı → C’tan Shard."
+    ],
+    choices: [
+      "C’tan Shard yenilince kaderine karar verirsiniz: Nomos kullansın, Calcazhar planını bitirsin ya da C’tan’ı yok edin. Bunlar Heretical / Dogmatic / Iconoclast çizgileriyle eşleşir; önceki seçimler sonları şekillendirir.",
+      "Gizli son (<i>How Did It All End?</i>) için Nomos’un sonuna kadar yaşaması gerekir."
+    ],
+    companions: [],
+    bosses: [
+      "<b>Elegy of Sorrow</b>: güçlü Burst Fire; Elusive Shadow’lu Assassin ateşi çekebilir.",
+      "<b>Cryptogeometric Sentinel</b>: balkonu alın, kanatlardaki Deathmark’ları temizleyin; 4’ten fazla Nekron yaşarken hasarı artar.",
+      "<b>The Copies</b>: partinizin üç kopyası; en tehlikelisi Burst Fire kopyalar, Vanguard diğerlerini taunt’lasın.",
+      "<b>Calcazhar</b>: Inquisitor Veteran ve Diviner’ı erken indirin; Biomancer ve Calcazhar’a crowd control.",
+      "<b>C’tan Shard</b>: önce Structuring Shard klonunu öldürün (büyük Temp HP); Energy Bomb öncelikli; %20 civarında Imprison evresine dikkat."
+    ],
+    missable: ["Nomos’u öldürmek/arındırmak gizli sonu kapatır.", "İsteğe bağlı ganimetleri (Neos Charoitus, Tomb World) ana yola girmeden alın."],
+    tips: ["Nekron mekanikleri: Living Metal iyileşmesi, Reanimation Protocols, Scarab Swarm onarımı.", "Boss öncesi manuel kayıt; sonra farklı son için kayıt dallandırın."]
+  }
+];
+
+const WALK_GENERAL = [
+  "Her bölümün <b>sonunda</b> ve büyük seçimlerden önce <b>manuel kayıt</b> alın; ayrı slotlarda tutun.",
+  "Bölümü bitirecek “tören/final” görevine girmeden önce yan görev, yoldaş ve tüccarları tamamlayın; tören sonrası bazı yerler kapanır.",
+  "Triumph’ı (zafer töreni) yan işleri bitirmeden başlatmayın; Steam topluluğunda içerik kaçırdığı bildirilmiş.",
+  "Üç kişilik co-op’ta büyük kararı Lord Kaptan seçer; ama önemli diyaloglarda üçünüz de ekranı okuyup oy kullanın.",
+  "Bazı seçimler yoldaşların kalıcı ayrılmasına yol açabilir; büyük kararlardan önce spoiler’lı bölüm notlarını okuyun."
+];

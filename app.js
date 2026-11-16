@@ -25,6 +25,7 @@
   });
 
   function showPanel(id, scroll) {
+    if (/^w\d$/.test(id)) { const t = document.getElementById(id); id = "walk"; if (t) setTimeout(() => t.scrollIntoView({ behavior: "instant", block: "start" }), 50); }
     if (!panels.some((p) => p.id === id)) id = panels[0].id;
     panels.forEach((p) => p.classList.toggle("active", p.id === id));
     $$(".tab", tabsEl).forEach((b) => {
@@ -392,6 +393,69 @@
 
   // ---------- diğer ----------
   $("#toTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // ---------- walkthrough ----------
+  (function walkthrough() {
+    const host = $("#walkChapters");
+    if (!host || typeof WALK === "undefined") return;
+    const list = (arr, tag) => arr && arr.length ? "<" + (tag || "ul") + ">" + arr.map((x) => "<li>" + x + "</li>").join("") + "</" + (tag || "ul") + ">" : "";
+    const sec = (title, arr, tag) => arr && arr.length ? '<details class="spoiler"><summary>' + title + "</summary>" + list(arr, tag) + "</details>" : "";
+    $("#walkGeneral").innerHTML = WALK_GENERAL.map((x) => "<li>" + x + "</li>").join("");
+    host.innerHTML = WALK.map((c) =>
+      '<article class="card chap" id="' + c.id + '" data-s="walkthrough ' + esc(c.tr + " " + c.en) + '">' +
+        '<div class="chead"><h3>' + c.tr + ' <span class="en">' + c.en + "</span></h3>" +
+        '<label><input type="checkbox" data-ch="' + c.id + '"> Bitirdim</label></div>' +
+        "<p>" + c.gist + "</p>" +
+        '<div class="warnbox"><b>⚠ Çıkmadan önce</b>' + list(c.warn) + "</div>" +
+        sec("Adım adım (spoiler)", c.steps, "ol") +
+        sec("Seçimler &amp; sonuçları (spoiler)", c.choices) +
+        sec("Yoldaşlar (spoiler)", c.companions) +
+        sec("Boss’lar (spoiler)", c.bosses) +
+        sec("Kaçırılabilirler (spoiler)", c.missable) +
+        sec("İpuçları", c.tips) +
+      "</article>").join("");
+    $("#walkRoute").innerHTML = WALK.map((c, i) => '<a href="#' + c.id + '" data-ch="' + c.id + '">' + (i === 0 ? "Prolog" : "Bölüm " + i) + "</a>").join("");
+    $$("#walkRoute a").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const el = document.getElementById(a.dataset.ch);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
+
+    let done = store.get("walk-done", {});
+    function paint() {
+      let n = 0;
+      WALK.forEach((c) => {
+        const on = !!done[c.id];
+        if (on) n++;
+        const art = document.getElementById(c.id);
+        art.classList.toggle("done", on);
+        $('input[data-ch="' + c.id + '"]', art).checked = on;
+        $('#walkRoute a[data-ch="' + c.id + '"]').classList.toggle("done", on);
+      });
+      $("#walkProg").style.width = (n / WALK.length * 100) + "%";
+      $("#walkCount").textContent = n + " / " + WALK.length + " bölüm tamam";
+    }
+    host.addEventListener("change", (e) => {
+      const id = e.target && e.target.dataset && e.target.dataset.ch;
+      if (!id) return;
+      if (e.target.checked) done[id] = true; else delete done[id];
+      store.set("walk-done", done);
+      paint();
+    });
+    $("#walkReset").addEventListener("click", () => {
+      if (!window.confirm("Walkthrough ilerlemesi sıfırlansın mı?")) return;
+      done = {}; store.set("walk-done", done); paint();
+    });
+    const sp = $("#walkSpoilers");
+    sp.addEventListener("click", () => {
+      const open = sp.getAttribute("aria-pressed") !== "true";
+      sp.setAttribute("aria-pressed", String(open));
+      sp.textContent = open ? "Tüm spoiler’ları kapat" : "Tüm spoiler’ları aç";
+      $$("#walkChapters details.spoiler").forEach((d) => { d.open = open; });
+    });
+    paint();
+  })();
+
   window.addEventListener("hashchange", () => { const id = location.hash.slice(1); if (id) { clearSearch(); showPanel(id, false); } });
   showPanel(location.hash.slice(1) || store.get("tab", "start"), false);
   window.scrollTo(0, 0);
