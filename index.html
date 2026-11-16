@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rogue Trader Crash Course — 3 Kişilik Co-op Rehberi (TR/EN)</title>
+<meta name="description" content="Warhammer 40,000: Rogue Trader için Türkçe/İngilizce terimli, interaktif crash course: co-op kurulumu, karakter yaratma, savaş, gemi, ekonomi, yoldaşlar, sözlük ve quiz.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="aquila" aria-hidden="true">✠</span>
+    <div>
+      <h1>Rogue Trader <small>Crash Course</small></h1>
+      <p class="sub">3 kişilik co-op için · Türkçe + English terimler · yama 1.6.x</p>
+    </div>
+  </div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Ara: wounds, momentum, cargo, Cassia…" aria-label="Sayfada ara" autocomplete="off">
+    <span id="qcount" class="qcount" aria-live="polite"></span>
+  </div>
+</header>
+
+<nav id="tabs" class="tabs" aria-label="Bölümler"></nav>
+
+<main>
+
+<!-- 0 · BAŞLA -->
+<section class="panel" id="start" data-title="Başla">
+  <div class="hero">
+    <h2>Önce büyük resim</h2>
+    <p>Warhammer 40,000: Rogue Trader, Owlcat Games'in <b>d100 tabanlı</b>, sıra tabanlı bir CRPG'si. D&amp;D/Pathfinder bilgisi büyük ölçüde işe yaramaz: her şey yüzdelik şans ve "bonus" mantığıyla çalışır. Bu sayfa, üç arkadaşın <b>sıfır bilgiyle</b> başlayıp ilk 10–15 saatte tökezlememesi için hazırlandı.</p>
+    <div class="stats">
+      <div class="stat"><b>~64 sa</b><span>ana hikâye (yan görevlerle ~100 sa)</span></div>
+      <div class="stat"><b>6 oyuncu</b><span>co-op üst sınırı; sizde 3 × 2 karakter</span></div>
+      <div class="stat"><b>d100</b><span>her check bir yüzde şansı</span></div>
+      <div class="stat"><b>TR UI</b><span>arayüz + altyazı Türkçe, ses İngilizce</span></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <article class="card" data-s="özet tldr hızlı başlangıç">
+      <h3>10 maddede özet <span class="en">TL;DR</span></h3>
+      <ol class="tight">
+        <li><b>Normal</b> zorlukla başlayın; sonra değiştirmek serbest.</li>
+        <li>Host = <b>Lord Kaptan (Lord Captain)</b>. Diyalog, gemi seviyesi ve yer girişleri onda; diğerleri öneri/oy verir.</li>
+        <li>Host önce tek oyunculu başlar, karakteri yaratır, sonra kayıttan <b>co-op lobisi</b> açar.</li>
+        <li>3 oyuncu × 2 karakter = 6'lı parti. İlk saatlerde yoldaş sayısı azdır; Bölüm 1'de dolar.</li>
+        <li>Co-op'ta <b>skill check için doğru kişiyi siz seçersiniz</b> (oyun en iyisini otomatik seçmez).</li>
+        <li><kbd>Tab</kbd> basılı = loot vurgula · <kbd>M</kbd> harita · <kbd>Space</kbd> tur bitir · <kbd>X</kbd> silah seti.</li>
+        <li>Hiçbir eşyayı çöpe atmayın: <b>Cargo</b>'ya gönderip fraksiyonlara satın → <b>İtibar</b>.</li>
+        <li>Düşmana <b>sağ tık</b>: zırhı, zayıflığı, direnci görün.</li>
+        <li>Silah seti değiştirmek <b>bedava</b>; Veil (psişik) ve Momentum göstergelerini izleyin.</li>
+        <li>Sık manuel kayıt alın; Hard zorlukta "ya bir şey olursa" için özellikle.</li>
+      </ol>
+    </article>
+    <article class="card warn" data-s="videolar farklar yama güncel 1.5 1.6 değişti">
+      <h3>⚠ Videolar mı, güncel oyun mu?</h3>
+      <p>Referans aldığımız iki video <b>lansman dönemi</b> (Aralık 2023) içeriği. Bundan sonra büyük yamalar geldi (1.1, 1.2, 1.3, 1.5, 1.6) ve DLC'ler çıktı. Özellikle:</p>
+      <ul class="tight">
+        <li><b>Yama 1.5:</b> Astra Militarum Commander, Ministorum Priest, Navy Officer ve Commissar kökenleri baştan tasarlandı. Video 1'deki köken ayrıntıları eskimiş olabilir.</li>
+        <li><b>Yama 1.6 (Haziran 2026):</b> Operative/Assassin dahil zayıf arketipler güçlendirildi; <i>Infinite Museion</i> DLC'si ile Sector Bionica geldi.</li>
+        <li>Zorluğa bağlı sayılar (örn. taze yaralanmanın eskiye dönme turu) değişir; videodaki "3 tur" her zorlukta geçerli değil.</li>
+        <li>Momentum eşikleri ve tam sayılar için <b>oyun içi tooltip</b> esastır.</li>
+      </ul>
+      <p class="muted">Bu sayfada [Video] etiketli bilgiler lansman videolarından, [Güncel] etiketli bilgiler 2025–2026 kaynaklarındandır.</p>
+    </article>
+  </div>
+
+  <article class="card" data-s="ilk oturum plan roller">
+    <h3>3 kişilik ekip için önerilen roller <span class="en">(öneri)</span></h3>
+    <div class="grid3">
+      <div class="mini"><b>Lord Kaptan</b><p>Diyalog seçer, gemiyi seviyelendirir. En çok "hikâye" okuyan kişi olmalı. Diğerleri "bunu seç" diye oy verir.</p></div>
+      <div class="mini"><b>Kargo &amp; Ticaret</b><p>Cargo yönetimi, satıcılar, itibar. Herkes envanteri/ticareti açabilir ama tek kişi takip etsin.</p></div>
+      <div class="mini"><b>Gemi &amp; Warp</b><p>Rota, Insight puanı, gemi savaşı ve post atamaları. Gemi komutası co-op'ta ortaktır.</p></div>
+    </div>
+    <p class="muted">Rolleri değiştirmek serbest; amaç, aynı anda üç kişinin üç farklı menüde dolaşıp kaybolmasını önlemek.</p>
+  </article>
+
+  <article class="card" data-s="kontrol listesi checklist">
+    <h3>Başlamadan önce kontrol listesi</h3>
+    <div id="checklist"></div>
+    <button class="btn ghost" id="resetChecklist">Listeyi sıfırla</button>
+  </article>
+</section>
+
+<!-- 1 · CO-OP -->
+<section class="panel" id="coop" data-title="Co-op">
+  <h2>Co-op: 3 kişi nasıl oynar? <span class="en">Cooperative mode</span></h2>
+  <div class="grid2">
+    <article class="card" data-s="co-op kurulum lobi nasıl başlanır">
+      <h3>Kurulum adımları</h3>
+      <ol>
+        <li><b>Host tek oyunculu başlar.</b> Rogue Trader'ı yaratır, açılış diyaloglarını geçer. Kayıt alır.</li>
+        <li>Arkadaşlar için <b>özel karakter</b> gerekiyorsa host, tutorial sonrası gemide "maiyetimi güçlendirmek istiyorum" seçeneğiyle onları oluşturur (bu adım tek oyunculuda yapılır).</li>
+        <li>Ana menü → <b>Cooperative (Kooperatif)</b> → sunucu bölgesi seç → kayıt dosyasını seç → lobi aç.</li>
+        <li>Lobi <b>kodunu paylaş</b>; arkadaşlar koda girer.</li>
+        <li>Host, karakterleri oyunculara <b>dağıtır</b> (3 kişi → ikişer karakter mantıklı).</li>
+        <li>İsterseniz <b>eş zamanlı savaş (simultaneous)</b> modunu açın; varsayılan kapalı ve ilk saatlerde kapalı kalması daha rahat.</li>
+      </ol>
+      <p class="muted">Aynı oyun sürümünü kullanın. Steam/GOG arasında erken dönemde sürüm uyumsuzluğu raporlandı; ilk gün 10 dakika test edin.</p>
+    </article>
+
+    <article class="card" data-s="co-op kurallar lord captain diyalog skill check">
+      <h3>Kurallar <span class="en">(neyi kim yapar)</span></h3>
+      <ul class="tight">
+        <li><b>Tek Lord Kaptan:</b> yalnızca o diyalog/kitap seçeneğini seçer, yerlere girer ve gemiyi seviyelendirir. Rolü başkasına devredebilir veya oturumu tek oyunculuya çevirebilir.</li>
+        <li><b>Diğerleri:</b> diyalog seçeneklerini vurgulayabilir; bazı seçimlerde oy verebilir.</li>
+        <li><b>Skill check:</b> hangi karakterin deneyeceğini <i>siz</i> seçersiniz; oyun en iyisini otomatik işaretlemez.</li>
+        <li><b>Paylaşılan:</b> envanter, kargo, satıcılar, ticaret ve <b>gemi savaşı komutası</b>.</li>
+        <li><b>Her oyuncu</b> kendi karakter(ler)ini hareket ettirir, savaşır, loot alır, seviye atlatır.</li>
+        <li><b>Drop-in / drop-out:</b> oyuncular oturuma katılıp ayrılabilir.</li>
+        <li><b>DLC:</b> yama 1.0.1'den beri host'un DLC'leri oturumda herkese açılır; herkesin hepsine sahip olması gerekmez.</li>
+      </ul>
+    </article>
+  </div>
+
+  <article class="card warn" data-s="co-op uyarılar özel karakter hikaye">
+    <h3>⚠ Bilmeniz gerekenler</h3>
+    <ul class="tight">
+      <li>Oyun <b>tek bir Rogue Trader</b> içindir; diğer oyuncular yoldaşları veya host'un yarattığı özel karakterleri oynar.</li>
+      <li>Özel karakterler yoldaşlara göre <b>bazı hikâye içeriğini kaçırabilir</b> (yoldaş görevleri/diyalogları yoldaşlara aittir).</li>
+      <li>Parti en çok <b>6 kişi</b>. Prolog'da yalnızca birkaç yoldaş vardır; üçünüz de aynı anda karakter kontrol etmek istiyorsanız Bölüm 1'e kadar bazı oyuncular daha az karakterle oynar. Özel karakter bunu rahatlatır.</li>
+      <li>Skill check'te yanlış kişiyi seçmek sık yapılan hatadır: en yüksek beceriye sahip kişiyi seçin (aşağıdaki hesaplayıcıya bakın).</li>
+    </ul>
+  </article>
+
+  <article class="card" data-s="dil türkçe language">
+    <h3>Türkçe dil notu</h3>
+    <p>Veri tabanlarında Türkçe için <b>arayüz ve altyazı = evet, ses = yok (İngilizce)</b> görünüyor. Güncelleme 1.3.2.8 notlarında Türkçe yerelleştirmenin konsollara ve Void Shadows DLC'sine eklendiği belirtilmiş. Steam'in Türkçe mağaza sayfası ise "Türkçe desteklenmemektedir" etiketini gösterebiliyor; bu eski/hatalı bir etiket olabilir, oyun içi <b>Ayarlar → Dil</b>'den kendiniz doğrulayın.</p>
+    <p class="muted">Sözlük bölümündeki "Oyundaki" sütununa oyunda gördüğünüz Türkçe karşılıkları yazarsanız tarayıcınız hatırlar.</p>
+  </article>
+</section>
+
+<!-- 2 · KARAKTER YARATMA -->
+<section class="panel" id="create" data-title="Karakter">
+  <h2>Karakter yaratma <span class="en">Character creation</span></h2>
+  <p class="lead">Sıra: Görünüm → Anavatan (Homeworld) → Köken (Origin) → Zafer / En Karanlık Saat → Arketip → Karakteristikler → Gemi. En önemli üçü: <b>Arketip</b>, <b>Homeworld</b> ve <b>karakteristik dağılımı</b>. Seçmek zor geliyorsa tanıdık bir şeyi seçin; yanlış seçim felaket değil (ve yeniden dağıtım var).</p>
+
+  <h3>1 · Anavatan <span class="en">Homeworld</span></h3>
+  <div id="homeworlds" class="cards"></div>
+
+  <h3>2 · Köken <span class="en">Origin</span></h3>
+  <div id="origins" class="cards"></div>
+
+  <h3>3 · Arketip <span class="en">Archetype</span> <small class="muted">(rütbe: BrokenBuilds, yama 1.6)</small></h3>
+  <div class="filters" id="archFilters">
+    <button class="chip on" data-f="all">Hepsi</button>
+    <button class="chip" data-f="1">Tier 1 (başlangıç)</button>
+    <button class="chip" data-f="2">Tier 2 (16. seviye)</button>
+    <button class="chip" data-f="3">Tier 3</button>
+  </div>
+  <div id="archetypes" class="cards"></div>
+  <article class="card" data-s="arketip yol haritası 16 seviye">
+    <h4>Basit yol haritası</h4>
+    <p>Tier 1 seçiminiz hangi Tier 2 kapılarının açılacağını belirler. Örnekler (kaynak: BrokenBuilds + video): <b>Officer → Grand Strategist / Master Tactician / Vanguard</b>; <b>Soldier → Master Tactician / Arch-Militant / Bounty Hunter</b>; <b>Warrior → Assassin / Vanguard / Arch-Militant</b>; <b>Operative → Grand Strategist / Bounty Hunter / Assassin</b>. Seviye 36'da hepsi <b>Exemplar</b>'a akar.</p>
+    <p class="muted">Yoldaşların başlangıç arketipi sabittir (değiştirilemez). Seçiminiz yalnızca kendi karakterinizi etkiler.</p>
+  </article>
+
+  <h3>4 · Karakteristikler <span class="en">Characteristics</span></h3>
+  <article class="card" data-s="karakteristik stat weapon skill ballistic strength toughness agility intelligence perception willpower fellowship">
+    <table class="tbl">
+      <thead><tr><th>EN</th><th>TR (öneri)</th><th>Ne işe yarar</th></tr></thead>
+      <tbody>
+        <tr><td>Weapon Skill (WS)</td><td>Yakın Dövüş Becerisi</td><td>Yakın dövüş isabeti. Warrior'lar için ana stat.</td></tr>
+        <tr><td>Ballistic Skill (BS)</td><td>Balistik Beceri</td><td>Menzilli isabet. Soldier/Operative için ana stat; ıskalamak istemiyorsanız puan basın.</td></tr>
+        <tr><td>Strength (Str)</td><td>Güç</td><td>Yakın dövüş hasarı (+1 / bonus), Athletics. Tank için ~45'e çıkarıp heavy armor proficiency alın.</td></tr>
+        <tr><td>Toughness (Tgh)</td><td>Dayanıklılık</td><td>HP (+%10 / bonus puanı) ve zehir/hastalık direnci; Carouse.</td></tr>
+        <tr><td>Agility (Agi)</td><td>Çeviklik</td><td>Initiative, Dodge, Demolition.</td></tr>
+        <tr><td>Intelligence (Int)</td><td>Zekâ</td><td>Lore, Logic, Medicae, Tech-Use. Diyalog ve bulmaca seçenekleri açar.</td></tr>
+        <tr><td>Perception (Per)</td><td>Algı</td><td>Tuzak/gizli eşya tespiti. Partide en az bir yüksek Algı lazım.</td></tr>
+        <tr><td>Willpower (Wil)</td><td>İrade</td><td>Zihinsel/psişik direnç; esas olarak psişerlere.</td></tr>
+        <tr><td>Fellowship (Fel)</td><td>Sosyallik</td><td>Persuasion, Coercion, Commerce.</td></tr>
+      </tbody>
+    </table>
+    <p>Yaratımın sonunda dağıtacağınız bir puan havuzu verilir (5'er adımla). <b>Her şeyi dengelemeyin:</b> statlar yavaş artar, herkes her şeyde usta olamaz. Partide özellikle <b>Tech-Use</b> ve <b>Perception</b> yüksek birer kişi olsun; oyun erken Tech-Use yoldaşı verir.</p>
+  </article>
+
+  <article class="card" data-s="bonus hesaplayıcı karakteristik bonus">
+    <h4>Bonus hesaplayıcı <span class="en">(onlar basamağı)</span></h4>
+    <div class="calc">
+      <label>Karakteristik <input id="bonusStat" type="number" min="1" max="100" value="38"></label>
+      <label>Yükseltme <select id="bonusUp"><option>0</option><option selected>5</option><option>10</option></select></label>
+      <div class="out" id="bonusOut"></div>
+    </div>
+    <p class="muted">Toplam değer = başarı şansı, bonus = kalite (hasar, HP, initiative gibi). +5'in bonusu artırıp artırmadığına bakıp yükseltin.</p>
+  </article>
+
+  <article class="card" data-s="öneri takım dengesi 3 kişi build">
+    <h4>3 kişi için önerilen çekirdek <span class="en">(öneri)</span></h4>
+    <ul class="tight">
+      <li><b>Host (Rogue Trader):</b> <b>Officer</b> (BrokenBuilds Tier 1 S; Grand Strategist veya Master Tactician'a açılır) <i>ya da</i> <b>Soldier → Master Tactician</b> (BrokenBuilds'in "yeni başlayanlar" önerisi: BS + Perception, sonra Toughness). Büyük kararları veren kişi çoğu zaman en az mikro-yönetim isteyen sınıfı sever; Officer'ın "başkasına tur ver" mantığı co-op'ta güzel eşleşir.</li>
+      <li><b>Yoldaşlar:</b> Abelard (ön saf), Argenta (menzilli), Idira (psişer) prolog'dan gelir. Cassia, Pasqal, Heinrix Bölüm 1'de katılır.</li>
+      <li>Her oyuncuya 2 karakter: örn. <b>A:</b> Rogue Trader + Abelard · <b>B:</b> Argenta + Cassia · <b>C:</b> Idira + Heinrix. Cassia ve Heinrix Bölüm 1'de katılır; o zamana kadar bazı oyuncular tek karakterle oynar (ya da host özel karakter yaratır).</li>
+    </ul>
+  </article>
+</section>
+
+<!-- 3 · SAVAŞ -->
+<section class="panel" id="combat" data-title="Savaş">
+  <h2>Savaş <span class="en">Ground combat</span></h2>
+
+  <div class="grid2">
+    <article class="card" data-s="savaş ekran ui initiative ap mp tur sırası">
+      <h3>Ekranı okumak</h3>
+      <ul class="tight">
+        <li><b>Sol: Initiative çubuğu.</b> Sıradaki aktör en altta. Kendi sıranızdan önce vuracak düşmanı öldürürseniz hasar yemezsiniz. Initiative'i <b>Agility</b> ve <b>Perception</b> bonusu belirler.</li>
+        <li><b>Üstte parti portreleri.</b> Sarı ok = seviye atladı; savaştan sonra puan dağıtın.</li>
+        <li><b>Hotbar:</b> 4 tüketim slotu (medkit/bomba; her bomba ayrı slot), silah setleri (<kbd>X</kbd>), silah yetenekleri ve skill-tree yetenekleri.</li>
+        <li><b>Orta: MP ve AP.</b> <b>Hareket Puanı (Movement Points)</b> hareket, <b>Aksiyon Puanı (Action Points)</b> yetenekler içindir. Genelde tur başına <b>tek saldırı yeteneği</b> kullanabilirsiniz; bazı yetenekler (Run and Gun, ultimate'lar, Officer buff'ları) ek hak verir.</li>
+        <li><b>Alt: can çubuğu</b> ve buff/debuff ikonları (üzerine gelince açıklar).</li>
+        <li><kbd>Space</kbd> = turu bitir. Reload bazı silahlarda 4 AP'dir; çoğu savaş reload'a gerek kalmadan biter, ama 5 mermili silahlarda uzun savaşta gerekir.</li>
+      </ul>
+    </article>
+
+    <article class="card" data-s="wounds injury trauma yaralanma can medkit">
+      <h3>Wounds, Injury, Trauma</h3>
+      <ul class="tight">
+        <li><b>Wounds = HP.</b> Sıfır → bilinç kaybı; savaş sonunda otomatik canlanır ve <b>can tamamen dolar</b> (medkit'i boşa harcamayın).</li>
+        <li><b>Injury (yaralanma):</b> tuzaktan veya tek vuruşta canın yarısından fazlasını kaybedince; birkaç injury birikince <b>Trauma</b> (stat düşüşü). Bilinç kaybı da trauma verir.</li>
+        <li><b>Taze yaralanma</b> medkit ile garanti iyileşir; belli tur geçince <b>eski</b> olur ve Medicae check gerekir. Tur sayısı zorluğa göre değişir (Story'de 5 tur, Unfair'de 1 tur).</li>
+        <li>En yüksek <b>Medicae</b>'li kişi iyileştirsin.</li>
+        <li>Gemide dinlenmek tüm injury/trauma'yı temizler.</li>
+        <li><b>Temporary Wounds</b> (mavi çubuk) gerçek canınızdan önce erir.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="grid2">
+    <article class="card" data-s="momentum heroic act desperate measure resolve">
+      <h3>Momentum <span class="en">(ultimate sistemi)</span></h3>
+      <ul class="tight">
+        <li>Savaş başında yarı dolu bir bar vardır; kill ve başarılı aksiyonlarla yükselir, düşman başarıları ve ölümlerle düşer.</li>
+        <li><b>Resolve</b>, tur başında ve öldürmede ne kadar momentum kazanacağınızı belirler.</li>
+        <li>Çok yüksekse <b>Heroic Act</b> (bedelsiz ultimate), çok düşükse <b>Desperate Measure</b> (güçlü ama bedelli; örn. Charge kaybı) açılır.</li>
+        <li>[Video] İlk Heroic Act 75 momentum, sonrakiler +25 daha pahalı. İlkini gerçekten kahramanca yapın; eşikler yamayla değişebilir.</li>
+      </ul>
+    </article>
+
+    <article class="card" data-s="veil psişik warp perils psyker">
+      <h3>Veil Degradation <span class="en">(psişer riski)</span></h3>
+      <ul class="tight">
+        <li>Her psişik güç Veil göstergesini doldurur: büyük güç ≈ +3, küçük güç ≈ +1; her tur −1 [Video].</li>
+        <li>Yükseldikçe <b>Psychic Phenomena</b> (debuff, momentum kaybı) ve nadiren <b>Perils of the Warp</b> (iblis çağırma, hasar) ihtimali artar.</li>
+        <li><b>Unsanctioned</b> psişerler (örn. Idira) <b>Sanctioned</b> olanlardan daha risklidir; Psy Rating arttıkça risk de güç de artar.</li>
+        <li>Pratik: güçleri tur tur dağıtın, Veil'e nefes aldırın; savaşı neredeyse kazanmışken iblis çağırmak sinir bozucudur.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="grid2">
+    <article class="card" data-s="zırh deflection dodge parry cover siper armor hasar">
+      <h3>Hasar nasıl hesaplanır?</h3>
+      <ol class="tight">
+        <li><b>Hit:</b> isabet şansı zarla belirlenir (WS/BS + modifier).</li>
+        <li><b>Dodge / Parry:</b> başarılı olursa <b>hasar sıfır</b>. <b>Dodge reduction</b> düşmanın kaçınma şansını düşürür.</li>
+        <li><b>Deflection:</b> mümkünse önce saptırma uygulanır.</li>
+        <li><b>Armor %:</b> kalan hasar zırh yüzdesiyle azalır (%25 zırh → %75 hasar).</li>
+        <li><b>Cover:</b> tam siper (kafatası kalkan) isabeti %60, yarım siper %35 düşürür; siper aranızda olmalı, zorlukla ölçeklenir.</li>
+      </ol>
+      <p class="muted">Düşmana sağ tıklayıp zırhını görün; zırhlıya <b>zırh delen</b> silah/yetenek, zırhsıza ucuz saldırı kullanın.</p>
+    </article>
+
+    <article class="card" data-s="silah seti burst fire recoil run and gun winded friendly fire">
+      <h3>Silahlar &amp; sıra</h3>
+      <ul class="tight">
+        <li><b>Silah seti değiştirmek AP harcamaz</b> ve tur içinde serbesttir: av tüfeği vur → yakın sete geç → Charge.</li>
+        <li>Her karakterde bir yakın + bir menzilli set olsun. Menzilli karakter için <b>tabanca</b> yakın dövüşte de ateş edebilir (diğer menzilliler edemez).</li>
+        <li><b>Run and Gun</b> = hareket + ek atış, ama <b>Winded (−10 BS)</b> getirir: önce normal menzilli atış, sonra Run and Gun, sonra bedava atış.</li>
+        <li><b>Seri atış:</b> isabet cezası + Recoil kadar BS düşüşü; mermiler sapar ve dost ateşi olabilir. Bolter gibi silahlarda yine de etkilidir [Video].</li>
+        <li><b>Dost ateşi vardır:</b> AoE'de imleç altındaki kırmızı kareleri kontrol edin.</li>
+        <li><b>Geri itme:</b> düşmanı duvara/uçuruma/başka düşmana atarak ek hasar.</li>
+      </ul>
+    </article>
+  </div>
+
+  <article class="card" data-s="exploit officer buff destek yetenek prescience mark">
+    <h3>Destek mantığı <span class="en">(Officer / Operative)</span></h3>
+    <p>İyi destek yoksa düşman sürekli kaçar, hasar düşük kalır ve aksiyon ekonomisinde geride kalırsınız. [Video 2]</p>
+    <ul class="tight">
+      <li><b>Exploit stack:</b> hedefe zaaf bindirir; sonraki isabetli saldırı daha çok vurur (Dismantling Attack, Analyse Enemies). <b>Exposed Weakness</b> yığınları tüketip hedefin Dodge/Parry/armor'unu bir tur düşürür → tüm parti kolay vurur.</li>
+      <li><b>Prescience:</b> müttefikin Int/Per/Fel/Wil değerlerini artırır (Perception artışı düşman kaçışını aşmaya yarar).</li>
+      <li><b>Assign Objective / Blitz Strategy / Mark:</b> hedef işaretleyip kill ile momentum kazanma, müttefikleri siper/yakın dövüşe gönderme.</li>
+      <li>Tooltip'leri <b>okuyun</b>; Corpus Valencius (sözlük) menüsünde terimlerin hepsi var.</li>
+    </ul>
+  </article>
+
+  <article class="card" data-s="savaş öncesi sağ tık keşif tactical phase sürpriz">
+    <h3>Savaştan önce</h3>
+    <ul class="tight">
+      <li><b>Sağ tık = inceleme:</b> hangi düşman hangi check'te zayıf, zırhı ne kadar. Savaş sırasında da çalışır.</li>
+      <li><b>Sürpriz saldırı:</b> siz şaşırtırsanız <b>Tactical Phase</b> (savaş öncesi konumlandırma) kazanırsınız; sizi şaşırtırlarsa olduğunuz yerde başlarsınız.</li>
+      <li><b>Hareketi planla:</b> emir vermeden hareket imlecini oynatın; o konumdan hangi hedeflere hangi yeteneğin çalışacağını görürsünüz (Charge'ın min/max mesafesi için özellikle).</li>
+      <li>Alan görüş hattı (line of sight) ister; kaçırmamak için hareket öncesi bakın.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- 4 · SKILL CHECK -->
+<section class="panel" id="checks" data-title="Check / d100">
+  <h2>Skill check &amp; d100 <span class="en">Dice rolls</span></h2>
+  <p class="lead">Diyalogda "<i>Coercion +30</i>" gibi bir ifade görürsünüz. <b>Ne kadar büyükse o kadar iyi</b>: oyun, karakterinizin becerisine bu sayıyı ekler, sonra <b>d100</b> atar. Sonuç toplamın altındaysa geçersiniz.</p>
+  <article class="card" data-s="skill check d100 hesaplayıcı zar atış şans">
+    <h4>Skill check hesaplayıcı</h4>
+    <div class="calc">
+      <label>Beceri/Karakteristik <input id="chkSkill" type="number" value="40" min="0" max="200"></label>
+      <label>Ekrandaki modifier <input id="chkMod" type="number" value="30" min="-100" max="100"></label>
+      <button class="btn" id="chkRoll">d100 at</button>
+      <div class="out" id="chkOut"></div>
+    </div>
+    <p class="muted">Not: uç değerlerde (çok düşük/çok yüksek şans) oyun kuralı farklı olabilir; oyun içi yüzdeyi esas alın. Bu bir hesap oyuncağıdır.</p>
+  </article>
+  <div class="grid2">
+    <article class="card" data-s="uzman parti specialization check sırası">
+      <h3>Uzmanlaşma</h3>
+      <ul class="tight">
+        <li>Tek oyunculuda <b>tüm parti seçiliyken</b> ilgili beceri en yüksek olan kişi zarı ilk atar; başarısızsa (tekrar denenebiliyorsa) ikinci en yüksek, sonra üçüncü… [Video 2]</li>
+        <li><b>Co-op'ta</b> bunu <b>siz</b> yaparsınız: kimin deneyeceğini seçin.</li>
+        <li>Yükseltme ekranı diğer parti üyelerinin aynı becerideki değerini gösterir; başkası zaten çok iyiyse onu geçmeye çalışmayın, kendi uzmanlığınızı derinleştirin (ör. Argenta'nın Demolition'ı 60 ile başlar).</li>
+        <li>Beceriye <b>+10</b> vermek, bağlı karakteristiği iki kez +5 yapmaktan hızlıdır; karakteristik daha pahalıdır.</li>
+      </ul>
+    </article>
+    <article class="card" data-s="beceri tablosu athletics carouse logic medicae tech-use lore">
+      <h3>Hangi beceri ne yapar?</h3>
+      <ul class="tight">
+        <li><b>Athletics</b> (Str) fiziksel engeller · <b>Carouse</b> (Tgh) zehir/alkol direnci/eğlence</li>
+        <li><b>Demolition</b> (Agi) patlayıcı/tuzak · <b>Tech-Use</b> (Int) kapı/konteyner/kogitatör</li>
+        <li><b>Logic</b> (Int) inandırıcılık · <b>Medicae</b> (Int) iyileştirme · <b>Lore</b> (Imperium/Warp/Xenos) bilgi seçenekleri</li>
+        <li><b>Persuasion / Coercion / Commerce</b> (Fel) diyalog ve ticaret</li>
+        <li>Birçok kapı/konteyner Tech-Use ister: partide yüksek Tech-Use <b>zorunlu</b>.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- 5 · LOOT & TİCARET -->
+<section class="panel" id="loot" data-title="Loot &amp; Ticaret">
+  <h2>Loot, ticaret ve imparatorluk <span class="en">Loot, trade &amp; empire</span></h2>
+  <div class="grid2">
+    <article class="card" data-s="loot tab harita konteyner cargo">
+      <h3>Loot alışkanlıkları</h3>
+      <ul class="tight">
+        <li><kbd>Tab</kbd> basılı: loot ve etkileşimli nesneleri vurgular (sarı çerçeve = bakılmadı, beyaz = bakıldı).</li>
+        <li>Bölgeden çıkarken bariz loot toplama için sunulur; gizli olanlar sizin keşfinizdedir.</li>
+        <li>Bir cesede tıklamak yakındaki cesetlerin lootunu tek pencerede toplar.</li>
+        <li><kbd>M</kbd> harita: gördüğünüz ama açmadığınız konteyner ikonları → çoğu kaçan loot burada çıkar.</li>
+        <li>Envanter <b>ortak</b>; çöpü <b>Cargo'ya</b> gönderin (<kbd>Alt</kbd>+tık veya "Collect all → Cargo").</li>
+        <li>Eşyanın üstüne gelince mevcut ekipmanla kıyaslar.</li>
+      </ul>
+    </article>
+    <article class="card" data-s="profit factor itibar ticaret reputation">
+      <h3>Profit Factor &amp; İtibar</h3>
+      <ul class="tight">
+        <li><b>Profit Factor (Kâr Faktörü):</b> altın yerine servetiniz; görevler/kontratlar artırıp azaltır. Alımlar bununla yapılır.</li>
+        <li><b>İtibar (Reputation):</b> her satıcı bir fraksiyona bağlı. Eşik atlayınca daha iyi mallar açılır; düşük itibarda en iyiler kilitli.</li>
+        <li>Bir şey almak için <b>ikisi de</b> yetmeli: yeterli Profit Factor + yeterli itibar rütbesi.</li>
+        <li><b>Cargo konteyneri</b> satmak itibar kazanmanın ana yolu (içindeki tek tek eşyalar gider).</li>
+        <li>Satıcının stoğu sınırlı: alabildiğinizi alın.</li>
+      </ul>
+    </article>
+  </div>
+  <div class="grid2">
+    <article class="card" data-s="koloni proje kontrat söylenti">
+      <h3>Koloniler, projeler, kontratlar, söylentiler</h3>
+      <ul class="tight">
+        <li><b>Koloni:</b> bazı gezegenleri hikâye seçimleriyle koloni yaparsınız. Koloni yönetiminden <b>proje</b> başlatırsınız (kaynak, itibar, silah). İlerleme çemberi dolar.</li>
+        <li>Bazı projeler <b>takasla</b> gelir (örn. +Profit Factor ama proje hızı yavaşlar). Seçerken yan etkiye bakın.</li>
+        <li><b>Kontrat:</b> bir kaynağı başka bir şeye çevirir (örn. 5 kaynak → 3 Profit Factor). Bölüm 2'den itibaren görünür.</li>
+        <li><b>Söylenti:</b> gidip doğrulamanız gerekir; bazıları yeni fırsat, bazıları boş yere koşturma.</li>
+      </ul>
+    </article>
+    <article class="card" data-s="respec yeniden dağıtım high factotum maiyet">
+      <h3>Respec &amp; retinue</h3>
+      <ul class="tight">
+        <li>Karakterlerin görünümü yaratımdan sonra yalnızca renk/kask/sırt çantası ayarlanabilir; <b>tam sıfırlama</b> = respec.</li>
+        <li>Gemideki <b>High Factotum</b> ile konuşup "maiyetimiz eğitime ihtiyaç duyuyor" benzeri seçenekle bir karakteri sıfırlayabilirsiniz; aynı NPC parti boşluğunu özel karakterle doldurma seçeneği de sunar.</li>
+        <li>Büyük yama sonrası respec fırsatı da verilmişti; bir hata yaparsanız dünya sonu değil.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- 6 · GEMİ -->
+<section class="panel" id="ship" data-title="Gemi &amp; Uzay">
+  <h2>Gemi, Warp ve uzay savaşı <span class="en">Voidship, Warp &amp; space combat</span></h2>
+  <div class="grid2">
+    <article class="card" data-s="gemi onarım scrap hull ram bileşen yükseltme">
+      <h3>Gemi yönetimi</h3>
+      <ul class="tight">
+        <li><b>Onarım:</b> 1 scrap = 1 gemi canı. Scrap bitti ve gemi neredeyse ölüyse Hull/Ram yükseltmesini <b>geri alıp</b> scrap iade ettirerek acil onarım yapabilirsiniz (son çare).</li>
+        <li><b>Hull</b> (can) ve <b>Ram</b> (çarpma hasarı/azaltma) <b>scrap</b> ile yükselir.</li>
+        <li><b>Motor, kalkan, zırh ve silahlar</b> (sancak/iskele, dorsal, pruva) yükselmez; <b>bulduğunuz parçalarla</b> değiştirilir. Güçlü silahı düşmana bakan yöne takın.</li>
+        <li><b>Gemi seviyesi:</b> savaş/keşifle gemi XP kazanır; seviye atlayınca yetenekler açılır (Swing Run, Torpedo Control, Reinforce Shield, Arc Aug…).</li>
+        <li><b>İki adım:</b> yeteneği aç <i>ve</i> onu bilen bir mürettebatı ilgili <b>post'a</b> ata (örn. Master of Maneuvers). Biri yoksa yetenek çalışmaz.</li>
+        <li>Co-op'ta gemi seviyesi Lord Kaptan'dadır, savaş komutası ortaktır.</li>
+      </ul>
+    </article>
+    <article class="card" data-s="warp rota navigator insight puanı seyahat güvenli">
+      <h3>Warp seyahati</h3>
+      <ul class="tight">
+        <li>Rota haritası genelde <b>Chapter/Act 1 sonunda</b> açılır (alt köşedeki küçük düğme; kolay gözden kaçar).</li>
+        <li>Çizgi rengi: <b>yeşil</b> güvenli → sarı → turuncu → <b>kırmızı</b> tehlikeli. Güvensiz rotalarda kötü olaylar çıkabilir (mürettebat psikolojisi, hikâye sonuçları).</li>
+        <li><b>Navigatör</b> yalnızca gemiyi Warp'tan geçirebilir; iyi Navigatör = daha güvenli yol.</li>
+        <li><b>Insight Puanları</b> rotayı güvenli yapar. Topluluk ipucu: harcamadan önce düşünün; ileride kendi kolonileriniz arasında uzun rotalar kurmak için işe yarıyorlar.</li>
+        <li>Yeni sistemde her gezegeni <b>tara</b> (begin scan): kargo, kaynak (extract için ekipman), görev, koloni fırsatı çıkabilir. <b>Chart new routes</b> yeni hedefleri açar.</li>
+        <li><b>Space dust</b> (kargo toplama) ve terk edilmiş gemiler (boarding) gibi yerler olur.</li>
+      </ul>
+    </article>
+  </div>
+  <article class="card" data-s="gemi savaşı kalkan hareket evre torpido swing run">
+    <h3>Gemi savaşı <span class="en">Ship-to-ship combat</span></h3>
+    <div class="grid3">
+      <div class="mini"><b>Kalkanlar</b><p>Her geminin her yönünde kalkan var. Önce kalkanı kır, sonra o yöne hasar ver. Kalkanı yeniden başlatabilirsiniz ama sonraki tur hareketiniz kısıtlanır.</p></div>
+      <div class="mini"><b>3 evreli hareket</b><p>Tur bitmeden <b>üçüncü evreye</b> ulaşmalısınız. Silahlarınızı herhangi bir evrede ve herhangi bir sırada kullanabilirsiniz.</p></div>
+      <div class="mini"><b>Konumlanma</b><p>Düşman arkanıza geçmeye çalışır (silahlarınız çoğunlukla öne/yanlara bakar). <b>Swing Run</b> yerinde U dönüşü verir; menzil ve manevra yetenekleri en değerlisidir.</p></div>
+      <div class="mini"><b>Torpidolar</b><p>Kontrol edilebilir ve çok hasar verir; yol boyunca düşmanın gideceği yere koyun. Ömürleri kısıtlıdır.</p></div>
+      <div class="mini"><b>Hasar kontrolü</b><p>Hasar alacağınız yöne Reinforce Shield. Hasar gören silahlar savaş sırasında devre dışı kalabilir.</p></div>
+      <div class="mini"><b>Ödül</b><p>Scrap ve gemi XP. Çoğunu onarıma harcayacaksınız; zor savaşlar scrap'e mal olabilir.</p></div>
+    </div>
+    <p class="muted">Warp Wave gibi bazı yetenekler eksik gemi canınız kadar kendinize hasar verebilir; gemi sağlıklıyken kullanın.</p>
+  </article>
+</section>
+
+<!-- 7 · İNANÇLAR -->
+<section class="panel" id="convictions" data-title="İnançlar">
+  <h2>İnançlar <span class="en">Convictions</span></h2>
+  <p class="lead">Rogue Trader olarak çok şey yapabilirsiniz; ama yaptıklarınız karakterinizin <b>nasıl algılandığını</b> ve hangi seçeneklerin açık kalacağını belirler. Üç çizgi: <b>Dogmatic</b>, <b>Iconoclast</b>, <b>Heretical</b>. Diyalog seçeneklerinin yanında hangi çizgiye puan vereceği yazar. Eşikler <b>15 · 75 · 150 · 300 · 600</b> puan; her biri yeni bir modifikatör açar [Video 2].</p>
+  <div class="grid3">
+    <article class="card" data-s="dogmatic">
+      <h3>Dogmatic <span class="en">Dogmatik</span></h3>
+      <p>Katı, doktrine bağlı. Örnek: <i>Grim Determination</i> (müttefikler ölümcül vuruşta 1 canla hayatta kalma şansı). Ateş/yanma hasarına yatkın [Video].</p>
+    </article>
+    <article class="card" data-s="iconoclast">
+      <h3>Iconoclast <span class="en">İkonoklast</span></h3>
+      <p>Merhametli, "doğru olanı yap". Müttefiklerin dayanıklılığı ve yeteneklerini rahat kullanma gibi buff'lar. Seçimler çoğu zaman "bağışla/anlayış göster" yönünde.</p>
+    </article>
+    <article class="card" data-s="heretical">
+      <h3>Heretical <span class="en">Heretik</span></h3>
+      <p>Yasaklı güçler ve riskli yollar. Psişik güçlere eğilim; diyalogda en acımasız veya en "yasak" seçenekler.</p>
+    </article>
+  </div>
+  <article class="card" data-s="inanç öneri roleplay">
+    <h4>Öneri</h4>
+    <ul class="tight">
+      <li>İlk oyunda <b>optimize etmeyin</b>: ekip olarak hangi çizgi eğlenceli ise onu seçin (BrokenBuilds de aynı yönde).</li>
+      <li>Bazı pasifler "tam kötü olmayı" gerektirir; üç kişi aynı çizgiyi sevmeyebilir. Diyalogda <b>oy kullanın</b>, Lord Kaptan seçsin.</li>
+      <li>Seçimler yoldaşlarla ilişkileri de etkiler; yoldaş görevleri/romantik hatlar için tek bir çizgiyi kovalamak gerekmeyebilir.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- 8 · YOLDAŞLAR & PARTİ KURUCU -->
+<section class="panel" id="party" data-title="Yoldaşlar">
+  <h2>Yoldaşlar &amp; parti kurucu <span class="en">Companions &amp; party builder</span></h2>
+  <p class="lead">Parti: <b>Rogue Trader + 5 yoldaş</b> (savaşta). Tüm yoldaşları toplayın: kenarda bekleyenler yine görev/diyalog/skill check verir. <b>Katılım bölümleri hafif spoiler</b> içerir.</p>
+
+  <article class="card" data-s="parti kurucu co-op oyuncu dağıtımı">
+    <h3>Co-op parti kurucu</h3>
+    <div class="builder">
+      <div class="bcol">
+        <h4>Rogue Trader (host)</h4>
+        <label>Arketip
+          <select id="rtArch">
+            <option value="support">Officer (destek)</option>
+            <option value="rangedcarry">Soldier (menzilli)</option>
+            <option value="melee">Warrior (yakın/tank)</option>
+            <option value="debuff">Operative (debuff)</option>
+            <option value="meleecarry">Bladedancer (DLC, yakın carry)</option>
+          </select>
+        </label>
+        <label>Oyuncu
+          <select id="rtOwner"><option value="0">Oyuncu A</option><option value="1">Oyuncu B</option><option value="2">Oyuncu C</option></select>
+        </label>
+      </div>
+      <div class="bcol wide">
+        <h4>Yoldaşlar → oyuncu</h4>
+        <div id="builderComps"></div>
+      </div>
+    </div>
+    <div id="builderOut" class="builder-out"></div>
+  </article>
+
+  <div class="filters" id="compFilters">
+    <button class="chip on" data-f="all">Hepsi</button>
+    <button class="chip" data-f="tank">Tank</button>
+    <button class="chip" data-f="melee">Yakın</button>
+    <button class="chip" data-f="ranged">Menzilli</button>
+    <button class="chip" data-f="support">Destek</button>
+    <button class="chip" data-f="caster">Psişer</button>
+    <button class="chip" data-f="navigator">Navigatör</button>
+    <button class="chip" data-f="tech">Tech</button>
+  </div>
+  <div id="companions" class="cards"></div>
+  <p class="muted">Kaynak: BrokenBuilds companion tier list (yama 1.5/1.6.1), gamepressure, bloxodes. Rütbeler topluluk görüşüdür; Yrliet gibi isimlerde kaynaklar ayrışıyor.</p>
+</section>
+
+<!-- 9 · ZORLUK & DLC -->
+<section class="panel" id="diff" data-title="Zorluk &amp; DLC">
+  <h2>Zorluk, DLC ve yamalar <span class="en">Difficulty, DLC &amp; patches</span></h2>
+  <h3>Zorluk <span class="en">Difficulty</span></h3>
+  <div id="difficulty" class="cards"></div>
+  <p class="muted">Zorluk istediğiniz zaman değiştirilebilir; ayrıca tek tek kaydırıcıları (örn. stun süresi) özelleştirebilirsiniz ("Custom"). Zor/Hard zorluk <i>Chapter 1</i> sonuna doğru kademeli olarak tam etkisine ulaşır. Hard'da başlayanlara dair "sistemi bilmeyenlere önerilmez" uyarısı var; üçünüz de yeniyseniz Normal ile başlayın.</p>
+
+  <h3>DLC'ler <span class="en">Expansions</span></h3>
+  <div id="dlcs" class="cards"></div>
+
+  <article class="card" data-s="yama sürüm 1.6.1 güncel patch">
+    <h3>Oyun sürümü</h3>
+    <p>Kaynaklara göre güncel PC sürümü <b>1.6.1.x</b> (Haziran 2026 "Gargantuan" 1.6 yaması). Owlcat'ın büyük yamaları sıklıkla yoldaş hataları ve co-op kararlılığı için hotfix içerir; oynarken Steam duyurularına göz atın. İlerleyen bölümlerde (özellikle son bölümler) lansman döneminde hata raporları yoğundu; sık kayıt alın.</p>
+  </article>
+</section>
+
+<!-- 10 · SÖZLÜK -->
+<section class="panel" id="glossary" data-title="Sözlük">
+  <h2>Sözlük <span class="en">Glossary (TR ⇄ EN)</span></h2>
+  <article class="card warn" data-s="sözlük çeviri uyarısı">
+    <p>Türkçe karşılıklar <b>çeviri önerisidir</b>; oyundaki gerçek Türkçe metinler farklı olabilir. Oyunda gördüğünüz karşılığı <b>"Oyundaki"</b> sütununa yazın; tarayıcı hafızasında kalır. Dışa aktar ile grup arkadaşlarınızla paylaşabilirsiniz.</p>
+  </article>
+  <div class="filters" id="glFilters"></div>
+  <div class="tblwrap">
+    <table class="tbl" id="glTable">
+      <thead><tr><th>English</th><th>Türkçe (öneri)</th><th>Açıklama</th><th>Oyundaki</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="row">
+    <button class="btn ghost" id="glExport">Oyundaki karşılıkları dışa aktar (JSON)</button>
+    <button class="btn ghost" id="glImport">İçe aktar</button>
+    <input id="glFile" type="file" accept="application/json" hidden>
+  </div>
+</section>
+
+<!-- 11 · QUIZ -->
+<section class="panel" id="quiz" data-title="Quiz">
+  <h2>Quiz <span class="en">Kendinizi sınayın</span></h2>
+  <div class="grid2">
+    <article class="card" id="quizBox" data-s="quiz soru test">
+      <div id="quizBody"></div>
+    </article>
+    <article class="card" data-s="flashcard kartlar terim">
+      <h3>Terim kartları <span class="en">Flashcards</span></h3>
+      <div id="flash" class="flash" tabindex="0" role="button" aria-label="Kartı çevir"></div>
+      <div class="row">
+        <button class="btn ghost" id="flashPrev">← Önceki</button>
+        <button class="btn" id="flashFlip">Çevir</button>
+        <button class="btn ghost" id="flashNext">Sonraki →</button>
+        <button class="btn ghost" id="flashShuffle">Karıştır</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 12 · HATALAR -->
+<section class="panel" id="mistakes" data-title="Hatalar">
+  <h2>Sık yapılan hatalar <span class="en">Common mistakes</span></h2>
+  <div class="grid2" id="mistakeList"></div>
+</section>
+
+<!-- 13 · KAYNAKLAR -->
+<section class="panel" id="sources" data-title="Kaynaklar">
+  <h2>Kaynaklar</h2>
+  <div class="grid2">
+    <article class="card">
+      <h3>Referans videolar</h3>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=keL7f8SEyWk" target="_blank" rel="noopener">Warhammer 40k: Rogue Trader Ultimate Beginner Guide</a> (Lucky Ghost, Aralık 2023) — karakter yaratma, savaş, UI, gemi, ticaret.</li>
+        <li><a href="https://www.youtube.com/watch?v=dIxGlDxsWYg" target="_blank" rel="noopener">WH40K: Rogue Trader — 10 Essential Tips Before you Begin</a> — ticaret, uzmanlaşma, destek, silah setleri, momentum, Veil.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Web kaynakları</h3>
+      <ul>
+        <li><a href="https://brokenbuilds.gg/rogue-trader/tier-lists/class-tier-list" target="_blank" rel="noopener">BrokenBuilds — Class Tier List (1.6)</a></li>
+        <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-companions" target="_blank" rel="noopener">BrokenBuilds — Companions (1.6.1)</a></li>
+        <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-dlc-guide" target="_blank" rel="noopener">BrokenBuilds — DLC Guide</a></li>
+        <li><a href="https://brokenbuilds.gg/rogue-trader/guides/beginner-guide" target="_blank" rel="noopener">BrokenBuilds — Beginner Guide</a></li>
+        <li><a href="https://gamingbolt.com/warhammer-40000-rogue-trader-co-op-detailed-ahead-of-launch" target="_blank" rel="noopener">GamingBolt — Co-op detayları</a></li>
+        <li><a href="https://www.gamepressure.com/warhammer-40000-rogue-trader/coop/zc11181" target="_blank" rel="noopener">Gamepressure — Co-op</a></li>
+        <li><a href="https://www.gamewatcher.com/warhammer-40-000-rogue-trader-co-op" target="_blank" rel="noopener">GameWatcher — Co-op / DLC paylaşımı</a></li>
+        <li><a href="https://progameguides.com/warhammer-40000-rogue-trader/how-to-play-co-op-in-rogue-trader/" target="_blank" rel="noopener">ProGameGuides — Co-op</a></li>
+        <li><a href="https://steamcommunity.com/app/2186680/discussions/0/4027970229984898964" target="_blank" rel="noopener">Steam — Co-op FAQ &amp; Known Issues (geliştirici)</a></li>
+        <li><a href="https://www.ludo.guide/guide/warhammer-40000-rogue-trader/difficulty" target="_blank" rel="noopener">ludo.guide — Zorluk ayarları</a></li>
+        <li><a href="https://roguetrader.wiki.fextralife.com/Story" target="_blank" rel="noopener">Fextralife — Zorluklar</a></li>
+        <li><a href="https://turnbasedlovers.com/news/warhammer-40000-rogue-trader-update-1-3-2-8-is-live-fixes-improvements-and-new-localization/" target="_blank" rel="noopener">TurnBasedLovers — Güncelleme 1.3.2.8 (Türkçe)</a></li>
+        <li><a href="https://www.gamewatcher.com/news/warhammer-40000-rogue-trader-update-1-5-rebalanced-colony-management-reworked-origins" target="_blank" rel="noopener">GameWatcher — Güncelleme 1.5</a></li>
+      </ul>
+    </article>
+  </div>
+  <p class="muted">Bu site resmî değildir. Warhammer 40,000: Rogue Trader © Games Workshop / Owlcat Games. Hazırlanma tarihi: 16 Kasım 2026. Bilgiler kaynaklardan derlenmiştir; oyundaki tooltip her zaman esastır.</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>Rogue Trader Crash Course · TR/EN · bağımsız hayran rehberi</span>
+  <button class="btn ghost" id="toTop">↑ Başa dön</button>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
