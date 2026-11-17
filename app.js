@@ -26,6 +26,10 @@
 
   function showPanel(id, scroll) {
     if (/^w\d$/.test(id)) { const t = document.getElementById(id); id = "walk"; if (t) setTimeout(() => t.scrollIntoView({ behavior: "instant", block: "start" }), 50); }
+    else if (!panels.some((p) => p.id === id)) {
+      const t = document.getElementById(id), host = t && t.closest(".panel");
+      if (host) { id = host.id; setTimeout(() => t.scrollIntoView({ behavior: "instant", block: "start" }), 50); }
+    }
     if (!panels.some((p) => p.id === id)) id = panels[0].id;
     panels.forEach((p) => p.classList.toggle("active", p.id === id));
     $$(".tab", tabsEl).forEach((b) => {

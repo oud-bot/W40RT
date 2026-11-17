@@ -99,19 +99,19 @@ const HOMEWORLDS = [
   { en: "Voidborn", tr: "Boşluk Doğumlu", role: "Şans / kritik / psişer", text: "Başarısız zarlarda %20 şansla başarı; düşman Dodge/Parry'si %20 şansla başarısız sayılır. Kritik hasar bonusu, ölümcül hasarda hayatta kalma şansı. Ekstra irade sayesinde psişerler için de iyi." },
   { en: "Hive World", tr: "Kovan Dünyası", role: "Kalabalıkta savaşan", text: "Etrafta müttefik/düşman çokken Resolve ve hareket artar, yalnızken ceza alır. Yakın dövüş performansı artar." },
   { en: "Forge World", tr: "Dövme (Forge) Dünyası", role: "Ağır zırh / uzun savaş", text: "Zırh, hareket hızı veya kritik şansından birini seçersiniz. Ağır zırhta ek azaltma, ateşe direnç, plazma/melta/power silah hasarı; saldırdıkça etkinlik artar." },
-  { en: "Imperial World", tr: "İmparatorluk Dünyası", role: "Her sınıfa uyar", text: "Seçtiğiniz bir karakteristiğe +10 ve parti üyelerine +5; canınız %40'ın altına düşünce büyük buff; iblis/Warp varlıklarına karşı parti hasarı. Esnek, güvenli seçim." },
+  { en: "Imperial World", tr: "İmparatorluk Dünyası", role: "Her sınıfa uyar", text: "Sabit stat modifiyesi yok; Humanity's Finest ile seçtiğiniz bir karakteristiğe (WS/BS hariç) cezasız +10. Canınız %40'ın altına düşünce büyük buff. Esnek, güvenli seçim." },
   { en: "Fortress World", tr: "Kale (Fortress) Dünyası", role: "Silahlı asker", text: "Her öldürmede birikimli %10 ihtimalle bedava saldırı; ilk reload bedava; ateş etmek Dodge'u artırır." }
 ];
 
 const ORIGINS = [
   { en: "Astra Militarum Commander", tr: "Astra Militarum Komutanı", text: "Grup buff'ı, menzilli silah odaklı (BS) ve algı bonusu. ⚠ Yama 1.5'te baştan tasarlandı." },
-  { en: "Commissar", tr: "Komiser (Commissar)", text: "Müttefike kill sonrası ekstra tur verme fikri, yakın dövüş (WS) ve ilişki bonusu. ⚠ Yama 1.5'te yeniden yapıldı." },
+  { en: "Commissar", tr: "Komiser (Commissar)", text: "At All Costs! (müttefike ateş edip buff verme) + Iconic Sidearm (tabanca); BS ve Fellowship bonusu. ⚠ Yama 1.5'te yeniden yapıldı: eski rehberler yanıltabilir." },
   { en: "Crime Lord", tr: "Suç Lordu", text: "Sağlam bir arka plan hikâyesi; hasar/dodge/debuff odaklı 'Surefire Plan', WS ve Perception bonusu." },
   { en: "Ministorum Priest", tr: "Ministorum Rahibi", text: "Momentum üretimi, dayanıklılık ve irade bonusu. ⚠ Yama 1.5'te yeniden yapıldı." },
-  { en: "Navy Officer", tr: "Donanma Subayı", text: "'Brace for Impact' ile hasar azaltma, Agility ve Fellowship bonusu; tank/mitigasyon düşünenlere. ⚠ Yama 1.5'te yeniden yapıldı." },
+  { en: "Navy Officer", tr: "Donanma Subayı", text: "'Brace for Impact!' ile yakındaki dostlara koruma; yakın dövüş/tank/destek odaklı (TGH, PER bonusu). ⚠ Yama 1.5'te yeniden yapıldı: eski rehberlerdeki AGI/FEL bonusu artık geçerli değil." },
   { en: "Noble", tr: "Soylu", text: "Bir parti üyesini 'hizmetkâr' atayıp güçlendirirsiniz; Intelligence (lore) bonusu ve diyalog seçenekleri." },
   { en: "Sanctioned Psyker", tr: "Kayıtlı Psişer", text: "Kendi başına neredeyse bir sınıf: alt dal seçilir — Biomancer (iyileştirme/buff), Diviner (şans buff'ı), Pyromancer (ateş), Sanctic (buff/debuff), Telepath (saf psişik hasar). Veil'e dikkat." },
-  { en: "Arbites (Lex Imperialis DLC)", tr: "Arbites (Lex Imperialis DLC)", text: "DLC kökeni; yaratım sırasında seçilir (BrokenBuilds'e göre üç uzmanlık içerir)." }
+  { en: "Arbitrator (Lex Imperialis DLC)", tr: "Arbitrator / Arbites (Lex Imperialis DLC)", text: "DLC kökeni; üç alt dal: Vigilant (pompalı), Castigator (debuff/komut), Subductor (kalkan)." }
 ];
 
 const ARCHETYPES = [

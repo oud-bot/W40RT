@@ -139,10 +139,90 @@
   <p class="lead">Sıra: Görünüm → Anavatan (Homeworld) → Köken (Origin) → Zafer / En Karanlık Saat → Arketip → Karakteristikler → Gemi. En önemli üçü: <b>Arketip</b>, <b>Homeworld</b> ve <b>karakteristik dağılımı</b>. Seçmek zor geliyorsa tanıdık bir şeyi seçin; yanlış seçim felaket değil (ve yeniden dağıtım var).</p>
 
   <h3>1 · Anavatan <span class="en">Homeworld</span></h3>
+  <p class="muted">Tablolu karşılaştırma, stat modifiyeleri ve 3 kişilik co-op önerileri için → <a href="#hw-origin">Homeworld ve Origin Rehberi</a></p>
   <div id="homeworlds" class="cards"></div>
 
   <h3>2 · Köken <span class="en">Origin</span></h3>
+  <p class="muted">Feature, başlangıç bonusları ve yama 1.5+ notları için → <a href="#hw-origin">Homeworld ve Origin Rehberi</a></p>
   <div id="origins" class="cards"></div>
+
+  <section class="subsec" id="hw-origin">
+    <h3>2b · Homeworld ve Origin Rehberi <span class="en">Homeworld &amp; Origin Guide</span></h3>
+    <p class="lead"><b>Homeworld</b> = doğduğun yer: sabit bir stat bloğu (+5 / −5) ve bir <i>feature</i> verir. <b>Origin</b> = Lord Captain olmadan önceki mesleğin: ek stat/beceri bonusu ve ikinci bir feature verir. Her +10 karakteristik = +1 “bonus” (onlar basamağı, bkz. karakteristik hesaplayıcı). Her ikisi de yaratma ekranında seçilir ve <b>sonradan değiştirilemez</b>: bir kaynağa göre respec yapsanız bile Origin sabit kalır. Bu yüzden önce planlayın.</p>
+    <div class="route" id="hwNav" aria-label="Rehber bölümleri">
+      <a href="#hw-table">Homeworld tablosu</a>
+      <a href="#or-table">Origin tablosu</a>
+      <a href="#hw-coop">3 kişilik co-op önerisi</a>
+      <a href="#hw-patch">Yama 1.5+ notları</a>
+    </div>
+
+    <article class="card" id="hw-table" data-s="homeworld anavatan death world forge world fortress world hive world imperial world voidborn stat feature tablo rehber">
+      <h4>Homeworld tablosu <span class="en">Homeworlds</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Homeworld</th><th>Feature</th><th>Stat</th><th>Ne yapar?</th><th>Uygun arketip</th><th>Co-op rolü (3 kişi)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Death World</b><br>Ölüm Dünyası</td><td>Survival Instinct</td><td><span class="pos">+5 STR, AGI, TGH</span><br><span class="neg">−5 INT, FEL</span></td><td>Yara aldıkça dayanıklılık/ek can; yakın dövüş silahlarında bonus.</td><td>Warrior, Soldier</td><td><b>Ön saf tank</b> (melee). Düşük Fellowship: diyalog yüzü başkası olsun.</td></tr>
+          <tr><td><b>Forge World</b><br>Dövme Dünyası</td><td>Forged for a Purpose<br><small>(3 seçenek: Subskin Armour, Locomotion System, Analytics System)</small></td><td><span class="pos">+5 INT, TGH</span><br><span class="neg">−5 FEL</span></td><td>Bir “gadget/augmentation” seçersiniz (zırh, hareket veya analiz).</td><td>Operative (tech, keskin nişancı)</td><td><b>Tech / keskin nişancı</b>. Tech-Use ve zeka odaklı karakter.</td></tr>
+          <tr><td><b>Fortress World</b><br>Kale Dünyası</td><td>Never Stop Shooting</td><td><span class="pos">+5 PER, WP</span><br><span class="neg">−5 FEL</span></td><td>Sürekli ateş etmeyi ödüllendirir (burst fire / seri atış).</td><td>Soldier (Arch-Militant yolu)</td><td><b>Menzilli DPS</b>, burst fire. Soldier için ilk tercih.</td></tr>
+          <tr><td><b>Hive World</b><br>Kovan Dünyası</td><td>Strength in Numbers</td><td><span class="pos">+5 FEL, AGI</span><br><span class="neg">−5 WP</span></td><td>Kalabalıkta güçlenir (etrafta birim çokken bonus).</td><td>Officer</td><td><b>Destek / diyalog yüzü</b>. Willpower düşük: Officer’da WP’yi sonra yükseltin.</td></tr>
+          <tr><td><b>Imperial World</b><br>İmparatorluk Dünyası</td><td>Humanity’s Finest</td><td>Sabit modifiye yok.<br><span class="pos">+10 seçtiğin 1 stat</span><br><small>(WS ve BS hariç, cezasız)</small></td><td>Esnek: tek bir statı ceza olmadan +10 yaparsınız. Düşük canda (≈%40 altı) büyük bonus talent’i var.</td><td>Officer, Warrior, her sınıf</td><td><b>Esnek / emin değilseniz</b>. Eksik statı kapatmak için ideal.</td></tr>
+          <tr><td><b>Voidborn</b><br>Boşluk Doğumlu</td><td>Fortune</td><td><span class="pos">+5 INT, WP</span><br><span class="neg">−5 STR</span></td><td>Başarısız zarı <b>%20 şansla</b> yeniden at (başarı şansı temel şansı aşamaz); düşman dodge/parry’si de %20 şansla başarısız sayılır.</td><td>Operative, Warrior, psişer</td><td><b>Risk / şans sevenler</b>; psişer ve Operative için çok yönlü.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Üç homeworld (Death, Forge, Fortress) <b>−5 Fellowship</b> verir: grupta mutlaka bir “yüz” olsun (Hive, Noble, Imperial veya Officer). Co-op’ta skill check için kimin deneyeceğini zaten siz seçersiniz.</p>
+    </article>
+
+    <article class="card" id="or-table" data-s="origin köken astra militarum commander commissar crime lord ministorum priest navy officer noble sanctioned psyker arbitrator navigator feature bonus tablo rehber">
+      <h4>Origin tablosu <span class="en">Origins (Lord Captain)</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Origin</th><th>Temel feature</th><th>Başlangıç bonusu</th><th>Rol</th><th>Yama 1.5+</th></tr></thead>
+        <tbody>
+          <tr><td><b>Astra Militarum Commander</b><br>Astra Militarum Komutanı</td><td>Regimental Tactics (savaşta 1 kez: dost ateşi yok + saldırdığınız düşmana bonus hasar)</td><td><span class="pos">+5 BS, FEL</span><br>+5 Athletics, Coercion</td><td>Menzilli, siper, lasgun; komuta</td><td><span class="badge rB">Yeniden yapıldı</span> Adjacency şartı kalktı; Timely Rescue ve Shoulder to Shoulder kaldırıldı; Fix Bayonets! ve Trench Warfare eklendi.</td></tr>
+          <tr><td><b>Commissar</b><br>Komiser</td><td>At All Costs! (müttefike tabancayla ateş edip buff verme), Iconic Sidearm (tabanca hasar/kritik)</td><td><span class="pos">+5 BS, FEL</span><br>+5 Coercion, Athletics</td><td>Tabanca odaklı lider / destek</td><td><span class="badge rB">Yeniden yapıldı</span> Duty and Honour! ve Show Them Contempt! kaldırıldı; başlangıç WS yerine BS oldu.</td></tr>
+          <tr><td><b>Crime Lord</b><br>Suç Lordu</td><td>Sure-Fire Plan (her kullanımda bir sonraki aksiyonu güçlendirir)</td><td><span class="pos">+5 WS, PER</span><br>+5 Awareness, Logic</td><td>Operative / keskin nişancı, debuff; arka plan sağlam</td><td>Değişmedi (1.6’da da yaygın Operative seçimi).</td></tr>
+          <tr><td><b>Ministorum Priest</b><br>Ministorum Rahibi</td><td>War Hymn (parti Momentum’u, zeal ile), Unshakable Faith (zeal ve WP)</td><td><span class="pos">+10 WP</span><br>+10 Lore (Imperium)</td><td>Momentum üreten destek / psişer olmayan inançlı savaşçı</td><td><span class="badge rB">Yeniden yapıldı</span> Zeal kaynağı eklendi; Shield of Faith kaldırıldı (Tenets of Retribution geldi). Argenta da bu değişiklikleri alır.</td></tr>
+          <tr><td><b>Navy Officer</b><br>Donanma Subayı</td><td>Brace for Impact! (5 hücre yarıçapında dost “braced” etkisi)</td><td><span class="pos">+5 TGH, PER</span><br>+5 Carouse, Awareness</td><td>Yakın dövüş, tank, destek (Warrior ve Operative ile uyumlu)</td><td><span class="badge rB">Yeniden yapıldı</span> Do Not Falter!, Scatter ve Perfect Timing kaldırıldı (Stentorian Voice, Evasive Manoeuvres, Fleet Combat Training geldi). Eski rehberlerde AGI/FEL bonusu yazar; artık TGH/PER.</td></tr>
+          <tr><td><b>Noble</b><br>Soylu</td><td>You. Serve Me.</td><td><span class="pos">+5 INT, FEL</span><br>+5 Coercion, Persuasion</td><td><b>Diyalog yüzü</b>, Officer ile klasik kombinasyon</td><td>Değişmedi.</td></tr>
+          <tr><td><b>Sanctioned Psyker</b><br>Kayıtlı Psişer</td><td>Sanctioned Psyker (psişik olay şansı −%20) + Psyker. Alt dallar: Biomancer, Diviner, Pyromancer, Sanctic, Telepath</td><td><span class="pos">+5 TGH, WP</span><br>+5 Carouse, Lore (Warp)<br><small>(kaynaklar çelişiyor; tooltip’e bakın)</small></td><td>Psişer; Veil riskini azaltır</td><td>Değişmedi.</td></tr>
+          <tr><td><b>Arbitrator</b> <small>(Lex Imperialis DLC)</small><br>Hâkim / Arbites</td><td>3 alt dal: <b>Vigilant</b> (Swift Justice, Fulminating Shot: pompalı), <b>Castigator</b> (Death Sentence, Castigated!: debuff/komut), <b>Subductor</b> (Ruthless Suppression, Assault Onslaught: kalkan gerekir)</td><td>Vigilant: +5 BS, PER · Castigator: +5 FEL, WP · Subductor: +5 WS, TGH; hepsinde +10 Coercion, +5 Lore (Imperium)</td><td>Pompalı DPS / kontrol / kalkanlı ön saf</td><td>DLC; yama 1.5’te cilalandı.</td></tr>
+          <tr><td><b>Navigator</b><br>Seyrüseferci</td><td>Lidless Stare</td><td><span class="pos">+5 PER, WP</span><br>+5 Awareness, Lore (Warp)</td><td colspan="2"><b>Lord Captain için seçilemez.</b> Yalnızca özel yoldaşlar için, Cassia kalıcı olarak partiden çıkarsa açılır.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Origin bonuslarına <b>advancement</b> sonrası ek stat/beceri gelir (örn. Noble: +5 FEL, Persuasion +10). Kökenler birbirine göre dengelidir; “en iyi” yoktur, arketip ve homeworld ile aynı 2–3 statı itmesi önemlidir. Triumph / Darkest Hour seçimleri (ör. Muazzam Başarı, Utanç Damgası) kökene göre küçük beceri bonusu/cezası verir.</p>
+    </article>
+
+    <article class="card" id="hw-coop" data-s="co-op 3 kişi öneri homeworld origin rol tank destek menzilli tech yüz">
+      <h4>3 kişilik co-op için öneri <span class="en">Co-op picks (3 players)</span></h4>
+      <p>Host Rogue Trader’ı oynar; diğer iki oyuncu yoldaş (Abelard, Argenta, Cassia, Idira…) veya özel yoldaş (mercenary) oynar. Yoldaşlar zaten <b>tank (Abelard), menzilli (Argenta), destek (Cassia), psişer (Idira), tech (Pasqal)</b> verir. Bu yüzden Lord Captain’ı <b>açığı kapatacak</b> şekilde seçin ve grupta <b>her stat için bir uzman</b> bırakın.</p>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Oyuncu</th><th>Rol</th><th>Arketip</th><th>Homeworld</th><th>Origin</th><th>Neden?</th></tr></thead>
+        <tbody>
+          <tr><td><b>A · Host</b><br>Lord Captain</td><td>Yüz + destek</td><td>Officer</td><td>Hive World veya Imperial World</td><td>Noble (diyalog) · Commissar / Astra Militarum Commander (savaş)</td><td>Hikâye ve diyalog ana karakterde; Fellowship + Willpower yüksek. Officer ekstra tur verir.</td></tr>
+          <tr><td><b>B</b></td><td>Ön saf tank</td><td>Warrior</td><td>Death World</td><td>Navy Officer veya Commissar</td><td>TGH/STR/AGI, yara aldıkça güçlenir; 1.5 sonrası Navy Officer tank/destek odaklı.</td></tr>
+          <tr><td><b>C</b></td><td>Menzilli DPS</td><td>Soldier</td><td>Fortress World</td><td>Astra Militarum Commander</td><td>Burst fire + siper; BS/PER ağırlıklı; Arch-Militant’a akar.</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="tight">
+        <li><b>Alternatif (tech / keskin nişancı):</b> Operative + Forge World (Analytics System) + Crime Lord (Sure-Fire Plan). 1.6.1 sniper build’i böyle kuruluyor.</li>
+        <li><b>Psişer:</b> Sanctioned Psyker origin Veil riskini düşürür; ama Idira zaten partide olduğundan ikinci bir psişer şart değil.</li>
+        <li><b>Voidborn</b> şans sevenler için: her zar için %20’lik ikinci şans; Operative veya psişerle iyi gider.</li>
+        <li>Arketip ayrıntıları ve 16. seviye yolları: aşağıdaki <a href="#archetypes">3 · Arketip</a> bölümü.</li>
+      </ul>
+      <p class="muted">Rol seçimleri bir öneridir (A Little Bit Human, HighGround, BrokenBuilds rehberlerinden derlendi); zevkinize göre değiştirin.</p>
+    </article>
+
+    <article class="card warn" id="hw-patch" data-s="yama 1.5 origin rework talent kaldırıldı commissar navy officer ministorum astra militarum patch">
+      <h4>Yama 1.5+ notları <span class="en">Patch 1.5+ (Ekim 2025)</span></h4>
+      <ul class="tight">
+        <li>Yama 1.5 <b>dört origin’i baştan tasarladı</b>: Astra Militarum Commander, Ministorum Priest, Navy Officer, Commissar. Homeworld’ler için değişiklik duyurulmadı.</li>
+        <li><b>Kaldırılan talent’ler:</b> Commissar: Duty and Honour!, Show Them Contempt! · Ministorum Priest: Shield of Faith · Navy Officer: Do Not Falter!, Scatter, Perfect Timing · Astra Militarum Commander: Timely Rescue, Shoulder to Shoulder.</li>
+        <li><b>Başlangıç bonusları değişti:</b> Commissar WS → BS; Astra Militarum Commander PER → FEL (Medicae → Coercion); Navy Officer AGI/FEL → TGH/PER; Ministorum Priest +10 WP, +10 Lore (Imperium).</li>
+        <li><b>Yeni yön:</b> Astra Militarum Commander = menzilli, siper, lasgun; Commissar = tabanca; Ministorum = Zeal ve Momentum; Navy Officer = melee/tank/destek.</li>
+        <li>Eski (2023–2025 öncesi) rehberlerdeki talent adları ve stat bonusları bu dört origin için <b>yanıltıcı</b> olabilir; oyunda tooltip’i esas alın.</li>
+        <li>Sonraki yamalarda (1.6, 1.6.1) origin’lerle ilgili ayrı bir yeniden tasarım duyurusu bulamadık.</li>
+      </ul>
+    </article>
+  </section>
 
   <h3>3 · Arketip <span class="en">Archetype</span> <small class="muted">(rütbe: BrokenBuilds, yama 1.6)</small></h3>
   <div class="filters" id="archFilters">

@@ -170,3 +170,12 @@ ol,ul{padding-left:1.25rem}
 .warnbox{border-left:3px solid var(--warn);background:#221d10;padding:.4rem .8rem;border-radius:0 8px 8px 0;margin:.5rem 0}
 .warnbox ul{margin:.2rem 0 .2rem 1rem;padding:0}
 .chap{scroll-margin-top:80px}
+
+/* homeworld & origin guide */
+.subsec{margin:1.2rem 0;padding-top:.4rem;scroll-margin-top:80px}
+.card[id]{scroll-margin-top:80px}
+.hwtbl td:first-child{white-space:nowrap}
+.hwtbl td,.hwtbl th{font-size:.88rem}
+.pos{color:var(--good)}
+.neg{color:#e07a6a}
+.hwtbl small{color:var(--muted)}
