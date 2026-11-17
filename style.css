@@ -183,3 +183,10 @@ ol,ul{padding-left:1.25rem}
 /* dlc */
 .coopnote{border-left:3px solid var(--gold);background:#1c1a12;padding:.4rem .8rem;border-radius:0 8px 8px 0;margin:.5rem 0 .2rem}
 .timeline td:first-child{white-space:nowrap}
+
+/* yatay kaydırılabilir tablolar için kenar gölgesi */
+.tblwrap{background:
+  linear-gradient(to right,var(--card) 30%,rgba(0,0,0,0)) 0 0/36px 100% no-repeat local,
+  linear-gradient(to left,var(--card) 30%,rgba(0,0,0,0)) 100% 0/36px 100% no-repeat local,
+  radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.55),rgba(0,0,0,0)) 0 0/14px 100% no-repeat scroll,
+  radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.55),rgba(0,0,0,0)) 100% 0/14px 100% no-repeat scroll}
