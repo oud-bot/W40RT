@@ -317,7 +317,7 @@
       <ul class="tight">
         <li><b>Bladedancer</b> Basic arketip olduğu için yaratım ekranında seçilir: DLC’yi <b>yaratmadan önce</b> kurun.</li>
         <li>Zealot, DLC ile birlikte gelen “Madness” mekaniğiyle aynı pakette; Madness tüm yoldaşları etkiler.</li>
-        <li>Co-op’ta DLC arketiplerini kullanmayı düşünüyorsanız, kimde hangi DLC var diye <b>kurmadan önce</b> arkadaşlarınızla konuşun.</li>
+        <li>Co-op’ta host’un DLC’leri oturumda herkese açılır (bkz. Co-op sekmesi); yine de DLC arketiplerini <b>kurmadan önce</b> host’un DLC’ye sahip olduğundan emin olun.</li>
       </ul>
     </article>
 
@@ -580,6 +580,7 @@
       <ul class="tight">
         <li>Karakterlerin görünümü yaratımdan sonra yalnızca renk/kask/sırt çantası ayarlanabilir; <b>tam sıfırlama</b> = respec.</li>
         <li>Gemideki <b>High Factotum</b> ile konuşup "maiyetimiz eğitime ihtiyaç duyuyor" benzeri seçenekle bir karakteri sıfırlayabilirsiniz; aynı NPC parti boşluğunu özel karakterle doldurma seçeneği de sunar.</li>
+        <li><b>Ücretsiz mi?</b> Yalnızca ilk respec’ler (her karakter için ilk üçü); sonrası Profit Factor’a mal olur. Archetype/Homeworld/Origin değişmez. Ayrıntı: <a href="#pt-respec">Yoldaşlar → Respec</a>.</li>
         <li>Büyük yama sonrası respec fırsatı da verilmişti; bir hata yaparsanız dünya sonu değil.</li>
       </ul>
     </article>
@@ -660,7 +661,97 @@
   <h2>Yoldaşlar &amp; parti kurucu <span class="en">Companions &amp; party builder</span></h2>
   <p class="lead">Parti: <b>Rogue Trader + 5 yoldaş</b> (savaşta). Tüm yoldaşları toplayın: kenarda bekleyenler yine görev/diyalog/skill check verir. <b>Katılım bölümleri hafif spoiler</b> içerir.</p>
 
-  <article class="card" data-s="parti kurucu co-op oyuncu dağıtımı">
+  <div class="route" aria-label="Bölümler">
+    <a href="#pt-roster">Yoldaş listesi</a>
+    <a href="#pt-presets">Hazır partiler (3 kişi)</a>
+    <a href="#pt-skills">Skill coverage</a>
+    <a href="#pt-respec">Respec</a>
+    <a href="#pt-builder">Parti kurucu</a>
+  </div>
+
+  <article class="card" id="pt-roster" data-s="yoldaş companion liste rol abelard argenta cassia pasqal idira heinrix jae yrliet ulfar marazhai kibellah solomorne eogunn stella başlangıç arketip önerilen yol skill">
+    <h3>Yoldaşlar: kısa rol + önerilen yol <span class="en">Companion roster</span></h3>
+    <div class="tblwrap"><table class="tbl hwtbl" id="rosterTbl">
+      <thead><tr><th>Yoldaş</th><th>Başlangıç arketip</th><th>Rol</th><th>Önerilen Advanced yol</th><th>Skill uzmanlığı</th><th>Katılım</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <p class="muted">“(öneri)” yazanlar kaynaklarda net bir yol olmayan, kapıya uyan benim önerilerimdir; Advanced arketip seçimi 16. seviyede gelir ve geri alınamıyor olabilir (bkz. Respec), o yüzden tooltip’i okuyun. Kapılar için <a href="#ar-adv">Archetype Rehberi</a>. Savaşta <b>Rogue Trader + 5 yoldaş</b> aktif olur; kalanlar gemide bekler.</p>
+  </article>
+
+  <article class="card" id="pt-presets" data-s="hazır parti öneri co-op 3 kişi dağılım host oyuncu yoldaş rogue trader erken oyun klasik dengeli hasar">
+    <h3>3 kişilik hazır partiler <span class="en">Ready-made parties</span></h3>
+    <p>Savaşta 6 karakter = <b>3 oyuncu × 2 karakter</b>. Rogue Trader’ı host oynar ve diyalog seçimi ondadır; skill check’i ise Co-op sekmesindeki kurala göre <i>siz</i> doğru kişiyle denersiniz. Rogue Trader’ı partinin <b>boşluğunu kapatacak</b> şekilde kurun.</p>
+
+    <h4>1 · Erken oyun (Prolog → Bölüm 1)</h4>
+    <div class="tblwrap"><table class="tbl hwtbl">
+      <thead><tr><th>Oyuncu</th><th>Karakterler</th><th>Rol</th></tr></thead>
+      <tbody>
+        <tr><td><b>A · Host</b></td><td>Rogue Trader (Officer) + özel karakter (Operative)</td><td>Yüz + destek; özel karakter tech/Logic açığını kapatır</td></tr>
+        <tr><td><b>B</b></td><td>Abelard + Idira</td><td>Ön saf tank + psişer (Idira’nın Perils riskine dikkat)</td></tr>
+        <tr><td><b>C</b></td><td>Argenta + özel karakter (Warrior veya Officer)</td><td>Menzilli AoE + ikinci ön saf/destek</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Prolog’da yalnızca <b>Abelard, Idira ve Argenta</b> vardır; Cassia, Pasqal ve Heinrix Bölüm 1’de gelir. Özel karakterler boşluğu doldurur ama yoldaş hikâyelerinin bir kısmını kaçırır. Skill: Athletics/Carouse Abelard, Awareness + Lore (Warp) Idira, Demolition Argenta, Tech-Use/Logic özel karakter, Persuasion/Coercion Rogue Trader.</p>
+
+    <h4>2 · Klasik dengeli (Bölüm 2+)</h4>
+    <div class="tblwrap"><table class="tbl hwtbl">
+      <thead><tr><th>Oyuncu</th><th>Karakterler</th><th>Rol</th></tr></thead>
+      <tbody>
+        <tr><td><b>A · Host</b></td><td>Rogue Trader (Warrior → Arch-Militant) + Cassia</td><td>Yakın hasar + en güçlü destek (Navigatör)</td></tr>
+        <tr><td><b>B</b></td><td>Abelard + Argenta</td><td>Tank + menzilli AoE</td></tr>
+        <tr><td><b>C</b></td><td>Pasqal + Yrliet</td><td>Tech/debuff + keskin nişancı (Yrliet Bölüm 2’de elle davet edilir)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Çekirdek: Abelard tank, Yrliet tek hedef hasar, Argenta alan hasarı, Pasqal çok yönlü, Cassia destek (ProGameGuides’ın en iyi partisi). Skill: Persuasion/Coercion Cassia, Tech-Use/Logic/Medicae Pasqal, Demolition Argenta, Awareness + Lore (Xenos) Yrliet, Athletics Abelard. <b>Açıklar:</b> Lore (Warp), Commerce, Lore (Imperium) Rogue Trader’a kalır.</p>
+
+    <h4>3 · Hasar + esnek <span class="badge rC">Void Shadows</span></h4>
+    <div class="tblwrap"><table class="tbl hwtbl">
+      <thead><tr><th>Oyuncu</th><th>Karakterler</th><th>Rol</th></tr></thead>
+      <tbody>
+        <tr><td><b>A · Host</b></td><td>Rogue Trader (Soldier → Arch-Militant) + Jae</td><td>Menzilli hasar + yüz (Commerce, Logic, Tech-Use, Lore)</td></tr>
+        <tr><td><b>B</b></td><td>Cassia + Argenta</td><td>Destek/AoE + menzilli carry</td></tr>
+        <tr><td><b>C</b></td><td>Heinrix + Kibellah</td><td>Melez yakın dövüş/psişer + hareketli melee patlaması</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">BrokenBuilds’in çekirdeği (Cassia, Argenta, Heinrix) ve son iki koltuğun Kibellah / Jae / geç oyun Idira arasında dönmesi önerisine dayanır. Kibellah için Void Shadows gerekir; yoksa yerine Idira (geç oyun) veya Yrliet. Skill: Demolition Argenta/Kibellah, Athletics Heinrix, Medicae Kibellah, Persuasion/Coercion Cassia. <b>Açık:</b> Lore (Warp), bunu Rogue Trader kapatır.</p>
+  </article>
+
+  <article class="card" id="pt-skills" data-s="skill coverage beceri athletics awareness tech-use persuasion demolition logic lore medicae commerce carouse coercion parti">
+    <h3>Skill coverage <span class="en">Kim hangi becerinin uzmanı olsun?</span></h3>
+    <p>Kural: <b>her karakter 1–2 beceriye odaklansın</b>; kendiniz bir beceride uzmansanız yoldaşlara gerekmez. Awareness, artan puanlar için iyi bir genel dolgudur. Tek oyunculuda en yüksek beceriye sahip kişi kontrolü otomatik yapar, co-op’ta ise kimin deneyeceğini siz seçersiniz.</p>
+    <div class="tblwrap"><table class="tbl hwtbl">
+      <thead><tr><th>Skill</th><th>Ne işe yarar?</th><th>Önerilen uzman(lar)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Athletics</b> (STR)</td><td>Zor arazi; savaşta alternatif açılar</td><td>Abelard, Heinrix</td></tr>
+        <tr><td><b>Awareness</b> (PER)</td><td>Tuzak, gizli nesne ve geçit bulma</td><td>Idira, Argenta, Yrliet, Ulfar</td></tr>
+        <tr><td><b>Tech-Use</b> (INT)</td><td>Kilitli kapılar, konteynerler, makineler</td><td>Pasqal, Jae</td></tr>
+        <tr><td><b>Persuasion</b> (FEL)</td><td>Alternatif diyalog seçenekleri</td><td>Cassia, Jae</td></tr>
+        <tr><td><b>Coercion</b> (FEL)</td><td>Gözdağı diyalogları</td><td>Cassia, Solomorne</td></tr>
+        <tr><td><b>Demolition</b></td><td>Tuzak etkisizleştirme, bomba</td><td>Argenta, Kibellah, Solomorne, Ulfar</td></tr>
+        <tr><td><b>Logic</b> (INT)</td><td>Zeka kontrolleri</td><td>Pasqal, Jae</td></tr>
+        <tr><td><b>Commerce</b></td><td>Ticaret/pazarlık kontrolleri</td><td>Jae</td></tr>
+        <tr><td><b>Carouse</b></td><td>Sosyal kontroller (içki/eğlence)</td><td>Abelard</td></tr>
+        <tr><td><b>Medicae</b></td><td>Tıbbi kontroller</td><td>Kibellah (Pasqal da kullanılır)</td></tr>
+        <tr><td><b>Lore (Imperium)</b></td><td>İmparatorluk bilgisi</td><td>Jae (Rogue Trader da)</td></tr>
+        <tr><td><b>Lore (Warp)</b></td><td>Warp / psişik bilgi</td><td>Idira (yoksa Rogue Trader)</td></tr>
+        <tr><td><b>Lore (Xenos)</b></td><td>Yaratık/uzaylı bilgisi; Aeldari/Drukhari yoldaşlar için en az 1 puan gerekir</td><td>Heinrix, Yrliet, Jae</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Kaynak: ludo.guide yoldaş rehberi (önerilen uzmanlıklar), GameSkinny ve Steam topluluk önerileri. Bunlar öneridir: kendi partinizin eksiğine göre kaydırın. Erken-orta oyunda en çok işe yarayanlar Tech-Use, Awareness, Demolition ve Fellowship becerileridir.</p>
+  </article>
+
+  <article class="card warn" id="pt-respec" data-s="respec yeniden dağıtım ücretsiz gemi high factotum janris danrok profit factor yoldaş">
+    <h3>Respec: gemide, ama her zaman bedava değil <span class="en">Respec</span></h3>
+    <ul class="tight">
+      <li><b>Nerede?</b> Prolog bitip geminizi serbestçe gezebildiğiniz andan itibaren köprüde <b>High Factotum Janris Danrok</b> ile konuşun ve “maiyetimiz eğitime ihtiyaç duyuyor” seçeneğini seçin. Rogue Trader’ı ve her yoldaşı ayrı ayrı sıfırlayabilirsiniz.</li>
+      <li><b>Ücret:</b> <b>İlk respec’ler ücretsizdir</b> (yama 1.0.97’den beri her yoldaşın kendi sayacı ve ilk üç ücretsiz hakkı var). Sonrasında her respec <b>Profit Factor</b> harcar ve sayı arttıkça pahalılaşır. “Hep bedava” sanıp küçük şeyler için respec yapmayın; ilk üçü akıllıca kullanın.</li>
+      <li><b>Neleri sıfırlar?</b> Yetenek (ability), talent ve harcanmış puanlar. <b>Homeworld, Origin ve seçtiğiniz Archetype’lar değişmez</b> (GamesFuze, BrokenBuilds). Bir kaynak (ProGameGuides) arketiplerin de sıfırlandığını yazıyor; eski/çelişkili olduğu için oyunda doğrulayın.</li>
+      <li><b>Co-op:</b> gemideki NPC’yle konuşma işi genelde host’a düşer; respec ihtiyacını host’a iletin (denemeden kesin söyleyemem).</li>
+      <li>Büyük yamalarda (ör. 1.1.28) Owlcat bir kerelik ücretsiz respec hakkı vermişti; yeni bir yamada böyle bir hak çıkıp çıkmadığını oyun içinden görürsünüz.</li>
+    </ul>
+  </article>
+
+  <article class="card" id="pt-builder" data-s="parti kurucu co-op oyuncu dağıtımı">
     <h3>Co-op parti kurucu</h3>
     <div class="builder">
       <div class="bcol">

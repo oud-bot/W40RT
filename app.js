@@ -140,12 +140,16 @@
         '<div class="rowhead"><h4>' + esc(c.n) + '</h4><span class="badge r' + esc(c.tier.replace(/[^A-Z]/g, "x")) + '">' + esc(c.tier) + "</span></div>" +
         '<p class="tag">' + esc(c.arch) + " · " + esc(c.tags.join(", ")) + "</p>" +
         "<p>" + esc(c.note) + "</p>" +
+        (c.path ? '<p class="muted"><b>Önerilen yol:</b> ' + esc(c.path) + (c.sk ? " · <b>Skill:</b> " + esc(c.sk) : "") + "</p>" : "") +
         '<details class="spoiler"><summary>Katılım & romantik hat (hafif spoiler)</summary><p>Katılım: ' + esc(c.join) + "<br>Romantik hat: " + esc(c.rom) + "</p></details>",
         "yoldaş companion " + c.n + " " + c.arch
       )
     ).join("");
   }
   renderComp("all");
+  $("#rosterTbl tbody").innerHTML = COMPANIONS.map((c) =>
+    "<tr><td><b>" + esc(c.n.replace(/ \(.*\)$/, "")) + "</b></td><td>" + esc(c.arch) + "</td><td>" + esc(c.role || "") + "</td><td>" + esc(c.path || "") + "</td><td>" + esc(c.sk || "") + "</td><td>" + esc(c.join) + "</td></tr>"
+  ).join("");
   $("#compFilters").addEventListener("click", (e) => {
     const b = e.target.closest(".chip"); if (!b) return;
     $$("#compFilters .chip").forEach((c) => c.classList.toggle("on", c === b));
