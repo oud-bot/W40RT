@@ -129,8 +129,8 @@ const ARCHETYPES = [
   { tier: 2, en: "Assassin", tr: "Suikastçı", rate: "A", role: "Tek hedef patlama", from: "Warrior, Operative veya Bladedancer", note: "1.6'da güçlendirildi; hâlâ konumlanmaya bağlı." },
   { tier: 2, en: "Vanguard", tr: "Öncü (Vanguard)", rate: "B", role: "Misilleme tank", from: "Warrior veya Officer", note: "Sağlam savunma; hücum tavanı düşük." },
   { tier: 2, en: "Executioner (Void Shadows DLC)", tr: "İnfazcı (DLC)", rate: "B", role: "Zamanla hasar", from: "Warrior, Operative veya Bladedancer", note: "Hasar-zamanla bruiser; 1.5 direnç reformunda dizginlendi." },
-  { tier: 2, en: "Overseer (Lex Imperialis DLC)", tr: "Gözetmen (DLC)", rate: "?", role: "Kalkan + pompalı", from: "DLC", note: "Kalkan ve pompalı tüfek temalı. Sıralaması kaynaklarda yok." },
-  { tier: 3, en: "Exemplar", tr: "Örnek Alan / Exemplar", rate: "—", role: "Tier 3", from: "36. seviyede", note: "Önceki seçimlerinizi derinleştirir. Oyun sonuna doğru; şimdilik takılmayın." }
+  { tier: 2, en: "Overseer (Lex Imperialis DLC)", tr: "Gözetmen (DLC)", rate: "?", role: "Siber-familiar destek", from: "Officer veya Operative (ya da Psyker/Arbites origin)", note: "Siber-familiar'ları komuta eden destek uzmanı. Sıralaması kaynaklarda yok." },
+  { tier: 3, en: "Exemplar", tr: "Örnek Alan / Exemplar", rate: "—", role: "Tier 3", from: "36. seviyede, herhangi bir Advanced ile", note: "Basic ve Advanced arketipinizin yeteneklerini geliştirir. Oyun sonuna doğru; şimdilik takılmayın." }
 ];
 
 const COMPANIONS = [

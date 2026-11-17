@@ -225,6 +225,7 @@
   </section>
 
   <h3>3 · Arketip <span class="en">Archetype</span> <small class="muted">(rütbe: BrokenBuilds, yama 1.6)</small></h3>
+  <p class="muted">Tier ayrımı, her basic arketip için rol + önerilen advanced yol ve 3 kişilik dağılım için → <a href="#arch-guide">Archetype Rehberi</a></p>
   <div class="filters" id="archFilters">
     <button class="chip on" data-f="all">Hepsi</button>
     <button class="chip" data-f="1">Tier 1 (başlangıç)</button>
@@ -238,9 +239,110 @@
     <p class="muted">Yoldaşların başlangıç arketipi sabittir (değiştirilemez). Seçiminiz yalnızca kendi karakterinizi etkiler.</p>
   </article>
 
+  <section class="subsec" id="arch-guide">
+    <h3>3b · Archetype Rehberi <span class="en">Archetype Guide</span></h3>
+    <p class="lead">Arketip = savaştaki “mesleğin”. Üç kademe vardır ve her kademe bir öncekine bağlıdır: <b>yaratırken yalnızca Basic seçilir</b>; Advanced 16. seviyede, Exemplar 36. seviyede açılır. Basic seçiminiz hangi Advanced kapılarının açılacağını belirler; bu yüzden önce yolu planlayın.</p>
+    <div class="route" aria-label="Rehber bölümleri">
+      <a href="#ar-tiers">Tier’lar</a>
+      <a href="#ar-basic">Basic (Seviye 1)</a>
+      <a href="#ar-adv">Advanced (Seviye 16)</a>
+      <a href="#ar-ex">Exemplar (Seviye 36)</a>
+      <a href="#ar-dlc">DLC arketipleri</a>
+      <a href="#ar-coop">3 kişilik dağılım</a>
+    </div>
+
+    <article class="card" id="ar-tiers" data-s="archetype arketip tier basic advanced exemplar seviye 1 16 36 rehber">
+      <h4>Tier’lar <span class="en">Tiers</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Tier</th><th>Seviye</th><th>Arketipler</th><th>Nasıl açılır?</th></tr></thead>
+        <tbody>
+          <tr><td><b>Basic</b><br>Temel</td><td>1 (yaratırken)</td><td>Warrior, Officer, Operative, Soldier · <span class="badge rC">DLC</span> Bladedancer, Zealot</td><td>Karakter yaratma ekranında seçilir; üzerine gelince hangi Advanced yolların açılacağı görünür.</td></tr>
+          <tr><td><b>Advanced</b><br>İleri</td><td>16</td><td>Assassin, Vanguard, Bounty Hunter, Master Tactician, Grand Strategist, Arch-Militant · <span class="badge rC">DLC</span> Executioner, Overseer</td><td>Basic arketipinize göre kapılar açılır (aşağıdaki tablo).</td></tr>
+          <tr><td><b>Exemplar</b><br>Örnek</td><td>36</td><td>Tek bir “Exemplar” arketipi</td><td>Herhangi bir Advanced arketiple 36. seviyeye ulaşınca; Basic + Advanced seçiminizi harmanlar.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Uygulamada: 1–15. seviye Basic, 16–35 arası Advanced, 36’dan sonra Exemplar dönemidir.</p>
+    </article>
+
+    <article class="card" id="ar-basic" data-s="basic temel arketip warrior officer operative soldier bladedancer zealot rol önerilen advanced yol">
+      <h4>Basic arketipler (Seviye 1) <span class="en">Basic archetypes</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Basic</th><th>Rol (kısaca)</th><th>Açılan Advanced yollar</th><th>Önerilen yol</th></tr></thead>
+        <tbody>
+          <tr><td><b>Officer</b><br>Subay</td><td>Destek / aksiyon ekonomisi. Müttefiklere ekstra tur ve tek hedefe güçlendirme verir. En affedici başlangıç olarak anılır; hasar vermese bile partiye katkısı büyüktür. Co-op’ta host için doğal seçim.</td><td>Vanguard, Master Tactician, Grand Strategist, <span class="badge rC">DLC</span> Overseer</td><td><b>Grand Strategist</b> (S) · alternatif Master Tactician</td></tr>
+          <tr><td><b>Soldier</b><br>Asker</td><td>Menzilli uzman: burst fire ve alan saldırıları. Vur–yer değiştir–yine vur akışıyla öne çıkan “menzilli carry”.</td><td>Bounty Hunter, Master Tactician, Arch-Militant</td><td><b>Arch-Militant</b> (S) · alternatif Master Tactician / Bounty Hunter</td></tr>
+          <tr><td><b>Warrior</b><br>Savaşçı</td><td>Yakın dövüş hasarı + tank; düşmanın dikkatini üzerine çeker. Charge ile ön safa girer. Zor zorluklarda konumlanma zahmetlidir, ama co-op’ta ön saf için en net rol.</td><td>Assassin, Vanguard, Arch-Militant, <span class="badge rC">DLC</span> Executioner</td><td><b>Arch-Militant</b> (hasar) veya <b>Vanguard</b> (saf tank)</td></tr>
+          <tr><td><b>Operative</b><br>Operatif</td><td>Hassas saldırgan: zaafları sömürür, debuff yığar (Analyse Enemy). Öğrenmesi biraz zaman alır. Sniper/tech karakterlere uyar.</td><td>Assassin, Bounty Hunter, Grand Strategist, <span class="badge rC">DLC</span> Executioner, <span class="badge rC">DLC</span> Overseer</td><td><b>Bounty Hunter</b> (menzilli) · <b>Grand Strategist</b> (destek) · Assassin (tek hedef)</td></tr>
+          <tr><td><b>Bladedancer</b> <span class="badge rC">DLC</span><br>Kılıç Dansçısı</td><td>Hızlı kılıç ustası: parry/dodge yapar, yer değiştirir. Yakın dövüş carry. <b>Void Shadows</b> gerekir ve yaratım anında seçilmelidir.</td><td>Assassin, Master Tactician, Arch-Militant, <span class="badge rC">DLC</span> Executioner</td><td><b>Arch-Militant</b> (S) · alternatif Master Tactician</td></tr>
+          <tr><td><b>Zealot</b> <span class="badge rC">DLC</span><br>Fanatik</td><td>Yakın menzil ezici: çekiç gibi ezici silahlar, fırlatma ve alan saldırıları. Henüz çıkmadı (aşağıya bakın).</td><td>Henüz bilinmiyor</td><td>DLC çıkınca netleşecek</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">“Önerilen yol”, BrokenBuilds’in yama 1.6 sıralaması ve genel rehberlerden derlenmiş bir tavsiyedir; zevkinize göre değiştirin. Karakteristikleri (WS/BS vb.) arketiple aynı yöne itmek en önemli kuraldır.</p>
+    </article>
+
+    <article class="card" id="ar-adv" data-s="advanced ileri arketip assassin vanguard bounty hunter master tactician grand strategist arch-militant executioner overseer kapı">
+      <h4>Advanced arketipler (Seviye 16) <span class="en">Advanced archetypes</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Advanced</th><th>Kapı (hangi Basic ile?)</th><th>Rol</th><th>Sıra</th></tr></thead>
+        <tbody>
+          <tr><td><b>Grand Strategist</b><br>Büyük Stratejist</td><td>Operative veya Officer</td><td>Savaş alanını müttefik buff’ı ve düşman debuff’ıyla yönetir; destek tepesi.</td><td><span class="badge rS">S</span></td></tr>
+          <tr><td><b>Arch-Militant</b><br>Baş Militan</td><td>Warrior, Soldier veya Bladedancer</td><td>Çok yönlü silah ustası; savaştıkça güçlenir. Geç oyun hasarı.</td><td><span class="badge rS">S</span></td></tr>
+          <tr><td><b>Master Tactician</b><br>Usta Taktisyen</td><td>Soldier, Officer veya Bladedancer</td><td>Taktik avantaj (momentum) yığar ve müttefiklerle paylaşır.</td><td><span class="badge rA">A</span></td></tr>
+          <tr><td><b>Bounty Hunter</b><br>Ödül Avcısı</td><td>Soldier veya Operative</td><td>Kritik vuruş odaklı avcı; düşman savunmasını düşürür.</td><td><span class="badge rA">A</span></td></tr>
+          <tr><td><b>Assassin</b><br>Suikastçı</td><td>Warrior, Operative veya Bladedancer</td><td>Öncelikli hedefleri yüksek hasar ve vur-kaç ile eler.</td><td><span class="badge rA">A</span></td></tr>
+          <tr><td><b>Vanguard</b><br>Öncü</td><td>Warrior veya Officer</td><td>Ön saf lideri: saldırıları üzerine çeker ve yönlendirir.</td><td><span class="badge rB">B</span></td></tr>
+          <tr><td><b>Executioner</b> <span class="badge rC">DLC</span><br>İnfazcı</td><td>Warrior, Operative veya Bladedancer</td><td>Zamanla hasar ve kontrol; yakın dövüş.</td><td><span class="badge rB">B</span></td></tr>
+          <tr><td><b>Overseer</b> <span class="badge rC">DLC</span><br>Gözetmen</td><td>Officer veya Operative (ya da Sanctioned/Unsanctioned Psyker ya da Arbites origin’i)</td><td>Siber-familiar’ları komuta eden destek uzmanı: düşmanı rahatsız eder, partiyi destekler.</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Sıralama: BrokenBuilds, yama 1.6 (S &gt; A &gt; B). Overseer için güvenilir bir sıra bulunamadı. Yama 1.5’te Executioner dahil bazı arketipler nerflendi; Bladedancer–Executioner kombinasyonu ise 1.6’da bilerek nerflenmeyenler arasında.</p>
+    </article>
+
+    <article class="card" id="ar-ex" data-s="exemplar 36 seviye tier 3 örnek">
+      <h4>Exemplar (Seviye 36) <span class="en">Tier III</span></h4>
+      <p>Herhangi bir Advanced arketiple 36. seviyeye gelince açılır. Yeni bir meslek seçmezsiniz: <b>Basic ve Advanced arketipinizin yeteneklerini daha da geliştirir</b> ve ek Exemplar talent’leri verir. Yani Officer → Grand Strategist yolundaki biri, Exemplar’da bu iki kolun üstüne inşa eder. Oyun sonuna doğru olduğu için ilk saatlerde planlamanıza gerek yok; önemli olan ilk iki seçimin birbirini tamamlaması.</p>
+    </article>
+
+    <article class="card warn" id="ar-dlc" data-s="dlc bladedancer executioner overseer zealot void shadows lex imperialis processional of the damned arketip">
+      <h4>DLC arketipleri <span class="en">DLC additions</span></h4>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Arketip</th><th>Tier</th><th>DLC</th><th>Ne ekler?</th></tr></thead>
+        <tbody>
+          <tr><td><b>Bladedancer</b></td><td>Basic (1)</td><td>Void Shadows<br><small>(24 Eylül 2024)</small></td><td>Kılıç/parry/dodge odaklı hızlı yakın dövüşçü. Yaratım anında seçilir; DLC’yi baştan kurun.</td></tr>
+          <tr><td><b>Executioner</b></td><td>Advanced (16)</td><td>Void Shadows</td><td>Warrior, Operative veya Bladedancer kapısından açılır; zamanla hasar + kontrol.</td></tr>
+          <tr><td><b>Overseer</b></td><td>Advanced (16)</td><td>Lex Imperialis<br><small>(24 Haziran 2025)</small></td><td>Siber-familiar komutanı destek. Officer/Operative ya da Sanctioned/Unsanctioned Psyker ve Arbites origin’i ile açılır.</td></tr>
+          <tr><td><b>Zealot</b></td><td>Basic (1)</td><td>Processional of the Damned<br><small>(8 Aralık 2026, henüz çıkmadı)</small></td><td>Ezici silahlarla yakın dövüş. Advanced kapıları ve gücü çıkış sonrası netleşir; planınızı buna bağlamayın.</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="tight">
+        <li><b>Bladedancer</b> Basic arketip olduğu için yaratım ekranında seçilir: DLC’yi <b>yaratmadan önce</b> kurun.</li>
+        <li>Zealot, DLC ile birlikte gelen “Madness” mekaniğiyle aynı pakette; Madness tüm yoldaşları etkiler.</li>
+        <li>Co-op’ta DLC arketiplerini kullanmayı düşünüyorsanız, kimde hangi DLC var diye <b>kurmadan önce</b> arkadaşlarınızla konuşun.</li>
+      </ul>
+    </article>
+
+    <article class="card" id="ar-coop" data-s="co-op 3 kişi dağılım arketip officer grand strategist soldier arch-militant warrior vanguard öneri">
+      <h4>3 kişilik co-op için dağılım <span class="en">Example party splits</span></h4>
+      <p>Hedef: <b>destek + menzilli hasar + ön saf</b> aynı partide olsun ve aynı Advanced yolda iki kişi çakışmasın.</p>
+      <div class="tblwrap"><table class="tbl hwtbl">
+        <thead><tr><th>Seçenek</th><th>Oyuncu 1 (host)</th><th>Oyuncu 2</th><th>Oyuncu 3</th><th>Karakter</th></tr></thead>
+        <tbody>
+          <tr><td><b>A · Dengeli (önerilen)</b></td><td>Officer → <b>Grand Strategist</b></td><td>Soldier → <b>Arch-Militant</b></td><td>Warrior → <b>Vanguard</b></td><td>Destek / menzilli hasar / saf tank. Başlangıç için en güvenli.</td></tr>
+          <tr><td><b>B · Daha çok hasar</b></td><td>Officer → <b>Grand Strategist</b></td><td>Soldier → <b>Bounty Hunter</b></td><td>Warrior → <b>Arch-Militant</b></td><td>Vanguard yerine hasar veren ön saf; tankı kaybetmeden daha hızlı bitirirsiniz.</td></tr>
+          <tr><td><b>C · Teknik / hızlı</b></td><td>Officer → <b>Master Tactician</b></td><td>Operative → <b>Bounty Hunter</b></td><td><span class="badge rC">DLC</span> Bladedancer → <b>Arch-Militant</b></td><td>Void Shadows gerekir; keskin nişancı + kılıç carry.</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="tight">
+        <li><b>Hikâye yoldaşı oynuyorsanız</b> başlangıç arketipi sabittir: Cassia Officer, Argenta Soldier, Abelard Warrior. Bu durumda yukarıdaki Advanced yolu o başlangıç arketipine göre seçin (ör. Argenta → Arch-Militant).</li>
+        <li>Özel yoldaş (mercenary) yaratırsanız tabloyu aynen uygulayabilirsiniz. Homeworld ve Origin eşleşmeleri için <a href="#hw-coop">Homeworld ve Origin Rehberi’ndeki co-op önerisi</a>.</li>
+        <li>Tek destek (Officer/Grand Strategist) çoğu zaman yeter; ikinci destek yerine hasar eklemek daha verimli olur. Bu bir öneridir, kesin kural değil.</li>
+      </ul>
+    </article>
+  </section>
+
   <h3>4 · Karakteristikler <span class="en">Characteristics</span></h3>
   <article class="card" data-s="karakteristik stat weapon skill ballistic strength toughness agility intelligence perception willpower fellowship">
-    <table class="tbl">
+    <div class="tblwrap"><table class="tbl">
       <thead><tr><th>EN</th><th>TR (öneri)</th><th>Ne işe yarar</th></tr></thead>
       <tbody>
         <tr><td>Weapon Skill (WS)</td><td>Yakın Dövüş Becerisi</td><td>Yakın dövüş isabeti. Warrior'lar için ana stat.</td></tr>
@@ -253,7 +355,7 @@
         <tr><td>Willpower (Wil)</td><td>İrade</td><td>Zihinsel/psişik direnç; esas olarak psişerlere.</td></tr>
         <tr><td>Fellowship (Fel)</td><td>Sosyallik</td><td>Persuasion, Coercion, Commerce.</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Yaratımın sonunda dağıtacağınız bir puan havuzu verilir (5'er adımla). <b>Her şeyi dengelemeyin:</b> statlar yavaş artar, herkes her şeyde usta olamaz. Partide özellikle <b>Tech-Use</b> ve <b>Perception</b> yüksek birer kişi olsun; oyun erken Tech-Use yoldaşı verir.</p>
   </article>
 
