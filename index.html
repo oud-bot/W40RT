@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rogue Trader Crash Course — 3 Kişilik Co-op Rehberi (TR/EN)</title>
 <meta name="description" content="Warhammer 40,000: Rogue Trader için Türkçe/İngilizce terimli, interaktif crash course: co-op kurulumu, karakter yaratma, savaş, gemi, ekonomi, yoldaşlar, sözlük ve quiz.">
-<link rel="stylesheet" href="style.css?v=64d1db7">
+<link rel="stylesheet" href="style.css?v=ct1">
 </head>
 <body>
 <header class="top">
@@ -392,6 +392,28 @@
 <section class="panel" id="combat" data-title="Savaş">
   <h2>Savaş <span class="en">Ground combat</span></h2>
 
+  <div class="route" aria-label="Savaş bölümleri">
+    <a href="#combat-tips">Savaş ipuçları</a>
+    <a href="#combat-momentum">Momentum</a>
+    <a href="#combat-veil">Veil</a>
+  </div>
+
+  <article class="card" id="combat-tips" data-s="savaş ipuçları pratik tips ap grenade bomba cover siper momentum veil friendly fire dost ateşi harita loot tab keşif silah seti co-op skill check">
+    <h3>Savaş ipuçları <span class="en">Combat tips</span></h3>
+    <ul class="tight">
+      <li><b>Keşfi grup halinde yapın.</b> Bir bölgeye girmeden önce <b>tüm ekibi seçin</b>; böylece yoldaşlar sizinle birlikte hareket eder ve savaş başladığında dağınık kalmazsınız.</li>
+      <li><b>Haritayı kontrol edin, loot'u kaçırmayın.</b> <kbd>Tab</kbd> (basılı tut) etkileşimli nesneleri vurgular; <kbd>M</kbd> haritayı açar ve ekibinizin <i>gördüğü</i> ama açmadığı sandıkları gösterir. Bölgeden çıkmadan haritaya bakın.</li>
+      <li><b>Her turda tüm AP'yi kullanın.</b> Saldırıdan sonra kalan AP'yi buff/debuff ve destek yeteneklerine harcayın; boşa giden AP, kaybedilmiş tur demektir.</li>
+      <li><b>İki silah setini de kullanın.</b> Set değiştirmek <b>bedava</b> (<kbd>X</kbd>): yakın + menzilli set taşıyın, duruma göre tur içinde geçin.</li>
+      <li><b>Bombaları önceden hazırlayın.</b> Her karakterin <b>4 tüketim slotu</b> vardır; el bombalarını savaştan önce slotlara koyun, savaşın ortasında envanter aramayın.</li>
+      <li><b>Siper çok güçlüdür.</b> Tam siper (kafatası kalkan) isabeti yaklaşık <b>%60</b>, yarım siper <b>%35</b> düşürür; yani tam siper tamamen engellemez ama ilk turlarda hayat kurtarır. Küçük siperler yıkılabilir, yanlardan ateş yiyebilirsiniz.</li>
+      <li><b>Momentum:</b> savaşa 100 ile başlarsınız; <b>175+</b> olunca <b>Heroic Act</b> açılır. Momentum <b>Resolve</b> ile (tur başında ve öldürmede) yükselir. Ayrıntı için <a href="#combat-momentum">Momentum kartı</a>.</li>
+      <li><b>Veil:</b> psişer kullanırken göstergeyi izleyin; yükselmişse güç kullanmayı bırakıp bir tur nefes aldırın. Ayrıntı: <a href="#combat-veil">Veil kartı</a>.</li>
+      <li><b>Biraz dost ateşi sorun değil.</b> Seri atış ve alan yetenekleri bazen müttefike de değer; savaş sonunda bayılanlar kalıcı olarak ölmez ve can tamamen dolar. Yine de kritik hasarlı bir müttefikin önüne alan saldırısı atmayın.</li>
+    </ul>
+    <p class="coopnote"><b>Co-op'a özel:</b> Skill check'lerde kimin en iyi olduğunu <b>manuel seçin</b>; yanlış kişiyle zar atmak sık yapılan hatadır. Diyalog/kontrol öncesi kimin hangi skill'de güçlü olduğuna hızlıca bakın (<a href="#checks">Check / d100</a> sekmesindeki hesaplayıcı yardımcı olur).</p>
+  </article>
+
   <div class="grid2">
     <article class="card" data-s="savaş ekran ui initiative ap mp tur sırası">
       <h3>Ekranı okumak</h3>
@@ -419,17 +441,17 @@
   </div>
 
   <div class="grid2">
-    <article class="card" data-s="momentum heroic act desperate measure resolve">
+    <article class="card" id="combat-momentum" data-s="momentum heroic act desperate measure resolve 175 25">
       <h3>Momentum <span class="en">(ultimate sistemi)</span></h3>
       <ul class="tight">
-        <li>Savaş başında yarı dolu bir bar vardır; kill ve başarılı aksiyonlarla yükselir, düşman başarıları ve ölümlerle düşer.</li>
+        <li>Bar 0–200 arasıdır; savaşa <b>100</b> ile başlarsınız. Kill ve başarılı aksiyonlarla yükselir, düşman başarıları ve ölümlerle düşer.</li>
         <li><b>Resolve</b>, tur başında ve öldürmede ne kadar momentum kazanacağınızı belirler.</li>
-        <li>Çok yüksekse <b>Heroic Act</b> (bedelsiz ultimate), çok düşükse <b>Desperate Measure</b> (güçlü ama bedelli; örn. Charge kaybı) açılır.</li>
-        <li>[Video] İlk Heroic Act 75 momentum, sonrakiler +25 daha pahalı. İlkini gerçekten kahramanca yapın; eşikler yamayla değişebilir.</li>
+        <li><b>175+</b> olunca <b>Heroic Act</b> (bedelsiz ultimate), <b>25 veya altında</b> <b>Desperate Measure</b> (güçlü ama bedelli; örn. Resolve'un sıfırlanması) açılır. Ağır yaralı karakterler Desperate Measure'a daha erken ulaşır.</li>
+        <li>[Video] İlk Heroic Act 75 momentum harcar, sonrakiler +25 daha pahalıdır. İlkini gerçekten kahramanca yapın; eşikler yamayla değişebilir.</li>
       </ul>
     </article>
 
-    <article class="card" data-s="veil psişik warp perils psyker">
+    <article class="card" id="combat-veil" data-s="veil psişik warp perils psyker">
       <h3>Veil Degradation <span class="en">(psişer riski)</span></h3>
       <ul class="tight">
         <li>Her psişik güç Veil göstergesini doldurur: büyük güç ≈ +3, küçük güç ≈ +1; her tur −1 [Video].</li>
@@ -933,6 +955,8 @@
         <li><a href="https://brokenbuilds.gg/rogue-trader/tier-lists/class-tier-list" target="_blank" rel="noopener">BrokenBuilds — Class Tier List (1.6)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-companions" target="_blank" rel="noopener">BrokenBuilds — Companions (1.6.1)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-dlc-guide" target="_blank" rel="noopener">BrokenBuilds — DLC Guide</a></li>
+        <li><a href="https://roguetrader.owlcat.games/beta-guide" target="_blank" rel="noopener">Owlcat — Resmi oyun rehberi (cover, dost ateşi, Momentum)</a></li>
+        <li><a href="https://roguetrader.wiki.fextralife.com/Controls" target="_blank" rel="noopener">Fextralife — Kontroller (Tab / M)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/beginner-guide" target="_blank" rel="noopener">BrokenBuilds — Beginner Guide</a></li>
         <li><a href="https://gamingbolt.com/warhammer-40000-rogue-trader-co-op-detailed-ahead-of-launch" target="_blank" rel="noopener">GamingBolt — Co-op detayları</a></li>
         <li><a href="https://www.gamepressure.com/warhammer-40000-rogue-trader/coop/zc11181" target="_blank" rel="noopener">Gamepressure — Co-op</a></li>
@@ -959,7 +983,7 @@
   <button class="btn ghost" id="toTop">↑ Başa dön</button>
 </footer>
 
-<script src="data.js?v=64d1db7"></script>
-<script src="app.js?v=64d1db7"></script>
+<script src="data.js?v=ct1"></script>
+<script src="app.js?v=ct1"></script>
 </body>
 </html>
