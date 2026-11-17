@@ -160,11 +160,24 @@ const DIFFICULTY = [
 ];
 
 const DLCS = [
-  { n: "Void Shadows", year: "2024", text: "Bladedancer (Tier 1) + Executioner (Tier 2) arketipleri, yoldaş Kibellah ve gemide bir Genestealer Cult hikâye hattı. Birçok kaynak ilk alınacak DLC diyor; Bladedancer yaratımda kilitlendiği için oyuna başlamadan alın.", tag: "İlk alın" },
-  { n: "Lex Imperialis", year: "Haziran 2025", text: "Arbites kökeni, Overseer arketipi, yoldaş Solomorne Anthar, savaş 'familiar'ları (cyber-eagle, mastif). PC Gamer: yalnızca evcil hayvan/familiar istiyorsanız şart değil.", tag: "İkinci" },
-  { n: "The Infinite Museion", year: "11 Haziran 2026", text: "Sector Bionica augment sistemi (100'den fazla augment), Ferrum Sanctum statı, yoldaş Eogunn Februs. Augment'ler mevcut karaktere uygulandığı için ikinci geçiş satın alımı olabilir.", tag: "Üçüncü" },
-  { n: "Processional of the Damned", year: "Duyuruldu", text: "Boşluk gemisi mezarlığı bölgesi, yeni yoldaş, yeni düşmanlar. BrokenBuilds'e göre henüz çıkmamıştı (Temmuz–Eylül 2026 penceresi); güncel durumu mağazadan doğrulayın.", tag: "Doğrula" },
-  { n: "The Shovel DLC", year: "Nisan 2025", text: "Ücretsiz silah DLC'si (Darktide kürek silahı).", tag: "Ücretsiz" }
+  { n: "Void Shadows", date: "24 Eylül 2024", tag: "İlk alın", pass: "Season Pass 1",
+    comp: "Kibellah (Death Cult suikastçısı; Assassin)", arch: "Bladedancer (Basic) + Executioner (Advanced)", mech: "Yeni mekanik yok; arketipler + yoldaş.",
+    story: "Genestealer Cult mürettebatınıza sızar; hikâye kendi geminizde geçer (~15 saat).",
+    coop: "Kibellah, yakın dövüş koltuğu için güçlü bir yoldaş seçeneği; bir oyuncunun 2 karakterinden biri olabilir. Bladedancer yalnızca karakter yaratılırken seçilebildiği için host'un DLC'yi oyuna başlamadan kurması gerekir. Co-op sekmesindeki kurala göre host'un DLC'leri oturumda herkese açılır; yine de Bladedancer'ı özel co-op karakterinde seçip seçemeyeceğinizi oyunda kontrol edin." },
+  { n: "Lex Imperialis", date: "24 Haziran 2025", tag: "Kalkan + pompalı için", pass: "Season Pass 1",
+    comp: "Solomorne Anthar (Arbitrator, Overseer) + cyber-mastiff Glaito", arch: "Arbitrator origin (Vigilant / Castigator / Subductor) + Overseer (Advanced)", mech: "Kalkanlar (yeni ekipman türü) ve familiar'lar (cyber-mastiff, siber-kartal).",
+    story: "Adeptus Arbites bir davayla Koronus Expanse'e gelir (~15 saat). Yama 1.4 ile birlikte çıktı.",
+    coop: "Kalkanlı pompalı ön saf (Subductor) veya familiar'lı destek (Overseer) için yeni bir rol seçeneği açar; familiar sahibinin turuna ek saldırı kaynağı ekler. Arbitrator origin yaratım anında seçilir (Lord Captain için); özel co-op karakterinde seçilip seçilemediğini oyunda kontrol edin. Diğer oyuncular Solomorne'u veya Overseer yolunu kullanabilir. Solomorne'un savaş değeri topluluğa göre ortada: koltuğu daha çok hikâyesi için seçin." },
+  { n: "The Infinite Museion", date: "11 Haziran 2026", tag: "Augment / 2. oynayış", pass: "Season Pass 2",
+    comp: "Eogunn Februs (Tech-Priest; Officer tipi destek, servo-kafatası Nuncius)", arch: "Yeni arketip/origin yok", mech: "Sector Bionica: 6 vücut slotunda 100'den fazla augment; Ferrum Sanctum statı; Galvanization.",
+    story: "Necron Overlord Trazyn the Infinite'in kasası ve von Valancius hanedanının geçmişi. Görev hattı 2. Perde'de başlar, 4–5. Perde'ye uzanır.",
+    coop: "Augment'ler kalıcıdır ve her birinin bir dezavantajı vardır; Ferrum Sanctum implant hasarını artırır ama elektrik/EMP hasarını da. Astartes, Aeldari, Drukhari, Cassia ve Navigator'lar augment alamaz; bu karakterleri yöneten oyuncu o koltukta sistemden yararlanamaz. Kalıcı olduğu için kurmadan önce parti olarak karar verin. Eogunn, Cassia ve Jae ile destek koltuğu için yarışır." },
+  { n: "Processional of the Damned", date: "8 Aralık 2026 (henüz çıkmadı)", tag: "Final DLC", pass: "Season Pass 2",
+    comp: "Stella the Miraculist (Ecclesiarchy'nin 'mucize' saydığı kayıtsız psişer)", arch: "Zealot (Basic; ezici silahlarla yakın dövüş)", mech: "Madness (tüm yoldaşları etkiler, savaşta debuff biriktirir), Grenade Launcher'lar, yeni düşmanlar (Arch Enemy ve Aeldari).",
+    story: "Ölmekte olan bir yıldızın yörüngesindeki devasa bir gemi mezarlığında mahsur kalırsınız (~15 saat). PC, PS5 ve Xbox için duyuruldu; Switch 2 için kaynaklar çelişiyor.",
+    coop: "Madness herkesin yoldaşını etkilediği için tüm oyuncuların partisini ilgilendirecek; hangi yoldaşın en çok etkilendiği ve nasıl iyileştiği çıkış sonrası netleşir. Zealot Basic bir arketip olduğundan, Bladedancer örneğinden hareketle yaratım anında seçilmesi muhtemel (doğrulanmadı). DLC henüz çıkmadığı için co-op ayrıntıları kesin değildir; 8 Aralık'tan sonra kontrol edin." },
+  { n: "The Shovel DLC", date: "Nisan 2025", tag: "Ücretsiz", pass: "—",
+    comp: "—", arch: "—", mech: "Ücretsiz silah DLC'si (Darktide kürek silahı).", story: "—", coop: "Yok." }
 ];
 
 const QUIZ = [

@@ -161,7 +161,9 @@
   ).join("");
 
   $("#dlcs").innerHTML = DLCS.map((d) =>
-    card('<div class="rowhead"><h4>' + esc(d.n) + '</h4><span class="badge">' + esc(d.tag) + '</span></div><p class="tag">' + esc(d.year) + "</p><p>" + esc(d.text) + "</p>", "dlc " + d.n)
+    card('<div class="rowhead"><h4>' + esc(d.n) + '</h4><span class="badge">' + esc(d.tag) + '</span></div><p class="tag">' + esc(d.date) + (d.pass !== "—" ? " · " + esc(d.pass) : "") + "</p>" +
+      (d.comp !== "—" ? '<ul class="tight"><li><b>Yoldaş:</b> ' + esc(d.comp) + "</li><li><b>Arketip / origin:</b> " + esc(d.arch) + "</li><li><b>Mekanik:</b> " + esc(d.mech) + "</li><li><b>Hikâye:</b> " + esc(d.story) + "</li></ul>" : "<p>" + esc(d.mech) + "</p>") +
+      '<p class="coopnote"><b>Co-op etkisi:</b> ' + esc(d.coop) + "</p>", "dlc " + d.n + " " + d.comp + " " + d.arch + " " + d.mech)
   ).join("");
 
   // ---------- hatalar ----------
