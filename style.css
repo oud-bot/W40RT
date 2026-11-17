@@ -190,3 +190,21 @@ ol,ul{padding-left:1.25rem}
   linear-gradient(to left,var(--card) 30%,rgba(0,0,0,0)) 100% 0/36px 100% no-repeat local,
   radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.55),rgba(0,0,0,0)) 0 0/14px 100% no-repeat scroll,
   radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.55),rgba(0,0,0,0)) 100% 0/14px 100% no-repeat scroll}
+
+/* DLC kontrolü ve ilk 2 saat */
+.dlcchk{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin:.6rem 0}
+.dlcchk .dc{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:.6rem .7rem;display:flex;flex-direction:column;gap:.25rem}
+.dlcchk label{font-size:.9rem;display:flex;gap:.4rem;align-items:center;cursor:pointer}
+.dlcchk .hostsel{color:var(--muted,#9aa0ac)}
+.dlcout{margin:.4rem 0}
+.f2-step{border:1px solid var(--line);border-radius:var(--r);padding:.6rem .8rem;margin:.5rem 0;background:var(--bg2)}
+.f2-step.done{opacity:.65}
+.f2-head{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem}
+.f2-link{font-size:.85rem}
+
+.plsetup{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin:.5rem 0}
+.pls{display:flex;gap:.4rem}
+.pls input{flex:1;min-width:0;background:#12141a;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.4rem .5rem;font-size:.95rem}
+.pls select{background:#12141a;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.3rem}
+.presetrow{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin:.3rem 0 .6rem}
+.presetrow .btn{padding:.3rem .7rem;font-size:.88rem}

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rogue Trader Crash Course — 3 Kişilik Co-op Rehberi (TR/EN)</title>
 <meta name="description" content="Warhammer 40,000: Rogue Trader için Türkçe/İngilizce terimli, interaktif crash course: co-op kurulumu, karakter yaratma, savaş, gemi, ekonomi, yoldaşlar, sözlük ve quiz.">
-<link rel="stylesheet" href="style.css?v=ct1">
+<link rel="stylesheet" href="style.css?v=ct2">
 </head>
 <body>
 <header class="top">
@@ -45,7 +45,7 @@
       <ol class="tight">
         <li><b>Normal</b> zorlukla başlayın; sonra değiştirmek serbest.</li>
         <li>Host = <b>Lord Kaptan (Lord Captain)</b>. Diyalog, gemi seviyesi ve yer girişleri onda; diğerleri öneri/oy verir.</li>
-        <li>Host önce tek oyunculu başlar, karakteri yaratır, sonra kayıttan <b>co-op lobisi</b> açar.</li>
+        <li>Host Rogue Trader'ı yaratır; arkadaşlar ister ilk odadaki <b>Mercenary Steward</b> ile kendi karakterini yaratır, ister hikâye yoldaşlarını alır. <a href="#coop-setup">İki senaryo</a>.</li>
         <li>3 oyuncu × 2 karakter = 6'lı parti. İlk saatlerde yoldaş sayısı azdır; Bölüm 1'de dolar.</li>
         <li>Co-op'ta <b>skill check için doğru kişiyi siz seçersiniz</b> (oyun en iyisini otomatik seçmez).</li>
         <li><kbd>Tab</kbd> basılı = loot vurgula · <kbd>M</kbd> harita · <kbd>Space</kbd> tur bitir · <kbd>X</kbd> silah seti.</li>
@@ -83,23 +83,46 @@
     <div id="checklist"></div>
     <button class="btn ghost" id="resetChecklist">Listeyi sıfırla</button>
   </article>
+
+  <article class="card" id="first2h" data-s="ilk 2 saat checklist adımlar tamamlandı başlangıç">
+    <h3>İlk 2 saat <span class="en">First two hours</span> <span class="muted" id="f2Count"></span></h3>
+    <p class="muted">Altı adım; her adımı bitirince "Tamamlandı"ya basın. İşaretler bu tarayıcıda saklanır; yukarıdaki kontrol listesiyle karışmaz.</p>
+    <div id="f2List"></div>
+    <button class="btn ghost" id="f2Reset">Adımları sıfırla</button>
+  </article>
 </section>
 
 <!-- 1 · CO-OP -->
 <section class="panel" id="coop" data-title="Co-op">
   <h2>Co-op: 3 kişi nasıl oynar? <span class="en">Cooperative mode</span></h2>
   <div class="grid2">
-    <article class="card" data-s="co-op kurulum lobi nasıl başlanır">
-      <h3>Kurulum adımları</h3>
-      <ol>
-        <li><b>Host tek oyunculu başlar.</b> Rogue Trader'ı yaratır, açılış diyaloglarını geçer. Kayıt alır.</li>
-        <li>Arkadaşlar için <b>özel karakter</b> gerekiyorsa host, tutorial sonrası gemide "maiyetimi güçlendirmek istiyorum" seçeneğiyle onları oluşturur (bu adım tek oyunculuda yapılır). Yama 1.2'den beri Prolog'da en fazla iki ek özel karakter de kullanılabilir; ayrıntı için <a href="#patch-timeline">yama tarihçesi</a>.</li>
-        <li>Ana menü → <b>Cooperative (Kooperatif)</b> → sunucu bölgesi seç → kayıt dosyasını seç → lobi aç.</li>
-        <li>Lobi <b>kodunu paylaş</b>; arkadaşlar koda girer.</li>
-        <li>Host, karakterleri oyunculara <b>dağıtır</b> (3 kişi → ikişer karakter mantıklı).</li>
-        <li>İsterseniz <b>eş zamanlı savaş (simultaneous)</b> modunu açın; varsayılan kapalı ve ilk saatlerde kapalı kalması daha rahat.</li>
+    <article class="card" id="coop-setup" data-s="co-op kurulum lobi nasıl başlanır mercenary steward janris danrok özel karakter senaryo server id">
+      <h3>Kurulum: iki senaryo <span class="en">Co-op setup</span></h3>
+      <p class="muted">Kaynak: Steam Co-op FAQ (geliştirici Starrok; son düzenleme Mart 2025). Eski "tutorial'dan sonra gemiye kadar bekleyin" bilgisi artık geçerli değil.</p>
+
+      <h4>Senaryo A · 3 arkadaş kendi karakterleriyle başlar</h4>
+      <ol class="tight">
+        <li><b>Host yeni oyunu başlatır</b> ve Rogue Trader'ı yaratır. Oyun tek karakterle açılır.</li>
+        <li>Ana menü → <b>Cooperative</b> → sunucu bölgesi → kayıt → lobi; <b>Server ID</b>'yi arkadaşlarla paylaşın.</li>
+        <li>İki arkadaş, <b>ilk odadaki Mercenary Steward</b> ile konuşarak kendi karakterini yaratır (en fazla 2 ek oyuncu).</li>
+        <li>Yaratımda tek oyunculudaki neredeyse tüm seçenekler var; <b>Triumph ve Darkest Hour seçilemez, gemi (voidship) seçilmez</b>.</li>
+        <li>Daha sonra ek özel karakter lazım olursa <b>köprüdeki High Factotum Janris Danrok</b> ile konuşun. Köprüde yalnızca Lord Captain aktif olduğundan, karakter yaratmak isteyen oyuncu Lord Captain'in kontrolünü almalıdır.</li>
       </ol>
-      <p class="muted">Aynı oyun sürümünü kullanın. Steam/GOG arasında erken dönemde sürüm uyumsuzluğu raporlandı; ilk gün 10 dakika test edin.</p>
+      <p class="muted">Lobiyi tam hangi anda açmanız gerektiği FAQ'de ayrıntılı değil; ilk odadan ayrılmadan önce deneyin. Yama 1.2'den itibaren Prolog'da ek özel karakter hakkı için <a href="#patch-timeline">yama tarihçesine</a> bakın.</p>
+
+      <h4>Senaryo B · Hikâye yoldaşlarını yönetmek</h4>
+      <ol class="tight">
+        <li>Host Rogue Trader'ı yaratır, ek özel karakter yaratmadan lobiyi açar.</li>
+        <li>İlk saat içinde <b>dört hikâye yoldaşı</b> Lord Captain'e katılır; bunlar oyuncu yaratımı değildir. Detay: <a href="#pt-roster">Yoldaş tablosu</a>.</li>
+        <li>Host karakterleri oyunculara <b>dağıtır</b> (3 oyuncu → ikişer karakter).</li>
+        <li>Özel karakterler yoldaş görevlerini/diyaloglarını kaçırır; hikâyeyi istiyorsanız bu senaryoyu seçin. İkisini karıştırabilirsiniz (ör. 1 özel + 1 yoldaş).</li>
+      </ol>
+
+      <h4>Her iki senaryoda</h4>
+      <ul class="tight">
+        <li><b>Eş zamanlı savaş (simultaneous)</b> modu varsayılan kapalı; ilk saatlerde kapalı kalması rahattır.</li>
+        <li>Aynı oyun sürümünü kullanın (aşağıda platform ve sürüm notları). İlk gün 10 dakika test edin.</li>
+      </ul>
     </article>
 
     <article class="card" data-s="co-op kurallar lord captain diyalog skill check">
@@ -111,7 +134,7 @@
         <li><b>Paylaşılan:</b> envanter, kargo, satıcılar, ticaret ve <b>gemi savaşı komutası</b>.</li>
         <li><b>Her oyuncu</b> kendi karakter(ler)ini hareket ettirir, savaşır, loot alır, seviye atlatır.</li>
         <li><b>Drop-in / drop-out:</b> oyuncular oturuma katılıp ayrılabilir.</li>
-        <li><b>DLC:</b> yama 1.0.1'den beri host'un DLC'leri oturumda herkese açılır; herkesin hepsine sahip olması gerekmez.</li>
+        <li><b>DLC:</b> kozmetik paketler host'tan otomatik paylaşılır; <b>ücretli hikâye DLC'leri paylaşılmaz</b>. Setler farklıysa hata verir. <a href="#dlc-check">DLC uyumluluk kontrolü</a>.</li>
       </ul>
     </article>
   </div>
@@ -123,6 +146,27 @@
       <li>Özel karakterler yoldaşlara göre <b>bazı hikâye içeriğini kaçırabilir</b> (yoldaş görevleri/diyalogları yoldaşlara aittir).</li>
       <li>Parti en çok <b>6 kişi</b>. Prolog'da yalnızca birkaç yoldaş vardır; üçünüz de aynı anda karakter kontrol etmek istiyorsanız Bölüm 1'e kadar bazı oyuncular daha az karakterle oynar. Özel karakter bunu rahatlatır.</li>
       <li>Skill check'te yanlış kişiyi seçmek sık yapılan hatadır: en yüksek beceriye sahip kişiyi seçin (aşağıdaki hesaplayıcıya bakın).</li>
+    </ul>
+  </article>
+
+  <article class="card warn" id="dlc-check" data-s="dlc uyumluluk kontrolü host void shadows lex imperialis infinite museion kozmetik hata">
+    <h3>DLC uyumluluk kontrolü <span class="en">DLC check</span></h3>
+    <p>Steam Co-op FAQ'ye göre <b>kozmetik paketleri</b> (Deluxe, ön sipariş vb.) host paylaşır, ama <b>ücretli DLC paylaşılmaz</b>: setler farklıysa oyun hata verir ve eksik içeriği edinmenizi ister. Bilinen sorun: oyun, en az ek içeriğe sahip oyuncunun host olmasını bekler. Kimde hangisi var işaretleyin:</p>
+    <div class="dlcchk" id="dlcChkGrid"></div>
+    <div id="dlcChkOut" class="dlcout" aria-live="polite"></div>
+    <p class="muted">Kaynak Steam FAQ'dir; kendisi bazı ayrıntıların (DLC düzeltmesi dahil) eskimiş olabileceğini söylüyor. Yama 1.0.1 notları ise host'un DLC'lerini paylaştığını yazıyordu; o sırada yalnızca kozmetik paketler vardı, ücretli hikâye DLC'leri (Void Shadows 24 Eyl 2024'te çıktı) sonradan geldi. Şüphede oyundaki hata mesajına güvenin. Bir DLC kayıtta açıldıktan sonra kapatılamadığı için kararı oyuna başlamadan verin.</p>
+  </article>
+
+  <article class="card" id="coop-platform" data-s="platform steam gog epic mac konsol xbox game pass microsoft store crossplay server id sürüm lobi bulunamadı">
+    <h3>Platform ve sürüm notları <span class="en">Platforms</span></h3>
+    <ul class="tight">
+      <li><b>PC:</b> Steam, GOG ve Epic oyuncuları <b>Server ID</b> ile birbirine her kombinasyonda bağlanabilir.</li>
+      <li><b>Mac:</b> yalnızca diğer Mac oyuncularıyla. Steam ile GOG ancak GOG doğrudan açılırsa (GOG Galaxy üzerinden değil) bağlanır; Steam, Epic'e ve Galaxy ile açılan GOG'a bağlanmaz; Epic, GOG'a yalnızca GOG Galaxy üzerinden bağlanır.</li>
+      <li><b>Microsoft Store / Game Pass:</b> çapraz oyun desteklenmez.</li>
+      <li><b>Konsol:</b> FAQ'nin ilk metni konsol co-op'unu o zaman için "planlanıyor" diyordu; yama tarihçesine göre konsollara sonradan geldi. Konsol ile PC arası uyumu bu sayfada doğrulayamadık; konsol oyuncusu varsa FAQ'nin konsol bölümüne bakın.</li>
+      <li>Co-op <b>yalnızca çevrimiçi</b>: LAN veya bölünmüş ekran yok.</li>
+      <li><b>"Lobi bulunamadı"</b> genelde sürüm farkıdır (özellikle Steam ve GOG sürümleri ayrışabilir). Co-op sürüm numarası, co-op menüsünün sağ altında yazar; eşleştirin.</li>
+      <li><b>Güncel sürümler</b> (Steam bilinen sorunlar listesi, 20 Temmuz 2026): PC <b>1.6.1.514</b>, Mac <b>1.6.1.170</b>.</li>
     </ul>
   </article>
 
@@ -317,7 +361,7 @@
       <ul class="tight">
         <li><b>Bladedancer</b> Basic arketip olduğu için yaratım ekranında seçilir: DLC’yi <b>yaratmadan önce</b> kurun.</li>
         <li>Zealot, DLC ile birlikte gelen “Madness” mekaniğiyle aynı pakette; Madness tüm yoldaşları etkiler.</li>
-        <li>Co-op’ta host’un DLC’leri oturumda herkese açılır (bkz. Co-op sekmesi); yine de DLC arketiplerini <b>kurmadan önce</b> host’un DLC’ye sahip olduğundan emin olun.</li>
+        <li>Co-op’ta ücretli DLC’ler paylaşılmaz; herkesin DLC seti uyumlu olmalı (bkz. <a href="#dlc-check">DLC uyumluluk kontrolü</a>). DLC arketiplerini <b>kurmadan önce</b> setleri kontrol edin.</li>
       </ul>
     </article>
 
@@ -775,6 +819,14 @@
 
   <article class="card" id="pt-builder" data-s="parti kurucu co-op oyuncu dağıtımı">
     <h3>Co-op parti kurucu</h3>
+    <div class="plsetup" id="plSetup"></div>
+    <div class="presetrow" id="plPresets">
+      <span class="muted">Şablon:</span>
+      <button class="btn ghost" data-p="balanced">Yeni başlayan dengeli</button>
+      <button class="btn ghost" data-p="aggro">Agresif</button>
+      <button class="btn ghost" data-p="story">Hikâye / beceri odaklı</button>
+    </div>
+    <p class="muted">Şablonlar Bölüm 1–2 sonrası parti içindir; erken oyun uyarısı bu yüzden çıkar. Şablondan sonra istediğiniz karakteri değiştirebilirsiniz.</p>
     <div class="builder">
       <div class="bcol">
         <h4>Rogue Trader (host)</h4>
@@ -869,12 +921,12 @@
       <tbody>
         <tr><td>19 Şub 2024</td><td>Yama 1.1.28</td><td>İlk büyük güncelleme: 1.800+ değişiklik, seslendirme, denge.</td><td>Co-op desync düzeltmeleri; çok oyunculu oturumda paralı asker (mercenary) tutma. Karakterleri yeniden kurmak için bir kerelik ücretsiz respec.</td></tr>
         <tr><td>26 Haz 2024</td><td>Yama 1.2</td><td>2.500+ değişiklik, yeni animasyonlar.</td><td>Co-op iyileştirmeleri; Prolog’da en fazla iki ek özel paralı asker: baştan birlikte oynayabilirsiniz.</td></tr>
-        <tr><td>24 Eyl 2024</td><td><b>Void Shadows</b></td><td>Bladedancer, Executioner, Kibellah.</td><td>Host DLC’liyse herkese açılır.</td></tr>
+        <tr><td>24 Eyl 2024</td><td><b>Void Shadows</b></td><td>Bladedancer, Executioner, Kibellah.</td><td>Ücretli DLC paylaşılmaz: her oyuncuda olmalı (bkz. DLC uyumluluk kontrolü).</td></tr>
         <tr><td>Kasım 2024 civarı</td><td>Yama 1.3</td><td>Yıldönümü güncellemesi.</td><td>Konsollarda co-op.</td></tr>
         <tr><td>24 Haz 2025</td><td><b>Lex Imperialis</b> + Yama 1.4</td><td>Arbitrator, Overseer, Solomorne, kalkanlar, familiar’lar.</td><td>Yeni rol seçenekleri (kalkan/pompalı, familiar destek).</td></tr>
         <tr><td>22 Eki 2025</td><td>Yama 1.5</td><td>4 origin baştan tasarlandı (Astra Militarum Commander, Ministorum Priest, Commissar, Navy Officer); nadir/egzotik silahlar için 25 yeni talent; yoldaş build’leri düzenlendi.</td><td>Eski origin tavsiyeleri geçersiz olabilir (bkz. Homeworld ve Origin Rehberi). Bazı güçlü arketipler nerflendi.</td></tr>
         <tr><td>11 Haz 2026</td><td><b>The Infinite Museion</b> + Yama 1.6 (ücretsiz)</td><td>Sector Bionica augment’leri. 1.6: Operative ve Assassin güçlendirildi, anahtar yetenekler bonus turlarda da çalışıyor; nerf yok. Bomba/grenade sistemi elden geçti.</td><td>Operative/Assassin artık daha cazip; Cassia ve Astartes/Xenos yoldaşlar augment alamaz.</td></tr>
-        <tr><td>Haz 2026 →</td><td>Yama 1.6.1.x</td><td>Hotfix serisi (ör. 1.6.1.493, .511); Eogunn’un Charge Distribution’ı zayıflatıldı.</td><td>Güncel PC sürümü 1.6.1.x.</td></tr>
+        <tr><td>Haz 2026 →</td><td>Yama 1.6.1.x</td><td>Hotfix serisi (ör. 1.6.1.493, .511, .514); Eogunn’un Charge Distribution’ı zayıflatıldı.</td><td>Güncel PC sürümü 1.6.1.514 (Temmuz 2026).</td></tr>
         <tr><td>8 Ara 2026</td><td><b>Processional of the Damned</b></td><td>Stella, Zealot, Madness, Grenade Launcher.</td><td>Henüz çıkmadı; çıkış sonrası kontrol edin.</td></tr>
       </tbody>
     </table></div>
@@ -883,7 +935,7 @@
 
   <article class="card" data-s="yama sürüm 1.6.1 güncel patch">
     <h3>Oyun sürümü</h3>
-    <p>Kaynaklara göre güncel PC sürümü <b>1.6.1.x</b> (11 Haziran 2026'da Infinite Museion ile gelen 1.6 yaması; Owlcat bunu "altıncı büyük güncelleme" diye adlandırdı). Tüm tarihçe için <a href="#patch-timeline">Yama ve DLC tarihçesi</a>. Owlcat'ın büyük yamaları sıklıkla yoldaş hataları ve co-op kararlılığı için hotfix içerir; oynarken Steam duyurularına göz atın. İlerleyen bölümlerde (özellikle son bölümler) lansman döneminde hata raporları yoğundu; sık kayıt alın.</p>
+    <p>Steam'in "Known Issues and Patch Roadmap" listesine göre (20 Temmuz 2026) güncel <b>PC sürümü 1.6.1.514</b>, <b>Mac sürümü 1.6.1.170</b>. Bu, 11 Haziran 2026'da Infinite Museion ile gelen 1.6 yamasının hotfix serisidir. Tüm tarihçe için <a href="#patch-timeline">Yama ve DLC tarihçesi</a>. Co-op'ta herkesin sürümü aynı olmalı; sürüm numarası co-op menüsünün sağ altındadır (bkz. <a href="#coop-platform">Platform notları</a>).</p>
   </article>
 </section>
 
@@ -955,6 +1007,7 @@
         <li><a href="https://brokenbuilds.gg/rogue-trader/tier-lists/class-tier-list" target="_blank" rel="noopener">BrokenBuilds — Class Tier List (1.6)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-companions" target="_blank" rel="noopener">BrokenBuilds — Companions (1.6.1)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/rogue-trader-dlc-guide" target="_blank" rel="noopener">BrokenBuilds — DLC Guide</a></li>
+        <li><a href="https://steamcommunity.com/app/2186680/discussions/0/4027970580228219058/" target="_blank" rel="noopener">Steam — Known Issues &amp; Patch Roadmap (güncel sürüm numaraları)</a></li>
         <li><a href="https://roguetrader.owlcat.games/beta-guide" target="_blank" rel="noopener">Owlcat — Resmi oyun rehberi (cover, dost ateşi, Momentum)</a></li>
         <li><a href="https://roguetrader.wiki.fextralife.com/Controls" target="_blank" rel="noopener">Fextralife — Kontroller (Tab / M)</a></li>
         <li><a href="https://brokenbuilds.gg/rogue-trader/guides/beginner-guide" target="_blank" rel="noopener">BrokenBuilds — Beginner Guide</a></li>
@@ -983,7 +1036,7 @@
   <button class="btn ghost" id="toTop">↑ Başa dön</button>
 </footer>
 
-<script src="data.js?v=ct1"></script>
-<script src="app.js?v=ct1"></script>
+<script src="data.js?v=ct2"></script>
+<script src="app.js?v=ct2"></script>
 </body>
 </html>

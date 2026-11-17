@@ -105,6 +105,76 @@
     });
   })();
 
+  // ---------- ilk 2 saat ----------
+  (function first2h() {
+    const box = $("#f2List");
+    function paint() {
+      const st = store.get("first2h", {});
+      const doneN = FIRST2H.filter((_, i) => st["f2-" + i]).length;
+      $("#f2Count").textContent = "· " + doneN + "/" + FIRST2H.length;
+      box.innerHTML = FIRST2H.map((s, i) => {
+        const done = !!st["f2-" + i];
+        return '<div class="f2-step' + (done ? " done" : "") + '"><div class="f2-head"><b>' + (i + 1) + ". " + esc(s.t) + "</b>" +
+          '<button class="btn ' + (done ? "" : "ghost") + '" data-i="' + i + '" aria-pressed="' + done + '">' + (done ? "✔ Tamamlandı" : "Tamamlandı") + "</button></div>" +
+          '<ul class="tight">' + s.items.map((x) => "<li>" + esc(x) + "</li>").join("") + "</ul>" +
+          '<a class="f2-link" href="' + esc(s.h) + '">İlgili bölüm →</a></div>';
+      }).join("");
+    }
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-i]"); if (!b) return;
+      const st = store.get("first2h", {}); const k = "f2-" + b.dataset.i;
+      st[k] = !st[k]; store.set("first2h", st); paint();
+    });
+    $("#f2Reset").addEventListener("click", () => { store.set("first2h", {}); paint(); });
+    paint();
+  })();
+
+  // ---------- DLC uyumluluk kontrolü ----------
+  (function dlcCheck() {
+    const NAMES = ["Void Shadows", "Lex Imperialis", "The Infinite Museion"];
+    const P = ["Oyuncu A", "Oyuncu B", "Oyuncu C"];
+    const st = store.get("dlccheck", { host: 0, own: [[], [], []] });
+    const grid = $("#dlcChkGrid"), out = $("#dlcChkOut");
+    grid.innerHTML = P.map((p, pi) =>
+      '<div class="dc"><b>' + p + '</b><label class="hostsel"><input type="radio" name="dchost" value="' + pi + '"> host</label>' +
+      NAMES.map((n, ni) => '<label><input type="checkbox" data-p="' + pi + '" data-n="' + ni + '"> ' + esc(n) + "</label>").join("") + "</div>"
+    ).join("");
+    $$('input[name="dchost"]', grid).forEach((r) => { r.checked = String(st.host) === r.value; });
+    $$("input[data-p]", grid).forEach((c) => { c.checked = ((st.own[c.dataset.p] || []).indexOf(+c.dataset.n) >= 0); });
+    function render() {
+      const own = st.own.map((a) => a || []);
+      const host = +st.host;
+      const inter = NAMES.map((_, ni) => own.every((a) => a.indexOf(ni) >= 0));
+      const hostExtra = own[host].filter((ni) => !inter[ni]);
+      const same = own.every((a) => a.length === own[0].length) && hostExtra.length === 0;
+      let h = "";
+      if (own.every((x) => x.length === 0)) {
+        h = '<p class="muted">Kimde hangi DLC olduğunu işaretleyin; sonuç burada çıkar.</p>';
+      } else if (same) {
+        h = '<p class="good">Setler aynı: DLC kaynaklı hata beklenmez.</p>';
+      } else if (hostExtra.length) {
+        h = '<p class="neg"><b>Uyarı:</b> ' + P[host] + " (host) şu DLC'lere sahip ama herkeste yok: <b>" + hostExtra.map((ni) => esc(NAMES[ni])).join(", ") +
+          "</b>. Ücretli DLC paylaşılmadığı için oyun \"DLC required\" hatası verebilir. Çözümler: en az DLC'ye sahip kişi host olsun, ya da host Steam'de Özellikler → Ek içerik bölümünden bu DLC'yi geçici kapatsın (içeriği o oturumda kullanılamaz; kayıtta açılmış DLC sonradan kapatılamayabilir).</p>";
+      } else {
+        h = '<p class="good">Host en az DLC\'ye sahip kişi; Steam FAQ\'ye göre bu sıralama sorunsuz olmalı. Yine de ilk gün test edin.</p>';
+      }
+      const lacking = P.map((p, pi) => ({ p, miss: NAMES.filter((_, ni) => own[pi].indexOf(ni) < 0) })).filter((x) => x.miss.length);
+      if (!same && lacking.length) h += '<ul class="tight">' + lacking.map((x) => "<li>" + x.p + " eksik: " + x.miss.map(esc).join(", ") + "</li>").join("") + "</ul>";
+      out.innerHTML = h;
+    }
+    grid.addEventListener("change", (e) => {
+      const t = e.target;
+      if (t.name === "dchost") st.host = +t.value;
+      else if (t.dataset.p !== undefined) {
+        const a = st.own[+t.dataset.p] || (st.own[+t.dataset.p] = []);
+        const n = +t.dataset.n, ix = a.indexOf(n);
+        if (t.checked && ix < 0) a.push(n); else if (!t.checked && ix >= 0) a.splice(ix, 1);
+      }
+      store.set("dlccheck", st); render();
+    });
+    render();
+  })();
+
   // ---------- kart listeleri ----------
   function card(html, s) { return '<article class="card" data-s="' + esc(s || "") + '">' + html + "</article>"; }
 
@@ -236,18 +306,38 @@
       ["caster", "Psişer / kontrol"],
       ["tech", "Yüksek Tech-Use"]
     ];
-    const PLAYERS = ["Oyuncu A", "Oyuncu B", "Oyuncu C"];
-    const state = store.get("builder", { rt: "support", owner: "0", comps: {} });
+    const DEFAULT_NAMES = ["Oyuncu A", "Oyuncu B", "Oyuncu C"];
+    const PREFS = [["", "Tercih yok"], ["melee", "Melee"], ["ranged", "Ranged"], ["support", "Support"], ["tank", "Tank"]];
+    const state = Object.assign({ rt: "support", owner: "0", comps: {}, names: ["", "", ""], prefs: ["", "", ""] }, store.get("builder", {}));
+    const PLAYERS = [0, 1, 2].map((i) => ({ toString() { return (state.names[i] || "").trim() || DEFAULT_NAMES[i]; } }));
+    const PRESETS = {
+      balanced: { rt: "support", owner: "0", comps: { 3: "0", 0: "1", 4: "1", 2: "2", 7: "2" }, prefs: ["support", "tank", "ranged"] },
+      aggro: { rt: "melee", owner: "0", comps: { 5: "0", 2: "1", 7: "1", 0: "2", 3: "2" }, prefs: ["melee", "ranged", "tank"] },
+      story: { rt: "support", owner: "0", comps: { 3: "0", 4: "1", 6: "1", 0: "2", 1: "2" }, prefs: ["support", "support", "tank"] }
+    };
     const compsBox = $("#builderComps");
+
+    const setupBox = $("#plSetup");
+    setupBox.innerHTML = [0, 1, 2].map((i) =>
+      '<div class="pls"><input type="text" maxlength="20" data-i="' + i + '" placeholder="' + DEFAULT_NAMES[i] + '" aria-label="' + DEFAULT_NAMES[i] + ' adı">' +
+      '<select data-pref="' + i + '" aria-label="' + DEFAULT_NAMES[i] + ' tercihi">' + PREFS.map((x) => '<option value="' + x[0] + '">' + x[1] + "</option>").join("") + "</select></div>"
+    ).join("");
+    $$("input", setupBox).forEach((inp) => { inp.value = state.names[inp.dataset.i] || ""; });
+    $$("select", setupBox).forEach((sel) => { sel.value = state.prefs[sel.dataset.pref] || ""; });
+    function relabel() {
+      $$("option", $("#rtOwner")).forEach((o, i) => { o.textContent = String(PLAYERS[i]); });
+      $$("select", compsBox).forEach((sel) => $$("option", sel).forEach((o) => { if (o.value !== "") o.textContent = String(PLAYERS[+o.value]); }));
+    }
 
     compsBox.innerHTML = COMPANIONS.map((c, i) =>
       '<div class="bc"><span>' + esc(c.n) + ' <small class="muted">· ' + esc(c.join) + '</small></span>' +
-      '<select data-i="' + i + '"><option value="">—</option>' + PLAYERS.map((p, pi) => '<option value="' + pi + '">' + p + "</option>").join("") + "</select></div>"
+      '<select data-i="' + i + '"><option value="">—</option>' + PLAYERS.map((p, pi) => '<option value="' + pi + '">' + esc(String(p)) + "</option>").join("") + "</select></div>"
     ).join("");
 
     $("#rtArch").value = state.rt;
     $("#rtOwner").value = state.owner;
     $$("select", compsBox).forEach((s) => { s.value = state.comps[s.dataset.i] || ""; });
+    relabel();
 
     function render() {
       const members = [{ name: "Rogue Trader (" + RT[state.rt].label + ")", owner: parseInt(state.owner, 10), tags: RT[state.rt].tags, join: "Prolog" }];
@@ -264,6 +354,13 @@
       per.forEach((n, i) => { if (n > 2) warns.push(PLAYERS[i] + " " + n + " karakter yönetiyor; 3 oyuncu için en rahat dağılım 2'şer karakter."); if (n === 0) warns.push(PLAYERS[i] + " hiç karakter almadı."); });
       const early = members.filter((m) => !/Prolog/.test(m.join));
       if (early.length) warns.push("Erken oyunda (Prolog) yalnızca Abelard, Idira ve Argenta var. " + early.map((m) => m.name.split(" (")[0]).join(", ") + " daha sonra katılır; o zamana kadar özel karakter ya da daha az karakterle oynayın.");
+      [0, 1, 2].forEach((i) => {
+        const pf = state.prefs[i];
+        if (pf && !members.some((m) => m.owner === i && m.tags.indexOf(pf) >= 0)) {
+          const lab = (PREFS.find((x) => x[0] === pf) || [0, pf])[1];
+          warns.push(PLAYERS[i] + " " + lab + " rolü istiyor ama karakterlerinde bu rol yok.");
+        }
+      });
       const missing = REQ.filter((r) => !covered[r[0]]);
       const tips = [];
       if (!covered.support) tips.push("Destek eksik: Cassia veya Jae düşünün.");
@@ -274,7 +371,7 @@
       $("#builderOut").innerHTML =
         '<div class="players">' + PLAYERS.map((p, i) => {
           const list = members.filter((m) => m.owner === i).map((m) => esc(m.name)).join("<br>") || '<span class="muted">—</span>';
-          return '<div class="pl"><b>' + p + " (" + per[i] + ")</b><div>" + list + "</div></div>";
+          return '<div class="pl"><b>' + esc(String(p)) + " (" + per[i] + ")</b><div>" + list + "</div></div>";
         }).join("") + "</div>" +
         '<div class="cover">' + REQ.map((r) => '<span class="cv ' + (covered[r[0]] ? "ok" : "no") + '">' + (covered[r[0]] ? "✔ " : "✘ ") + esc(r[1]) + "</span>").join("") + "</div>" +
         (warns.length ? '<ul class="warnlist">' + warns.map((w) => "<li>" + esc(w) + "</li>").join("") + "</ul>" : "") +
@@ -285,6 +382,24 @@
 
     $("#rtArch").addEventListener("change", (e) => { state.rt = e.target.value; store.set("builder", state); render(); });
     $("#rtOwner").addEventListener("change", (e) => { state.owner = e.target.value; store.set("builder", state); render(); });
+    setupBox.addEventListener("input", (e) => {
+      const inp = e.target.closest("input"); if (!inp) return;
+      state.names[inp.dataset.i] = inp.value; store.set("builder", state); relabel(); render();
+    });
+    setupBox.addEventListener("change", (e) => {
+      const sel = e.target.closest("select"); if (!sel) return;
+      state.prefs[sel.dataset.pref] = sel.value; store.set("builder", state); render();
+    });
+    $("#plPresets").addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-p]"); if (!b) return;
+      const pr = PRESETS[b.dataset.p];
+      state.rt = pr.rt; state.owner = pr.owner; state.comps = Object.assign({}, pr.comps); state.prefs = pr.prefs.slice();
+      store.set("builder", state);
+      $("#rtArch").value = state.rt; $("#rtOwner").value = state.owner;
+      $$("select", compsBox).forEach((s) => { s.value = state.comps[s.dataset.i] || ""; });
+      $$("select", setupBox).forEach((sel) => { sel.value = state.prefs[sel.dataset.pref] || ""; });
+      render();
+    });
     compsBox.addEventListener("change", (e) => {
       const s = e.target.closest("select"); if (!s) return;
       state.comps[s.dataset.i] = s.value; store.set("builder", state); render();

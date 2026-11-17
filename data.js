@@ -163,7 +163,7 @@ const DLCS = [
   { n: "Void Shadows", date: "24 Eylül 2024", tag: "İlk alın", pass: "Season Pass 1",
     comp: "Kibellah (Death Cult suikastçısı; Assassin)", arch: "Bladedancer (Basic) + Executioner (Advanced)", mech: "Yeni mekanik yok; arketipler + yoldaş.",
     story: "Genestealer Cult mürettebatınıza sızar; hikâye kendi geminizde geçer (~15 saat).",
-    coop: "Kibellah, yakın dövüş koltuğu için güçlü bir yoldaş seçeneği; bir oyuncunun 2 karakterinden biri olabilir. Bladedancer yalnızca karakter yaratılırken seçilebildiği için host'un DLC'yi oyuna başlamadan kurması gerekir. Co-op sekmesindeki kurala göre host'un DLC'leri oturumda herkese açılır; yine de Bladedancer'ı özel co-op karakterinde seçip seçemeyeceğinizi oyunda kontrol edin." },
+    coop: "Kibellah, yakın dövüş koltuğu için güçlü bir yoldaş seçeneği; bir oyuncunun 2 karakterinden biri olabilir. Bladedancer yalnızca karakter yaratılırken seçilebildiği için host'un DLC'yi oyuna başlamadan kurması gerekir. Co-op'ta ücretli DLC paylaşılmadığından tüm oyuncularda Void Shadows olmalı (bkz. DLC uyumluluk kontrolü); Bladedancer'ı özel co-op karakterinde seçip seçemeyeceğinizi oyunda kontrol edin." },
   { n: "Lex Imperialis", date: "24 Haziran 2025", tag: "Kalkan + pompalı için", pass: "Season Pass 1",
     comp: "Solomorne Anthar (Arbitrator, Overseer) + cyber-mastiff Glaito", arch: "Arbitrator origin (Vigilant / Castigator / Subductor) + Overseer (Advanced)", mech: "Kalkanlar (yeni ekipman türü) ve familiar'lar (cyber-mastiff, siber-kartal).",
     story: "Adeptus Arbites bir davayla Koronus Expanse'e gelir (~15 saat). Yama 1.4 ile birlikte çıktı.",
@@ -172,7 +172,7 @@ const DLCS = [
     comp: "Eogunn Februs (Tech-Priest; Officer tipi destek, servo-kafatası Nuncius)", arch: "Yeni arketip/origin yok", mech: "Sector Bionica: 6 vücut slotunda 100'den fazla augment; Ferrum Sanctum statı; Galvanization.",
     story: "Necron Overlord Trazyn the Infinite'in kasası ve von Valancius hanedanının geçmişi. Görev hattı 2. Perde'de başlar, 4–5. Perde'ye uzanır.",
     coop: "Augment'ler kalıcıdır ve her birinin bir dezavantajı vardır; Ferrum Sanctum implant hasarını artırır ama elektrik/EMP hasarını da. Astartes, Aeldari, Drukhari, Cassia ve Navigator'lar augment alamaz; bu karakterleri yöneten oyuncu o koltukta sistemden yararlanamaz. Kalıcı olduğu için kurmadan önce parti olarak karar verin. Eogunn, Cassia ve Jae ile destek koltuğu için yarışır." },
-  { n: "Processional of the Damned", date: "8 Aralık 2026 (henüz çıkmadı)", tag: "Final DLC", pass: "Season Pass 2",
+  { n: "Processional of the Damned", date: "8 Aralık 2026 (henüz çıkmadı)", tag: "Yakında · 8 Ara", pass: "Season Pass 2",
     comp: "Stella the Miraculist (Ecclesiarchy'nin 'mucize' saydığı kayıtsız psişer)", arch: "Zealot (Basic; ezici silahlarla yakın dövüş)", mech: "Madness (tüm yoldaşları etkiler, savaşta debuff biriktirir), Grenade Launcher'lar, yeni düşmanlar (Arch Enemy ve Aeldari).",
     story: "Ölmekte olan bir yıldızın yörüngesindeki devasa bir gemi mezarlığında mahsur kalırsınız (~15 saat). PC, PS5 ve Xbox için duyuruldu; Switch 2 için kaynaklar çelişiyor.",
     coop: "Madness herkesin yoldaşını etkilediği için tüm oyuncuların partisini ilgilendirecek; hangi yoldaşın en çok etkilendiği ve nasıl iyileştiği çıkış sonrası netleşir. Zealot Basic bir arketip olduğundan, Bladedancer örneğinden hareketle yaratım anında seçilmesi muhtemel (doğrulanmadı). DLC henüz çıkmadığı için co-op ayrıntıları kesin değildir; 8 Aralık'tan sonra kontrol edin." },
@@ -202,15 +202,15 @@ const QUIZ = [
 
 const CHECKLIST = [
   { g: "Oyundan önce (herkes)", items: [
-    "Aynı oyun sürümü ve platform (host'un DLC'leri oturumda paylaşılır; yine de ilk gün test edin)",
+    "Aynı oyun sürümü ve platform; ücretli DLC setleri uyumlu mu? (Co-op sekmesindeki DLC uyumluluk kontrolü; kozmetikler host'tan paylaşılır)",
     "Dil: Ayarlar → Türkçe arayüz/altyazı (ses İngilizce)",
     "Host DLC'leri: Bladedancer istiyorsanız Void Shadows yaratımdan ÖNCE yüklü olsun",
     "Roller: Lord Kaptan kim? Kargo/envanter, gemi/Warp ve not tutan kim?",
     "Zorluk: Normal ile başlayın (sonra değiştirilebilir)"
   ]},
   { g: "İlk oturum", items: [
-    "Host tek oyunculu başlayıp Rogue Trader'ı yaratsın ve tutorial'ı geçsin",
-    "Arkadaşlar için özel karakter(ler) gerekiyorsa gemideki 'maiyet' seçeneğiyle oluşturun, sonra kaydedip lobiye geçin",
+    "Host yeni oyunu başlatıp Rogue Trader'ı yaratsın (ilk odada Mercenary Steward var)",
+    "Arkadaşlar özel karakter istiyorsa ilk odadaki Mercenary Steward ile yaratsın; sonradan köprüde Janris Danrok (Lord Captain kontrolüyle) ek karakter yaratır",
     "Cooperative modda lobi aç → kayıt seç → kod paylaş → karakterleri oyunculara dağıt",
     "Her oyuncuya 2 karakter (6 kişilik parti) planlayın; ilk saatlerde parti daha küçük olabilir",
     "Tab (loot vurgula), M (harita), Space (turu bitir), X (silah seti) tuşlarını birlikte deneyin"
@@ -455,4 +455,30 @@ const WALK_GENERAL = [
   "Triumph’ı (zafer töreni) yan işleri bitirmeden başlatmayın; Steam topluluğunda içerik kaçırdığı bildirilmiş.",
   "Üç kişilik co-op’ta büyük kararı Lord Kaptan seçer; ama önemli diyaloglarda üçünüz de ekranı okuyup oy kullanın.",
   "Bazı seçimler yoldaşların kalıcı ayrılmasına yol açabilir; büyük kararlardan önce spoiler’lı bölüm notlarını okuyun."
+];
+
+// "İlk 2 saat" adımları. Kayıt anahtarı: rtcc:first2h (eski checklist anahtarından ayrı, onu bozmaz).
+const FIRST2H = [
+  { t: "Oyun öncesi: DLC ve sürüm", l: "coop", h: "#dlc-check", items: [
+    "Üç kişi de aynı sürümde (PC güncel: 1.6.1.514); sürüm co-op menüsünün sağ altında yazar",
+    "DLC uyumluluk kontrolü yapıldı; en az DLC'li kişi host",
+    "Türkçe arayüz/altyazı seçildi (ses İngilizce)" ]},
+  { t: "Karakter yaratma", l: "create", h: "#arch-guide", items: [
+    "Homeworld ve origin seçildi (sonradan değişmez)",
+    "Basic arketip ve hedef Advanced yol belirlendi",
+    "3 kişilik dağılımda aynı Advanced yolda iki kişi çakışmıyor" ]},
+  { t: "Co-op kurulum", l: "coop", h: "#coop-setup", items: [
+    "Host Rogue Trader'ı yarattı, lobi açıldı, Server ID paylaşıldı",
+    "Arkadaşlar ilk odadaki Mercenary Steward ile karakterlerini yarattı (ya da hikâye yoldaşlarını aldı)",
+    "Karakterler oyunculara dağıtıldı (ikişer)" ]},
+  { t: "İlk savaş", l: "combat", h: "#combat-tips", items: [
+    "AP/MP ayrımı anlaşıldı; her turda AP bitirildi",
+    "Cover kullanıldı, ilk turda yakın dövüşe atılmadı",
+    "AoE ve seri atışta dost ateşi kontrol edildi" ]},
+  { t: "İlk level-up", l: "create", h: "#hw-table", items: [
+    "Savaş sonrası sarı ok görüldü; puanlar dağıtıldı",
+    "Skill'ler 1–2 uzmanlığa odaklandı (Awareness iyi bir dolgu)" ]},
+  { t: "Loot ve Cargo alışkanlığı", l: "loot", h: "#loot", items: [
+    "Bölgeden çıkmadan M ile haritada kaçan sandık var mı bakıldı",
+    "Eşyalar çöpe atılmadı: Cargo'ya gönderildi" ]}
 ];
